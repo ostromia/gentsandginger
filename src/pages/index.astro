@@ -8,6 +8,9 @@ import '@fontsource/sedgwick-ave';
 import banner_desktop from "../assets/banner_desktop.jpg";
 import nav_logo from "../assets/nav_logo.png";
 import '@fontsource/reenie-beanie';
+import thefulfordarms from "../assets/thefulfordarms.png";
+import truckfestival from "../assets/truckfestival.png";
+import bandonthewall from "../assets/bandonthewall.jpg";
 ---
 
 <!doctype html>
@@ -32,6 +35,40 @@ import '@fontsource/reenie-beanie';
         </header>
 
         <main>
+
+            <div id="events-wrapper">
+                <h1>Events</h1>
+
+                <div id="events">
+                    <div class="event">
+                        <div class="event-icon-wrapper">
+                            <img alt="" src={truckfestival.src} />
+                        </div>
+                        <a href="https://truckfestival.com/line-up/">
+                            Truck Festival 2025
+                        </a>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-icon-wrapper">
+                            <img alt="" src={thefulfordarms.src} />
+                        </div>
+                        <a href="https://www.fatsoma.com/e/j1o4jbmb/la/hml2">
+                            8th June 2025 York Fulford Arms Headline
+                        </a>
+                    </div>
+
+                    <div class="event">
+                        <div class="event-icon-wrapper">
+                            <img alt="" src={bandonthewall.src} />
+                        </div>
+                        <a href="https://bandonthewall.org/events/elephunk-in-the-room-gents-and-gingers-the-palpitations/">
+                            Elephunk in the room: Gents & Ginger + The Palpitations
+                        </a>
+                    </div>
+                </div>
+            </div>
+
             <div id="githermints-in-groove">
                 <img alt="" src={GithermintsInGroove.src} />
             </div>
@@ -60,12 +97,12 @@ import '@fontsource/reenie-beanie';
                 <a href="https://www.youtube.com/watch?v=gXMAVJ8y9Qk">
                     TWTD Music Video
                 </a>
+            </div>
         </main>
 	</body>
 </html>
 
 <style>
-
     nav {
         height: 10rem;
         width: 100%;
@@ -105,7 +142,7 @@ import '@fontsource/reenie-beanie';
     }
 
     main {
-        max-width: 500px;
+        max-width: 1000px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -114,6 +151,64 @@ import '@fontsource/reenie-beanie';
         box-sizing: border-box;
         gap: 2rem;
     }
+
+    h1 {
+        font-family: 'Reenie Beanie', cursive;
+        color: #d57d18;
+        font-size: 5rem;
+        margin: 0;
+    }
+
+    #events-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #events {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .event {
+        display: flex;
+        gap: 1rem;
+        height: 4rem;
+        align-items: center;
+    }
+
+    .event-icon-wrapper {
+        height: 100%;
+        background-color: #d57d18;
+        border-radius: 0.25rem;
+        overflow: hidden;
+        /* padding: 0.125rem;
+        box-sizing: border-box; */
+    }
+
+    img {
+        height: 100%;
+    }
+
+    .event > a {
+        color: #d57d18;
+        text-decoration: none;
+        font-size: 20px;
+    }
+
+    /* .events-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .events-links > a {
+        color: #d57d18;
+        text-decoration: none;
+    } */
+
+
 
     /* #githermints-in-groove {
         max-width: 500px;
