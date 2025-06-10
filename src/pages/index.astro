@@ -5,6 +5,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import IMG_048A5038_1200x630 from "../assets/IMG_048A5038_1200x630.jpg";
 import GithermintsInGroove from "../assets/Githerments in Groove.jpg";
 import '@fontsource/sedgwick-ave';
+import banner_desktop from "../assets/banner_desktop.jpg";
 ---
 
 <!doctype html>
@@ -13,6 +14,13 @@ import '@fontsource/sedgwick-ave';
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
 	</head>
 	<body>
+
+        <header>
+            <div id="banner">
+                <img alt="" src={banner_desktop.src} />
+            </div>
+        </header>
+
         <main>
             <div id="githermints-in-groove">
                 <img alt="" src={GithermintsInGroove.src} />
@@ -47,6 +55,18 @@ import '@fontsource/sedgwick-ave';
 </html>
 
 <style>
+    #banner {
+        /* overflow: hidden; */
+        /* height: 100dvh;
+        width: 100dvw; */
+    }
+
+    #banner > img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
     main {
         max-width: 500px;
         display: flex;
