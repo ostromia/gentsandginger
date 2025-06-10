@@ -6,6 +6,8 @@ import IMG_048A5038_1200x630 from "../assets/IMG_048A5038_1200x630.jpg";
 import GithermintsInGroove from "../assets/Githerments in Groove.jpg";
 import '@fontsource/sedgwick-ave';
 import banner_desktop from "../assets/banner_desktop.jpg";
+import nav_logo from "../assets/nav_logo.png";
+import '@fontsource/reenie-beanie';
 ---
 
 <!doctype html>
@@ -16,6 +18,14 @@ import banner_desktop from "../assets/banner_desktop.jpg";
 	<body>
 
         <header>
+            <nav>
+                <a href="/events/">Events</a>
+                <a href="/merchandise/">Merchandise</a>
+                <img src={nav_logo.src} />
+                <a href="/about/">About</a>
+                <a href="/contact/">Contact</a>
+            </nav>
+
             <div id="banner">
                 <img alt="" src={banner_desktop.src} />
             </div>
@@ -55,7 +65,34 @@ import banner_desktop from "../assets/banner_desktop.jpg";
 </html>
 
 <style>
+
+    nav {
+        height: 10rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        position: absolute;
+        color: #d57d18;
+        gap: 2rem;
+        font-size: 32px;
+        font-family: 'Reenie Beanie', cursive;
+    }
+
+    nav > img {
+        height: 100%;
+    }
+
+    nav > a {
+        color: #d57d18;
+        text-decoration: none;
+    }
+
+
     #banner {
+        height: 100dvh;
+        /* width: 100%; */
         /* overflow: hidden; */
         /* height: 100dvh;
         width: 100dvw; */
