@@ -17,26 +17,62 @@ import GithermintsInGroove from "../assets/Githerments in Groove.jpg";
             <div id="githermints-in-groove">
                 <img alt="" src={GithermintsInGroove.src} />
             </div>
+
+            <div id="links">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSes613JZzO880ZoA38NtIuJxes6Swd_OUUrO7Oxtaq5vwXgmQ/closedform">
+                    Limited New Merch Pre Order
+                </a>
+
+                <a href="https://www.fatsoma.com/e/j1o4jbmb/la/hml2">
+                    8th June York Fulford Arms Headline
+                </a>
+
+                <a href="https://truckfestival.com/line-up/">
+                    Come See Us at Truckfest
+                </a>
+
+                <a href="https://kycker.ffm.to/githermentsingroove">
+                    Listen to our Debut Album
+                </a>
+
+                <a href="https://www.youtube.com/watch?v=gXMAVJ8y9Qk">
+                    TWTD Music Video
+                </a>
         </main>
 	</body>
 </html>
 
 <style>
     main {
-        max-width: 1000px;
+        max-width: 500px;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         margin: auto;
         padding: 2rem;
         box-sizing: border-box;
+        gap: 2rem;
     }
 
-    #githermints-in-groove {
+    /* #githermints-in-groove {
         max-width: 500px;
-    }
+        margin: auto;
+    } */
 
     #githermints-in-groove > img {
         width: 100%;
         border-radius: 0.5rem;
     }
+
+    #links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    #links > a {
+        color: #d57d18;
+        text-decoration: none;
+    }
+
 </style>
