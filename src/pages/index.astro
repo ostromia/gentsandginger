@@ -1,10 +1,14 @@
 ---
 import "../styles/global.css";
+import Head from "../components/Head.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import IMG_048A5038_1200x630 from "../assets/IMG_048A5038_1200x630.jpg";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+        <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
 	</head>
 	<body>
         hello world
