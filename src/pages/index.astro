@@ -3,8 +3,8 @@ import "../styles/global.css";
 import Head from "../components/Head.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import IMG_048A5038_1200x630 from "../assets/IMG_048A5038_1200x630.jpg";
-
 import GithermintsInGroove from "../assets/Githerments in Groove.jpg";
+import '@fontsource/sedgwick-ave';
 ---
 
 <!doctype html>
@@ -16,6 +16,10 @@ import GithermintsInGroove from "../assets/Githerments in Groove.jpg";
         <main>
             <div id="githermints-in-groove">
                 <img alt="" src={GithermintsInGroove.src} />
+            </div>
+
+            <div id="heading">
+                Gents & Ginger
             </div>
 
             <div id="links">
@@ -62,6 +66,12 @@ import GithermintsInGroove from "../assets/Githerments in Groove.jpg";
     #githermints-in-groove > img {
         width: 100%;
         border-radius: 0.5rem;
+    }
+
+    #heading {
+        font-family: 'Sedgwick Ave', cursive;
+        color: #d57d18;
+        font-size: 2rem;
     }
 
     #links {
