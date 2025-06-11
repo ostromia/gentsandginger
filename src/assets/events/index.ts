@@ -1,7 +1,7 @@
 import thefulfordarms from "./thefulfordarms.jpg";
 import truckfestival from "./truckfestival.jpeg";
 import bandonthewall from "./bandonthewall.jpg";
-import lumafilmtvfestival from "./lumafilmtvfestival.jpg"
+import lumafilmtvfestival from "./lumafilmtvfestival.jpg";
 
 const events = [
     {
@@ -34,7 +34,7 @@ const events = [
         image: bandonthewall.src,
         url: "https://bandonthewall.org/events/elephunk-in-the-room-gents-and-gingers-the-palpitations/",
         location: "Band on the Wall, Manchester"
-    },
+    }
 ];
 
 export default events;

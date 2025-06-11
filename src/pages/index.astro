@@ -4,7 +4,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import IMG_048A5038_1200x630 from "../assets/IMG_048A5038_1200x630.jpg";
 
 import Navigation from "../components/Navigation.astro";
-import Footer from "../components/Fotter.astro";
+import Footer from "../components/Footer.astro";
 
 import banner_desktop from "../assets/banner_desktop.jpg";
 import events from "../assets/events";
@@ -12,10 +12,10 @@ import events from "../assets/events";
 
 <!doctype html>
 <html lang="en">
-	<head>
+    <head>
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
-	</head>
-	<body>
+    </head>
+    <body>
         <header>
             <div style="position: absolute; width: 100%;">
                 <Navigation />
@@ -31,47 +31,39 @@ import events from "../assets/events";
                 <h1>Events</h1>
 
                 <div id="events">
-                    {events.slice(0, 3).map((e) => (
-                        <div class="event">
-                            <div class="event-icon-wrapper">
-                                <a href={e.url}>
-                                    <img alt="" src={e.image} />
-                                </a>
-                            </div>
-
-                            <div class="event-text-wrapper">
-                                <div class="event-date">
-                                    {e.date}
+                    {
+                        events.slice(0, 3).map((e) => (
+                            <div class="event">
+                                <div class="event-icon-wrapper">
+                                    <a href={e.url}>
+                                        <img alt="" src={e.image} />
+                                    </a>
                                 </div>
 
-                                <a href={e.url}>
-                                {e.title}
-                                </a>
+                                <div class="event-text-wrapper">
+                                    <div class="event-date">{e.date}</div>
 
-                                <div class="event-location">
-                                    {e.location}
+                                    <a href={e.url}>{e.title}</a>
+
+                                    <div class="event-location">{e.location}</div>
+                                </div>
+
+                                <div class="event-buy-button">
+                                    <a href={e.url}>Buy Tickets</a>
                                 </div>
                             </div>
-
-                            <div class="event-buy-button">
-                                <a href={e.url}>
-                                    Buy Tickets
-                                </a>
-                            </div>
-                        </div>
-                    ))}
+                        ))
+                    }
                 </div>
             </div>
 
             <div class="event-buy-button" style="display: flex; justify-content: center; margin-left: unset;">
-                <a href="/events/">
-                    View All Events
-                </a>
+                <a href="/events/"> View All Events </a>
             </div>
         </main>
 
         <Footer />
-	</body>
+    </body>
 </html>
 
 <style>
@@ -150,7 +142,8 @@ import events from "../assets/events";
         font-size: 30px;
     }
 
-    .event-location, .event-date {
+    .event-location,
+    .event-date {
         font-size: 20px;
     }
 
