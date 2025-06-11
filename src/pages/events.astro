@@ -18,7 +18,6 @@ import events from "../assets/events";
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
 	</head>
 	<body>
-
         <header>
             <nav>
                 <a href="/events/">Events</a>
@@ -27,10 +26,6 @@ import events from "../assets/events";
                 <a href="/about/">About</a>
                 <a href="/contact/">Contact</a>
             </nav>
-
-            <div id="banner">
-                <img alt="" src={banner_desktop.src} />
-            </div>
         </header>
 
         <main>
@@ -38,7 +33,7 @@ import events from "../assets/events";
                 <h1>Events</h1>
 
                 <div id="events">
-                    {events.slice(0, 3).map((e) => (
+                    {events.map((e) => (
                         <div class="event">
                             <div class="event-icon-wrapper">
                                 <a href={e.url}>
@@ -69,12 +64,6 @@ import events from "../assets/events";
                     ))}
                 </div>
             </div>
-
-            <div class="event-buy-button" style="display: flex; justify-content: center; margin-left: unset;">
-                <a href="/events/">
-                    View All Events
-                </a>
-            </div>
         </main>
 
         <Footer />
@@ -89,7 +78,6 @@ import events from "../assets/events";
         justify-content: center;
         align-items: center;
         margin: auto;
-        position: absolute;
         color: #d57d18;
         gap: 2rem;
         font-size: 32px;
@@ -104,7 +92,6 @@ import events from "../assets/events";
         color: #d57d18;
         text-decoration: none;
     }
-
 
     #banner {
         height: 100dvh;
@@ -203,3 +190,4 @@ import events from "../assets/events";
     }
 
 </style>
+
