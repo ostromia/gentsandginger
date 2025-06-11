@@ -16,7 +16,6 @@ import events from "../assets/events";
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
 	</head>
 	<body>
-
         <header>
             <div style="position: absolute; width: 100%;">
                 <Navigation />
@@ -98,7 +97,7 @@ import events from "../assets/events";
     }
 
     h1 {
-        font-family: 'Reenie Beanie', cursive;
+        font-family: var(--font-reenie-beanie), cursive;
         color: #d57d18;
         font-size: 5rem;
         margin: 0;
@@ -136,9 +135,7 @@ import events from "../assets/events";
     .event-icon-wrapper img {
         height: 100%;
         width: 100%;
-        /* max-width: 25%; */
         object-fit: cover;
-
     }
 
     .event-text-wrapper {
@@ -171,5 +168,4 @@ import events from "../assets/events";
         padding: 0.5rem 0.5rem;
         box-sizing: border-box;
     }
-
 </style>

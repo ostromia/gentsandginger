@@ -1,12 +1,8 @@
 ---
-// global imports
-import '@fontsource/sedgwick-ave';
-import '@fontsource/reenie-beanie';
-import "../styles/global.css";
-
-// imports
+import { Font } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import { SITE_TITLE } from '../consts';
+import "../styles/global.css";
 
 interface Props {
 	title: string;
@@ -28,8 +24,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link rel="preload" href="/fonts/atkinson-regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/atkinson-bold.woff" as="font" type="font/woff" crossorigin />
+<Font cssVariable='--font-atkinson-hyperlegible' preload />
+<Font cssVariable='--font-reenie-beanie' preload />
+<Font cssVariable='--font-sedgwick-ave' preload />
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
