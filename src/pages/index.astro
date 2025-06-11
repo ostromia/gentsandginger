@@ -12,6 +12,7 @@ import thefulfordarms from "../assets/thefulfordarms.jpg";
 import truckfestival from "../assets/truckfestival.jpeg";
 import bandonthewall from "../assets/bandonthewall.jpg";
 import Footer from "../components/Fotter.astro";
+import lumafilmtvfestival from "../assets/lumafilmtvfestival.jpg"
 
 
 const events = [
@@ -21,6 +22,14 @@ const events = [
         image: truckfestival.src,
         url: "https://truckfestival.com/line-up/",
         location: "Hill Farm, Oxfordshire"
+    },
+
+    {
+        title: "Luma Film Festival",
+        date: "9 - 11 June 2025",
+        image: lumafilmtvfestival.src,
+        url: "https://www.lumafilmfestival.co.uk",
+        location: "The School of Art, York"
     },
 
     {
@@ -187,13 +196,18 @@ const events = [
 
     .event-icon-wrapper {
         height: 100%;
+        width: 25%;
         background-color: #d57d18;
         border-radius: 0.25rem;
         overflow: hidden;
     }
 
-    img {
+    .event-icon-wrapper img {
         height: 100%;
+        width: 100%;
+        /* max-width: 25%; */
+        object-fit: cover;
+
     }
 
     .event-text-wrapper {
