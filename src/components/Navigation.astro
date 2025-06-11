@@ -1,0 +1,36 @@
+---
+import nav_logo from "../assets/nav_logo.png";
+---
+
+<nav>
+    <a href="/events/">Events</a>
+    <a href="/merchandise/">Merchandise</a>
+    <a href="/">
+        <img src={nav_logo.src} />
+    </a>
+    <a href="/about/">About</a>
+    <a href="/contact/">Contact</a>
+</nav>
+
+<style>
+    nav {
+        height: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        color: #d57d18;
+        gap: 2rem;
+        font-size: 32px;
+        font-family: 'Reenie Beanie', cursive;
+    }
+
+    img {
+        height: 9rem;
+    }
+
+    a {
+        color: #d57d18;
+        text-decoration: none;
+    }
+</style>

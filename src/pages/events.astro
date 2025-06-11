@@ -3,13 +3,11 @@ import "../styles/global.css";
 import Head from "../components/Head.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import IMG_048A5038_1200x630 from "../assets/IMG_048A5038_1200x630.jpg";
-import GithermintsInGroove from "../assets/Githerments in Groove.jpg";
 import '@fontsource/sedgwick-ave';
-import banner_desktop from "../assets/banner_desktop.jpg";
-import nav_logo from "../assets/nav_logo.png";
 import '@fontsource/reenie-beanie';
 import Footer from "../components/Fotter.astro";
 import events from "../assets/events";
+import Navigation from "../components/Navigation.astro";
 ---
 
 <!doctype html>
@@ -19,15 +17,7 @@ import events from "../assets/events";
 	</head>
 	<body>
         <header>
-            <nav>
-                <a href="/events/">Events</a>
-                <a href="/merchandise/">Merchandise</a>
-                <a href="/">
-                    <img src={nav_logo.src} />
-                </a>
-                <a href="/about/">About</a>
-                <a href="/contact/">Contact</a>
-            </nav>
+            <Navigation />
         </header>
 
         <main>
