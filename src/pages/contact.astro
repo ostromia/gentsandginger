@@ -1,0 +1,29 @@
+---
+import Head from "../components/Head.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import IMG_048A5038_1200x630 from "../assets/IMG_048A5038_1200x630.jpg";
+
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
+    </head>
+    <body>
+        <header>
+            <Navigation />
+        </header>
+
+        <main>
+        </main>
+
+        <Footer />
+    </body>
+</html>
+
+<style>
+</style>
+
