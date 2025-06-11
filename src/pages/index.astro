@@ -8,10 +8,38 @@ import '@fontsource/sedgwick-ave';
 import banner_desktop from "../assets/banner_desktop.jpg";
 import nav_logo from "../assets/nav_logo.png";
 import '@fontsource/reenie-beanie';
-import thefulfordarms from "../assets/thefulfordarms.png";
-import truckfestival from "../assets/truckfestival.png";
+import thefulfordarms from "../assets/thefulfordarms.jpg";
+import truckfestival from "../assets/truckfestival.jpeg";
 import bandonthewall from "../assets/bandonthewall.jpg";
 import Footer from "../components/Fotter.astro";
+
+
+const events = [
+    {
+        title: "Truckfestival 2025",
+        date: "24 - 27 June 2025",
+        image: truckfestival.src,
+        url: "https://truckfestival.com/line-up/",
+        location: "Hill Farm, Oxfordshire"
+    },
+
+    {
+        title: "Gents & Ginger Reunion",
+        date: "8 June 2025",
+        image: thefulfordarms.src,
+        url: "https://www.thefulfordarms.com/event/gents-ginger/",
+        location: "The Fulford Arms, York"
+    },
+
+    {
+        title: "Band on the Wall",
+        date: "2 Auguest 2024",
+        image: bandonthewall.src,
+        url: "https://bandonthewall.org/events/elephunk-in-the-room-gents-and-gingers-the-palpitations/",
+        location: "Band on the Wall, Manchester"
+    },
+];
+
 ---
 
 <!doctype html>
@@ -36,38 +64,46 @@ import Footer from "../components/Fotter.astro";
         </header>
 
         <main>
-
             <div id="events-wrapper">
                 <h1>Events</h1>
 
                 <div id="events">
-                    <div class="event">
-                        <div class="event-icon-wrapper">
-                            <img alt="" src={truckfestival.src} />
-                        </div>
-                        <a href="https://truckfestival.com/line-up/">
-                            Truck Festival 2025
-                        </a>
-                    </div>
+                    {events.map((e) => (
+                        <div class="event">
+                            <div class="event-icon-wrapper">
+                                <a href={e.url}>
+                                    <img alt="" src={e.image} />
+                                </a>
+                            </div>
 
-                    <div class="event">
-                        <div class="event-icon-wrapper">
-                            <img alt="" src={thefulfordarms.src} />
-                        </div>
-                        <a href="https://www.fatsoma.com/e/j1o4jbmb/la/hml2">
-                            8th June 2025 York Fulford Arms Headline
-                        </a>
-                    </div>
+                            <div class="event-text-wrapper">
+                                <div class="event-date">
+                                    {e.date}
+                                </div>
 
-                    <div class="event">
-                        <div class="event-icon-wrapper">
-                            <img alt="" src={bandonthewall.src} />
+                                <a href={e.url}>
+                                {e.title}
+                                </a>
+
+                                <div class="event-location">
+                                    {e.location}
+                                </div>
+                            </div>
+
+                            <div class="event-buy-button">
+                                <a href={e.url}>
+                                    Buy Tickets
+                                </a>
+                            </div>
                         </div>
-                        <a href="https://bandonthewall.org/events/elephunk-in-the-room-gents-and-gingers-the-palpitations/">
-                            Elephunk in the room: Gents & Ginger + The Palpitations
-                        </a>
-                    </div>
+                    ))}
                 </div>
+            </div>
+
+            <div class="event-buy-button" style="display: flex; justify-content: center; margin-left: unset;">
+                <a href="/events/">
+                    View All Events
+                </a>
             </div>
         </main>
 
@@ -132,18 +168,20 @@ import Footer from "../components/Fotter.astro";
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        justify-content: center;
     }
 
     #events {
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        width: 100%;
     }
 
     .event {
         display: flex;
         gap: 1rem;
-        height: 4rem;
+        height: 10rem;
         align-items: center;
     }
 
@@ -158,32 +196,35 @@ import Footer from "../components/Fotter.astro";
         height: 100%;
     }
 
-    .event > a {
+    .event-text-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .event-text-wrapper > a {
         color: #d57d18;
         text-decoration: none;
+        font-size: 30px;
+    }
+
+    .event-location, .event-date {
         font-size: 20px;
     }
 
-    #githermints-in-groove > img {
-        width: 100%;
-        border-radius: 0.5rem;
+    .event-buy-button {
+        margin-left: auto;
     }
 
-    #heading {
-        font-family: 'Sedgwick Ave', cursive;
-        color: #d57d18;
-        font-size: 2rem;
-    }
-
-    #links {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    #links > a {
-        color: #d57d18;
+    .event-buy-button > a {
+        color: white;
         text-decoration: none;
+        background-color: #d57d18;
+        border-radius: #d57d18;
+        border-width: 1px;
+        border: 1px solid orange;
+        padding: 0.5rem 0.5rem;
+        box-sizing: border-box;
     }
 
 </style>
