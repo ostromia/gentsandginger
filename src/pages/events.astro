@@ -19,11 +19,10 @@ import Footer from "~components/Footer.astro";
         </header>
 
         <main>
-            <div id="events-wrapper">
+            <section>
                 <h1>Events</h1>
-
                 <Events />
-            </div>
+            </section>
         </main>
 
         <Footer />
@@ -34,120 +33,10 @@ import Footer from "~components/Footer.astro";
     @use "~styles/global";
     @use "~styles/fonts";
 
-    nav {
-        height: 10rem;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-        color: #d57d18;
-        gap: 2rem;
-        font-size: 32px;
-        @include fonts.reeniebeanie;
-    }
-
-    nav img {
-        height: 9rem;
-    }
-
-    nav > a {
-        color: #d57d18;
-        text-decoration: none;
-    }
-
-    #banner {
-        height: 100dvh;
-    }
-
-    #banner > img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    main {
-        max-width: 1000px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: auto;
-        padding: 2rem;
-        box-sizing: border-box;
-        gap: 2rem;
-    }
-
     h1 {
         @include fonts.reeniebeanie;
         color: #d57d18;
         font-size: 5rem;
         margin: 0;
-    }
-
-    #events-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        justify-content: center;
-    }
-
-    #events {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    .event {
-        display: flex;
-        gap: 1rem;
-        height: 10rem;
-        align-items: center;
-    }
-
-    .event-icon-wrapper {
-        height: 100%;
-        width: 25%;
-        background-color: #d57d18;
-        border-radius: 0.25rem;
-        overflow: hidden;
-    }
-
-    .event-icon-wrapper img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .event-text-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .event-text-wrapper > a {
-        color: #d57d18;
-        text-decoration: none;
-        font-size: 30px;
-    }
-
-    .event-location,
-    .event-date {
-        font-size: 20px;
-    }
-
-    .event-buy-button {
-        margin-left: auto;
-    }
-
-    .event-buy-button > a {
-        color: white;
-        text-decoration: none;
-        background-color: #d57d18;
-        border-radius: #d57d18;
-        border-width: 1px;
-        border: 1px solid orange;
-        padding: 0.5rem 0.5rem;
-        box-sizing: border-box;
     }
 </style>
