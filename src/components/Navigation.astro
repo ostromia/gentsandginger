@@ -26,6 +26,8 @@ import logo from "~assets/logo.svg";
 </nav>
 
 <style lang="scss">
+    @use "~styles/fonts";
+
     nav {
         display: flex;
         justify-content: center;
@@ -34,8 +36,8 @@ import logo from "~assets/logo.svg";
         box-sizing: border-box;
         color: #d57d18;
         gap: 2rem;
+        @include fonts.reeniebeanie;
         font-size: 32px;
-        font-family: var(--font-reenie-beanie), cursive;
     }
 
     a {

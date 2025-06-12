@@ -1,6 +1,8 @@
+@use "~styles/fonts";
+
 html,
 body {
-    font-family: var(--font-atkinson-hyperlegible), sans-serif;
+    @include fonts.atkinson;
     margin: 0;
     background-color: #f0ead6;
 }

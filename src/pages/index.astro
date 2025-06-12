@@ -85,6 +85,7 @@ import events from "~assets/events";
 
 <style lang="scss">
     @use "~styles/global";
+    @use "~styles/fonts";
 
     #banner {
         height: 100dvh;
@@ -108,7 +109,7 @@ import events from "~assets/events";
     }
 
     h1 {
-        font-family: var(--font-reenie-beanie), cursive;
+        @include fonts.reeniebeanie;
         color: #d57d18;
         font-size: 1rem;
         margin: 0;

@@ -57,6 +57,7 @@ import events from "~assets/events";
 
 <style lang="scss">
     @use "~styles/global";
+    @use "~styles/fonts";
 
     nav {
         height: 10rem;
@@ -68,7 +69,7 @@ import events from "~assets/events";
         color: #d57d18;
         gap: 2rem;
         font-size: 32px;
-        font-family: var(--font-reenie-beanie), cursive;
+        @include fonts.reeniebeanie;
     }
 
     nav img {
@@ -102,7 +103,7 @@ import events from "~assets/events";
     }
 
     h1 {
-        font-family: var(--font-reenie-beanie), cursive;
+        @include fonts.reeniebeanie;
         color: #d57d18;
         font-size: 5rem;
         margin: 0;
