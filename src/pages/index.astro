@@ -30,7 +30,7 @@ import banner_desktop from "~assets/banner_desktop.jpg";
 
         <main>
             <section>
-                <h1 style="font-size: 5rem;">Events</h1>
+                <h1>Events</h1>
 
                 <Events number={3} />
 
@@ -40,16 +40,17 @@ import banner_desktop from "~assets/banner_desktop.jpg";
             </section>
 
             <section>
-                <h1 style="font-size: 3rem;">Githerments In Groove</h1>
+                <h1>Githerments In Groove</h1>
 
                 <GithermentsInGroove />
             </section>
 
             <section>
-                <h1 style="font-size: 3rem;">Those were the days</h1>
+                <h1>Those Were The Days</h1>
 
                 <YouTube
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    loading="lazy"
                     name="YouTube video player"
                     src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
                 />
@@ -97,8 +98,31 @@ import banner_desktop from "~assets/banner_desktop.jpg";
     h1 {
         @include fonts.reeniebeanie;
         color: #d57d18;
-        font-size: 1rem;
-        margin: 0;
+        font-size: 4rem;
+    }
+
+    @media (max-width: 700px) {
+        h1 {
+            font-size: 3.5rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 3rem;
+        }
+    }
+
+    @media (max-width: 500px) {
+        h1 {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (max-width: 400px) {
+        h1 {
+            font-size: 2rem;
+        }
     }
 
     .view-all-events-button {
