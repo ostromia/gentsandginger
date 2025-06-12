@@ -9,6 +9,22 @@ export default defineConfig({
     base: "gentsandginger",
 
     integrations: [mdx(), sitemap()],
+
+    vite: {
+        resolve: {
+            alias: {
+                "~src": "/src",
+                "~assets": "/src/assets",
+                "~components": "/src/components",
+                "~content": "/src/content",
+                "~layouts": "/src/layouts",
+                "~pages": "/src/pages",
+                "~styles": "/src/styles",
+                "~scripts": "/src/scripts"
+            }
+        }
+    },
+
     experimental: {
         fonts: [
             {
