@@ -29,7 +29,7 @@ import banner_desktop from "~assets/banner_desktop.jpg";
         </header>
 
         <main>
-            <div id="events-wrapper">
+            <section>
                 <h1 style="font-size: 5rem;">Events</h1>
 
                 <Events number={3} />
@@ -37,14 +37,15 @@ import banner_desktop from "~assets/banner_desktop.jpg";
                 <div class="view-all-events-button">
                     <a href="/gentsandginger/events/">View All Events</a>
                 </div>
-            </div>
+            </section>
 
-            <div id="githerments-in-groove">
+            <section>
                 <h1 style="font-size: 3rem;">Githerments In Groove</h1>
-                <GithermentsInGroove />
-            </div>
 
-            <div id="those-were-the-days">
+                <GithermentsInGroove />
+            </section>
+
+            <section>
                 <h1 style="font-size: 3rem;">Those were the days</h1>
 
                 <YouTube
@@ -52,7 +53,7 @@ import banner_desktop from "~assets/banner_desktop.jpg";
                     name="YouTube video player"
                     src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
                 />
-            </div>
+            </section>
         </main>
 
         <Footer />
@@ -65,23 +66,32 @@ import banner_desktop from "~assets/banner_desktop.jpg";
 
     #banner {
         height: 100dvh;
-    }
 
-    #banner > img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
     }
 
     main {
         max-width: 1000px;
+        margin: auto;
+
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: auto;
+        gap: 5rem;
+
         padding: 2rem;
         box-sizing: border-box;
-        gap: 5rem;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
     }
 
     h1 {
@@ -99,25 +109,8 @@ import banner_desktop from "~assets/banner_desktop.jpg";
             color: white;
             text-decoration: none;
             background-color: #d57d18;
-            border-radius: #d57d18;
-            border-width: 1px;
-            border: 1px solid orange;
-            padding: 0.5rem 0.5rem;
+            padding: 0.5rem;
             box-sizing: border-box;
         }
-    }
-
-    #githerments-in-groove {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        justify-content: center;
-    }
-
-    #those-were-the-days {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        justify-content: center;
     }
 </style>
