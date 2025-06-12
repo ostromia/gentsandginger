@@ -1,14 +1,14 @@
 ---
-import nav_logo from "~assets/nav_logo.png";
+import logo from "~assets/logo.svg";
 ---
 
 <nav>
     <a href="/gentsandginger/events/">Events</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSes613JZzO880ZoA38NtIuJxes6Swd_OUUrO7Oxtaq5vwXgmQ/closedform"
-        >Merchandise</a
-    >
-    <a href="/gentsandginger/">
-        <img src={nav_logo.src} />
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSes613JZzO880ZoA38NtIuJxes6Swd_OUUrO7Oxtaq5vwXgmQ/closedform">
+        Merchandise
+    </a>
+    <a class="logo-link" href="/gentsandginger/">
+        <img src={logo.src} />
     </a>
     <a href="/gentsandginger/about/">About</a>
     <a href="/gentsandginger/contact/">Contact</a>
@@ -16,23 +16,23 @@ import nav_logo from "~assets/nav_logo.png";
 
 <style>
     nav {
-        height: 10rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: auto;
+        padding: 1rem;
+        box-sizing: border-box;
         color: #d57d18;
         gap: 2rem;
         font-size: 32px;
         font-family: var(--font-reenie-beanie), cursive;
     }
 
-    img {
-        height: 9rem;
-    }
-
     a {
         color: #d57d18;
         text-decoration: none;
+    }
+
+    img {
+        height: 5rem;
     }
 </style>
