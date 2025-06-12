@@ -4,9 +4,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
 import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
 
 import Navigation from "~components/Navigation.astro";
+import Events from "~components/Events.astro";
 import Footer from "~components/Footer.astro";
-
-import events from "~assets/events";
 ---
 
 <!doctype html>
@@ -23,31 +22,7 @@ import events from "~assets/events";
             <div id="events-wrapper">
                 <h1>Events</h1>
 
-                <div id="events">
-                    {
-                        events.map((e) => (
-                            <div class="event">
-                                <div class="event-icon-wrapper">
-                                    <a href={e.url}>
-                                        <img alt="" src={e.image} />
-                                    </a>
-                                </div>
-
-                                <div class="event-text-wrapper">
-                                    <div class="event-date">{e.date}</div>
-
-                                    <a href={e.url}>{e.title}</a>
-
-                                    <div class="event-location">{e.location}</div>
-                                </div>
-
-                                <div class="event-buy-button">
-                                    <a href={e.url}>Buy Tickets</a>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
+                <Events />
             </div>
         </main>
 

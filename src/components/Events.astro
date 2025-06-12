@@ -1,0 +1,94 @@
+---
+import events from "~assets/events";
+
+interface Props {
+    number?: number;
+}
+
+const { number = events.length } = Astro.props;
+---
+
+<div class="wrapper">
+    {
+        events.slice(0, number).map((e) => (
+            <div class="event">
+                <div class="icon">
+                    <a href={e.url}>
+                        <img alt="" src={e.image} />
+                    </a>
+                </div>
+
+                <div class="text">
+                    <div class="date">{e.date}</div>
+                    <a class="title" href={e.url}>
+                        {e.title}
+                    </a>
+                    <div class="location">{e.location}</div>
+                </div>
+
+                <div class="buy-button">
+                    <a href={e.url}>Buy Tickets</a>
+                </div>
+            </div>
+        ))
+    }
+</div>
+
+<style lang="scss">
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .event {
+        height: 10rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .icon {
+        height: 100%;
+        width: 25%;
+        background-color: #d57d18;
+        border-radius: 0.25rem;
+        overflow: hidden;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        .title {
+            color: #d57d18;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .location,
+        .date {
+            font-size: 20px;
+        }
+    }
+
+    .buy-button {
+        margin-left: auto;
+    }
+
+    .buy-button > a {
+        color: white;
+        text-decoration: none;
+        background-color: #d57d18;
+        padding: 0.5rem;
+        box-sizing: border-box;
+    }
+</style>

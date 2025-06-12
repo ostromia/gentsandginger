@@ -4,12 +4,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
 import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
 
 import Navigation from "~components/Navigation.astro";
-import Footer from "~components/Footer.astro";
+import Events from "~components/Events.astro";
 import GithermentsInGroove from "~components/GithermentsInGroove.astro";
 import YouTube from "~components/YouTube.astro";
+import Footer from "~components/Footer.astro";
 
 import banner_desktop from "~assets/banner_desktop.jpg";
-import events from "~assets/events";
 ---
 
 <!doctype html>
@@ -32,34 +32,10 @@ import events from "~assets/events";
             <div id="events-wrapper">
                 <h1 style="font-size: 5rem;">Events</h1>
 
-                <div id="events">
-                    {
-                        events.slice(0, 3).map((e) => (
-                            <div class="event">
-                                <div class="event-icon-wrapper">
-                                    <a href={e.url}>
-                                        <img alt="" src={e.image} />
-                                    </a>
-                                </div>
+                <Events number={3} />
 
-                                <div class="event-text-wrapper">
-                                    <div class="event-date">{e.date}</div>
-
-                                    <a href={e.url}>{e.title}</a>
-
-                                    <div class="event-location">{e.location}</div>
-                                </div>
-
-                                <div class="event-buy-button">
-                                    <a href={e.url}>Buy Tickets</a>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-
-                <div class="event-buy-button" style="display: flex; justify-content: center; margin-left: unset;">
-                    <a href="/gentsandginger/events/"> View All Events </a>
+                <div class="view-all-events-button">
+                    <a href="/gentsandginger/events/">View All Events</a>
                 </div>
             </div>
 
@@ -115,71 +91,20 @@ import events from "~assets/events";
         margin: 0;
     }
 
-    #events-wrapper {
+    .view-all-events-button {
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
         justify-content: center;
-    }
 
-    #events {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        width: 100%;
-    }
-
-    .event {
-        display: flex;
-        gap: 1rem;
-        height: 10rem;
-        align-items: center;
-    }
-
-    .event-icon-wrapper {
-        height: 100%;
-        width: 25%;
-        background-color: #d57d18;
-        border-radius: 0.25rem;
-        overflow: hidden;
-    }
-
-    .event-icon-wrapper img {
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    .event-text-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    .event-text-wrapper > a {
-        color: #d57d18;
-        text-decoration: none;
-        font-size: 30px;
-    }
-
-    .event-location,
-    .event-date {
-        font-size: 20px;
-    }
-
-    .event-buy-button {
-        margin-left: auto;
-    }
-
-    .event-buy-button > a {
-        color: white;
-        text-decoration: none;
-        background-color: #d57d18;
-        border-radius: #d57d18;
-        border-width: 1px;
-        border: 1px solid orange;
-        padding: 0.5rem 0.5rem;
-        box-sizing: border-box;
+        a {
+            color: white;
+            text-decoration: none;
+            background-color: #d57d18;
+            border-radius: #d57d18;
+            border-width: 1px;
+            border: 1px solid orange;
+            padding: 0.5rem 0.5rem;
+            box-sizing: border-box;
+        }
     }
 
     #githerments-in-groove {
