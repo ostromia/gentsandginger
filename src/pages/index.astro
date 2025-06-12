@@ -5,6 +5,7 @@ import IMG_048A5038_1200x630 from "../assets/IMG_048A5038_1200x630.jpg";
 
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
+import YouTube from "../components/YouTube.astro";
 
 import banner_desktop from "../assets/banner_desktop.jpg";
 import events from "../assets/events";
@@ -28,7 +29,7 @@ import events from "../assets/events";
 
         <main>
             <div id="events-wrapper">
-                <h1>Events</h1>
+                <h1 style="font-size: 5rem;">Events</h1>
 
                 <div id="events">
                     {
@@ -55,10 +56,20 @@ import events from "../assets/events";
                         ))
                     }
                 </div>
+
+                <div class="event-buy-button" style="display: flex; justify-content: center; margin-left: unset;">
+                    <a href="/events/"> View All Events </a>
+                </div>
             </div>
 
-            <div class="event-buy-button" style="display: flex; justify-content: center; margin-left: unset;">
-                <a href="/events/"> View All Events </a>
+            <div id="those-were-the-days">
+                <h1 style="font-size: 3rem;">Those were the days</h1>
+
+                <YouTube
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    name="YouTube video player"
+                    src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
+                />
             </div>
         </main>
 
@@ -85,13 +96,13 @@ import events from "../assets/events";
         margin: auto;
         padding: 2rem;
         box-sizing: border-box;
-        gap: 2rem;
+        gap: 5rem;
     }
 
     h1 {
         font-family: var(--font-reenie-beanie), cursive;
         color: #d57d18;
-        font-size: 5rem;
+        font-size: 1rem;
         margin: 0;
     }
 
@@ -160,5 +171,12 @@ import events from "../assets/events";
         border: 1px solid orange;
         padding: 0.5rem 0.5rem;
         box-sizing: border-box;
+    }
+
+    #those-were-the-days {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
     }
 </style>
