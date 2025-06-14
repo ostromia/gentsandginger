@@ -17,7 +17,9 @@ import Footer from "~components/Footer.astro";
             <Navigation />
         </header>
 
-        <main></main>
+        <main>
+            <h1>Merchandise</h1>
+        </main>
 
         <Footer />
     </body>
@@ -25,4 +27,16 @@ import Footer from "~components/Footer.astro";
 
 <style lang="scss">
     @use "~styles/global";
+    @use "~styles/fonts";
+
+    main {
+        gap: 1rem;
+    }
+
+    h1 {
+        @include fonts.reeniebeanie;
+        color: #d57d18;
+        font-size: 5rem;
+        margin: 0;
+    }
 </style>

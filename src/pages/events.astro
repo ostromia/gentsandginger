@@ -19,10 +19,8 @@ import Footer from "~components/Footer.astro";
         </header>
 
         <main>
-            <section>
-                <h1>Events</h1>
-                <Events />
-            </section>
+            <h1>Events</h1>
+            <Events />
         </main>
 
         <Footer />
@@ -32,6 +30,10 @@ import Footer from "~components/Footer.astro";
 <style lang="scss">
     @use "~styles/global";
     @use "~styles/fonts";
+
+    main {
+        gap: 1rem;
+    }
 
     h1 {
         @include fonts.reeniebeanie;
