@@ -1,57 +1,231 @@
 ---
 import logo from "~assets/logo.svg";
+import hamburger from "~assets/icons/hamburger.svg";
+import x from "~assets/icons/x.svg";
 ---
 
-<!-- prettier-ignore -->
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const buttons = document.querySelectorAll(".riko-button");
+        const menu = document.getElementById("riko-menu")!;
+        const rikoButtonOpen = document.getElementById("riko-button-open")!;
+
+        buttons.forEach((btn) => {
+            const button = btn as HTMLElement;
+
+            button.addEventListener("click", () => {
+                if (window.getComputedStyle(menu).display === "none") {
+                    menu.style.display = "flex";
+                    rikoButtonOpen.style.display = "none";
+                    document.body.style.overflow = "hidden";
+                } else {
+                    rikoButtonOpen.style.display = "block";
+                    menu.style.display = "none";
+                    document.body.style.overflow = "visible";
+                }
+            });
+        });
+    });
+</script>
+
 <nav>
-    <a href="/gentsandginger/events/">
-        Events
-    </a>
+    <div class="ghost mobile">
+        <button id="riko-button-open" class="riko-button">
+            <img alt="hamburger" src={hamburger.src} />
+        </button>
 
-    <a href="/gentsandginger/merchandise/">
-        Merchandise
-    </a>
+        <a class="logo" href="/gentsandginger/">
+            <img src={logo.src} />
+        </a>
 
-    <a class="logo-link" href="/gentsandginger/">
-        <img src={logo.src} />
-    </a>
+        <div id="riko-menu" class="hidden">
+            <div class="riko-menu-menu">
+                <button class="riko-button">
+                    <img alt="x" src={x.src} />
+                </button>
 
-    <a href="/gentsandginger/about/">
-        About
-    </a>
+                <a class="logo" href="/gentsandginger/">
+                    <img src={logo.src} />
+                </a>
+            </div>
 
-    <a href="/gentsandginger/contact/">
-        Contact
-    </a>
+            <div class="riko-menu-links">
+                <a href="/gentsandginger/events/">Events</a>
+                <a href="/gentsandginger/merchandise/">Merchandise</a>
+                <a href="/gentsandginger/about/">About</a>
+                <a href="/gentsandginger/contact/">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ghost desktop">
+        <a href="/gentsandginger/events/">Events</a>
+
+        <a href="/gentsandginger/merchandise/">Merchandise</a>
+
+        <a class="logo" href="/gentsandginger/">
+            <img src={logo.src} />
+        </a>
+
+        <a href="/gentsandginger/about/">About</a>
+
+        <a href="/gentsandginger/contact/">Contact</a>
+    </div>
 </nav>
 
 <style lang="scss">
     @use "~styles/fonts";
+    @use "~styles/mia";
 
-    nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        box-sizing: border-box;
-        color: #d57d18;
-        gap: 2rem;
-        @include fonts.reeniebeanie;
-        font-size: 32px;
+    // handling screen size
+    $mobile: 699px;
+    $desktop: 700px;
+
+    .ghost {
+        display: contents;
     }
 
-    a {
-        color: #d57d18;
-        text-decoration: none;
+    .mobile {
+        display: none;
     }
 
-    img {
+    .desktop {
+        display: block;
+    }
+
+    @media (max-width: $mobile) {
+        .mobile {
+            display: block;
+        }
+
+        .desktop {
+            display: none;
+        }
+    }
+
+    @media (min-width: $desktop) {
+        .mobile {
+            display: none;
+        }
+
+        .desktop {
+            display: block;
+        }
+    }
+
+    // universal styling
+    .logo > img {
         height: 5rem;
     }
 
-    @media (max-width: 700px) {
-        a:not(.logo-link) {
+    // desktop styling
+    @media (min-width: $desktop) {
+        nav > .desktop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+
+            padding: 1rem;
+            box-sizing: border-box;
+
+            @include fonts.reeniebeanie;
+            font-size: 2rem;
+        }
+
+        a {
+            color: #d57d18;
+            text-decoration: none;
+        }
+    }
+
+    // mobile styling
+    @media (max-width: $mobile) {
+        nav > .mobile {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            align-items: center;
+            gap: 2rem;
+
+            padding: 1rem;
+            box-sizing: border-box;
+
+            :nth-child(1) {
+                grid-column: 1;
+                justify-self: start;
+            }
+
+            :nth-child(2) {
+                grid-column: 2;
+                justify-self: center;
+            }
+        }
+
+        .riko-button {
+            @include mia.resetButton;
+            color: #d57d18;
+
+            img {
+                height: 2rem;
+                width: 2rem;
+            }
+        }
+
+        #riko-menu {
+            height: 100%;
             display: none;
+            position: fixed;
+            inset: 0;
+
+            background-color: #f0ead6;
+            // background-color: rgba(255, 255, 255, 0.75);
+
+            flex-direction: column;
+
+            a {
+                color: #d57d18;
+                text-decoration: none;
+            }
+
+            .riko-menu-menu {
+                display: grid;
+                grid-template-columns: 1fr auto 1fr;
+                align-items: center;
+                gap: 2rem;
+
+                padding: 1rem;
+                box-sizing: border-box;
+
+                > button {
+                    grid-column: 1;
+                    justify-self: start;
+
+                    @include mia.resetButton;
+                    color: #d57d18;
+
+                    img {
+                        height: 2rem;
+                        width: 2rem;
+                    }
+                }
+
+                > a {
+                    grid-column: 2;
+                    justify-self: center;
+                }
+            }
+        }
+
+        .riko-menu-links {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            z-index: 999;
+            @include fonts.reeniebeanie;
+            font-size: 2rem;
         }
     }
 </style>
