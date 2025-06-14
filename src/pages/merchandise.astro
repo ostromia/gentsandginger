@@ -5,6 +5,10 @@ import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
 
 import Navigation from "~components/Navigation.astro";
 import Footer from "~components/Footer.astro";
+
+import merchandise from "~assets/merchandise";
+
+const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" });
 ---
 
 <!doctype html>
@@ -19,6 +23,27 @@ import Footer from "~components/Footer.astro";
 
         <main>
             <h1>Merchandise</h1>
+
+            <div class="wrapper">
+                {
+                    merchandise.map((e) => (
+                        <div class="product">
+                            <div class="image">
+                                <img alt="" src={e.image} />
+                            </div>
+
+                            <div class="text">
+                                <div class="title">{e.name}</div>
+                                <div class="price">{gbp.format(e.price)}</div>
+                            </div>
+
+                            <button disabled class="button">
+                                Sold Out
+                            </button>
+                        </div>
+                    ))
+                }
+            </div>
         </main>
 
         <Footer />
@@ -29,6 +54,8 @@ import Footer from "~components/Footer.astro";
     @use "~styles/global";
     @use "~styles/fonts";
 
+    $productWidth: 200px;
+
     main {
         gap: 1rem;
     }
@@ -38,5 +65,44 @@ import Footer from "~components/Footer.astro";
         color: #d57d18;
         font-size: 5rem;
         margin: 0;
+    }
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, $productWidth);
+        grid-gap: 1rem;
+        justify-content: center;
+
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .product {
+        display: flex;
+        flex-direction: column;
+
+        gap: 0.5rem;
+
+        width: $productWidth;
+        background-color: #e6972e;
+
+        border-radius: 0.25rem;
+
+        padding: 0.5rem;
+        box-sizing: border-box;
+
+        .image {
+            height: 100%;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .button {
+        }
     }
 </style>
