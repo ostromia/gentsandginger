@@ -12,19 +12,17 @@ const { number = events.length } = Astro.props;
     {
         events.slice(0, number).map((e) => (
             <div class="event">
-                <div class="icon">
+                <div class="image">
                     <a href={e.url}>
                         <img alt="" src={e.image} />
                     </a>
                 </div>
 
-                <div class="text">
+                <a class="text" href={e.url}>
                     <div class="date">{e.date}</div>
-                    <a class="title" href={e.url}>
-                        {e.title}
-                    </a>
+                    <div class="title">{e.title}</div>
                     <div class="location">{e.location}</div>
-                </div>
+                </a>
 
                 <div class="buy-button">
                     <a href={e.url}>Buy Tickets</a>
@@ -43,52 +41,115 @@ const { number = events.length } = Astro.props;
     }
 
     .event {
-        height: 10rem;
         display: flex;
-        align-items: center;
         gap: 1rem;
     }
 
-    .icon {
-        height: 100%;
+    .image {
         width: 25%;
+        aspect-ratio: 16 / 10;
+        min-height: 100px;
+        min-width: 160px;
         background-color: #d57d18;
         border-radius: 0.25rem;
         overflow: hidden;
 
         img {
-            height: 100%;
             width: 100%;
+            height: 100%;
             object-fit: cover;
+            display: block;
         }
     }
 
     .text {
+        text-decoration: none;
+        color: inherit;
+
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: 0.5rem;
+        overflow: hidden;
+        flex: 1;
+
+        .title,
+        .location,
+        .date {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
         .title {
             color: #d57d18;
             text-decoration: none;
-            font-size: 30px;
+            font-size: 1.75rem;
         }
 
         .location,
         .date {
-            font-size: 20px;
+            font-size: 1.25rem;
         }
     }
 
     .buy-button {
+        align-self: center;
         margin-left: auto;
+
+        a {
+            color: white;
+            text-decoration: none;
+            background-color: #d57d18;
+            padding: 0.5rem;
+            box-sizing: border-box;
+        }
     }
 
-    .buy-button > a {
-        color: white;
-        text-decoration: none;
-        background-color: #d57d18;
-        padding: 0.5rem;
-        box-sizing: border-box;
+    @media (max-width: 800px) {
+        .text {
+            .title {
+                font-size: 1.25rem;
+            }
+
+            .location,
+            .date {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    @media (max-width: 700px) {
+        .text {
+            .title {
+                font-size: 1.25rem;
+            }
+
+            .location,
+            .date {
+                font-size: 1rem;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .buy-button {
+            display: none;
+        }
+
+        .text {
+            .title {
+                font-size: 1.125rem;
+            }
+
+            .location,
+            .date {
+                font-size: 1rem;
+            }
+        }
+
+        .event {
+            gap: 0.5rem;
+        }
     }
 </style>
