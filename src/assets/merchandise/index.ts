@@ -5,28 +5,28 @@ import _0004 from "./0004.png";
 
 const events = [
     {
-        name: "Those Were The Days Tour Poster",
+        name: 'Gents & Ginger "Those Were The Days Tour" Poster',
         date: "01.01.2000",
         image: _0001.src,
         price: 100.0
     },
 
     {
-        name: "Gents & Ginger Beanie",
+        name: 'Gents & Ginger "Original" Beanie',
         date: "01.01.2000",
         image: _0002.src,
         price: 100.0
     },
 
     {
-        name: "Gents & Ginger Reunion T-Shirt",
+        name: 'Gents & Ginger "Ambience for a Musicverse Pt. II" T-Shirt',
         date: "01.01.2000",
         image: _0003.src,
         price: 100.0
     },
 
     {
-        name: "Gents & Ginger Frog T-Shirt",
+        name: 'Gents & Ginger "Frog Band" T-Shirt',
         date: "01.01.2000",
         image: _0004.src,
         price: 100.0
