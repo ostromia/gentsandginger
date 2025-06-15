@@ -4,13 +4,10 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
 import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
 
 import Navigation from "~components/Navigation.astro";
+import Merchandise from "~src/components/Merchandise.astro";
 import Footer from "~components/Footer.astro";
 
-import merchandise from "~assets/merchandise";
 import search from "~assets/icons/search.svg";
-
-const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" });
-const products = merchandise;
 ---
 
 <script>
@@ -48,26 +45,7 @@ const products = merchandise;
                 <input id="search" type="text" placeholder="Search products..." />
             </div>
 
-            <div class="wrapper">
-                {
-                    products.map((e) => (
-                        <div class="product" data-title={e.name.toLowerCase()}>
-                            <div class="image">
-                                <img alt="" src={e.image} />
-                            </div>
-
-                            <div class="text">
-                                <div class="title">{e.name}</div>
-                                <div class="price">{gbp.format(e.price)}</div>
-                            </div>
-
-                            <button disabled class="button">
-                                Sold Out
-                            </button>
-                        </div>
-                    ))
-                }
-            </div>
+            <Merchandise />
         </main>
 
         <Footer />
@@ -77,8 +55,6 @@ const products = merchandise;
 <style lang="scss">
     @use "~styles/global";
     @use "~styles/fonts";
-
-    $productWidth: 200px;
 
     main {
         gap: 1rem;
@@ -106,49 +82,9 @@ const products = merchandise;
     input {
         margin: 0;
         padding: 0;
-        // margin: 1rem auto;
         display: block;
         width: 100%;
         padding: 0.5rem;
         font-size: 1rem;
-    }
-
-    .wrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, $productWidth);
-        grid-gap: 1rem;
-        justify-content: center;
-
-        padding: 1rem;
-        box-sizing: border-box;
-    }
-
-    .product {
-        display: flex;
-        flex-direction: column;
-
-        gap: 0.5rem;
-
-        width: $productWidth;
-        background-color: #e6972e;
-
-        border-radius: 0.25rem;
-
-        padding: 0.5rem;
-        box-sizing: border-box;
-
-        .image {
-            height: 100%;
-            width: 100%;
-
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: contain;
-            }
-        }
-
-        .button {
-        }
     }
 </style>

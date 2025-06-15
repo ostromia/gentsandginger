@@ -1,0 +1,75 @@
+---
+import merchandise from "~assets/merchandise";
+
+interface Props {
+    number?: number;
+}
+
+const { number = merchandise.length } = Astro.props;
+
+const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" });
+---
+
+<div class="wrapper">
+    {
+        merchandise.slice(0, number).map((e) => (
+            <div class="product" data-title={e.name.toLowerCase()}>
+                <div class="image">
+                    <img alt="" src={e.image} />
+                </div>
+
+                <div class="text">
+                    <div class="title">{e.name}</div>
+                    <div class="price">{gbp.format(e.price)}</div>
+                </div>
+
+                <button disabled class="button">
+                    Sold Out
+                </button>
+            </div>
+        ))
+    }
+</div>
+
+<style lang="scss">
+    $productWidth: 200px;
+
+    .wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, $productWidth);
+        grid-gap: 1rem;
+        justify-content: center;
+
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    .product {
+        display: flex;
+        flex-direction: column;
+
+        gap: 0.5rem;
+
+        width: $productWidth;
+        background-color: #e6972e;
+
+        border-radius: 0.25rem;
+
+        padding: 0.5rem;
+        box-sizing: border-box;
+
+        .image {
+            height: 100%;
+            width: 100%;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+        }
+
+        .button {
+        }
+    }
+</style>
