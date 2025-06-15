@@ -6,27 +6,7 @@ import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
 import Navigation from "~components/Navigation.astro";
 import Merchandise from "~src/components/Merchandise.astro";
 import Footer from "~components/Footer.astro";
-
-import search from "~assets/icons/search.svg";
 ---
-
-<script>
-    window.addEventListener("DOMContentLoaded", () => {
-        const input = document.getElementById("search") as HTMLInputElement;
-        const products = document.querySelectorAll(".product");
-
-        input.addEventListener("input", () => {
-            const search = input.value.toLowerCase();
-
-            products.forEach((e) => {
-                const product = e as HTMLElement;
-                const title = product.dataset.title!.toLowerCase();
-
-                product.style.display = title.includes(search) ? "flex" : "none";
-            });
-        });
-    });
-</script>
 
 <html lang="en">
     <head>
@@ -39,11 +19,6 @@ import search from "~assets/icons/search.svg";
 
         <main>
             <h1>Merchandise</h1>
-
-            <div class="search">
-                <img alt="" src={search.src} />
-                <input id="search" type="text" placeholder="Search products..." />
-            </div>
 
             <Merchandise />
         </main>
@@ -65,26 +40,5 @@ import search from "~assets/icons/search.svg";
         color: #d57d18;
         font-size: 5rem;
         margin: 0;
-    }
-
-    .search {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        align-items: center;
-        gap: 1rem;
-
-        img {
-            height: 1.5rem;
-            width: 1.5rem;
-        }
-    }
-
-    input {
-        margin: 0;
-        padding: 0;
-        display: block;
-        width: 100%;
-        padding: 0.5rem;
-        font-size: 1rem;
     }
 </style>
