@@ -13,7 +13,7 @@ const { number = events.length } = Astro.props;
         events.slice(0, number).map((e) => (
             <div class="event">
                 <div class="image">
-                    <a href={e.url}>
+                    <a href={e.url} aria-label={e.title}>
                         <img alt="" src={e.image} />
                     </a>
                 </div>
