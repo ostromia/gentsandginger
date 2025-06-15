@@ -5,6 +5,6 @@ export default {
     tabWidth: 4,
     singleQuote: false,
     trailingComma: "none",
-    printWidth: 125,
+    printWidth: 150,
     plugins: ["prettier-plugin-astro"]
 };
