@@ -26,7 +26,13 @@ import applemusic from "~assets/icons/applemusic.svg";
         </a>
     </div>
 
-    &copy; Gents & Ginger {new Date().getFullYear()}
+    <div class="policies">
+        <a href="/gentsandginger/about/">About</a>
+        <a href="/gentsandginger/contact/">Contact</a>
+        <a href="/gentsandginger/policies/privacy-policy/">Privacy Policy</a>
+    </div>
+
+    <div>&copy; Gents & Ginger {new Date().getFullYear()}</div>
 </footer>
 
 <style lang="scss">
@@ -53,6 +59,19 @@ import applemusic from "~assets/icons/applemusic.svg";
 
         a {
             text-decoration: none;
+        }
+    }
+
+    .policies {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        a {
+            color: black;
+            text-decoration: none;
+            white-space: nowrap;
         }
     }
 </style>
