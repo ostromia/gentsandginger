@@ -19,6 +19,10 @@
         {
             "languageId": "markdown",
             "enabled": true
+        },
+        {
+            "languageId": "mdx",
+            "enabled": true
         }
     ],
 
