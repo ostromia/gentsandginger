@@ -36,11 +36,6 @@ export default defineConfig({
                 provider: fontProviders.fontsource(),
                 name: "Reenie Beanie",
                 cssVariable: "--font-reenie-beanie"
-            },
-            {
-                provider: fontProviders.fontsource(),
-                name: "Sedgwick Ave",
-                cssVariable: "--font-sedgwick-ave"
             }
         ]
     }
