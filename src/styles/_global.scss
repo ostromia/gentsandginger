@@ -35,3 +35,10 @@ section {
     justify-content: center;
     gap: 1rem;
 }
+
+// input css reset
+input {
+    font-family: inherit;
+    font-size: 1rem;
+    border: 0;
+}

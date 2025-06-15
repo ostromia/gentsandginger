@@ -7,11 +7,30 @@ import Navigation from "~components/Navigation.astro";
 import Footer from "~components/Footer.astro";
 
 import merchandise from "~assets/merchandise";
+import search from "~assets/icons/search.svg";
 
 const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" });
+const products = merchandise;
 ---
 
-<!doctype html>
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const input = document.getElementById("search") as HTMLInputElement;
+        const products = document.querySelectorAll(".product");
+
+        input.addEventListener("input", () => {
+            const search = input.value.toLowerCase();
+
+            products.forEach((e) => {
+                const product = e as HTMLElement;
+                const title = product.dataset.title!.toLowerCase();
+
+                product.style.display = title.includes(search) ? "flex" : "none";
+            });
+        });
+    });
+</script>
+
 <html lang="en">
     <head>
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
@@ -24,10 +43,15 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
         <main>
             <h1>Merchandise</h1>
 
+            <div class="search">
+                <img alt="" src={search.src} />
+                <input id="search" type="text" placeholder="Search products..." />
+            </div>
+
             <div class="wrapper">
                 {
-                    merchandise.map((e) => (
-                        <div class="product">
+                    products.map((e) => (
+                        <div class="product" data-title={e.name.toLowerCase()}>
                             <div class="image">
                                 <img alt="" src={e.image} />
                             </div>
@@ -65,6 +89,28 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
         color: #d57d18;
         font-size: 5rem;
         margin: 0;
+    }
+
+    .search {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 1rem;
+
+        img {
+            height: 1.5rem;
+            width: 1.5rem;
+        }
+    }
+
+    input {
+        margin: 0;
+        padding: 0;
+        // margin: 1rem auto;
+        display: block;
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
     }
 
     .wrapper {
