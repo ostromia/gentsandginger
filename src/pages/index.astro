@@ -10,7 +10,7 @@ import Merchandise from "~src/components/Merchandise.astro";
 import YouTube from "~components/YouTube.astro";
 import Footer from "~components/Footer.astro";
 
-import banner_desktop from "~assets/banner_desktop.jpg";
+import banner from "~assets/banner.webm";
 ---
 
 <!doctype html>
@@ -20,12 +20,14 @@ import banner_desktop from "~assets/banner_desktop.jpg";
     </head>
     <body>
         <header>
-            <div style="position: absolute; width: 100%;">
+            <div style="position: absolute; width: 100%; z-index: 999;">
                 <Navigation />
             </div>
 
             <div id="banner">
-                <img alt="" src={banner_desktop.src} />
+                <video autoplay muted loop playsinline>
+                    <source src={banner} type="video/webm" />
+                </video>
             </div>
         </header>
 
@@ -81,12 +83,13 @@ import banner_desktop from "~assets/banner_desktop.jpg";
     }
 
     #banner {
-        height: 100svh;
+        height: 100vh;
 
-        img {
+        video {
             height: 100%;
             width: 100%;
             object-fit: cover;
+            filter: grayscale(100%);
         }
     }
 
