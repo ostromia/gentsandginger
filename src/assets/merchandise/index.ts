@@ -8,28 +8,28 @@ const events = [
         name: 'Gents & Ginger "Those Were The Days Tour" Poster',
         date: "01.01.2000",
         image: _0001.src,
-        price: 100.0
+        price: 0.0
     },
 
     {
         name: 'Gents & Ginger "Original" Beanie',
         date: "01.01.2000",
         image: _0002.src,
-        price: 100.0
+        price: 0.0
     },
 
     {
         name: 'Gents & Ginger "Ambience for a Musicverse Pt. II" T-Shirt',
         date: "01.01.2000",
         image: _0003.src,
-        price: 100.0
+        price: 0.0
     },
 
     {
         name: 'Gents & Ginger "Frog Band" T-Shirt',
         date: "01.01.2000",
         image: _0004.src,
-        price: 100.0
+        price: 0.0
     }
 ];
 
