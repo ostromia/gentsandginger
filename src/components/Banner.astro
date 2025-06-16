@@ -1,0 +1,22 @@
+---
+import banner from "~assets/banner.webm";
+---
+
+<div id="banner">
+    <video autoplay muted loop playsinline>
+        <source src={banner} type="video/webm" />
+    </video>
+</div>
+
+<style lang="scss">
+    #banner {
+        height: 100vh;
+
+        video {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+    }
+</style>
