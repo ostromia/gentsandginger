@@ -2,6 +2,12 @@
 import logo from "~assets/logo.svg";
 import hamburger from "~assets/icons/hamburger.svg";
 import x from "~assets/icons/x.svg";
+
+interface Props {
+    style?: string;
+}
+
+const { style } = Astro.props;
 ---
 
 <script>
@@ -28,7 +34,7 @@ import x from "~assets/icons/x.svg";
     });
 </script>
 
-<nav>
+<nav style={style}>
     <div class="ghost mobile">
         <button id="riko-button-open" class="riko-button">
             <img alt="hamburger" src={hamburger.src} />
