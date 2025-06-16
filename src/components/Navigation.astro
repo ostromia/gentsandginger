@@ -82,42 +82,7 @@ const { style } = Astro.props;
 <style lang="scss">
     @use "~styles/fonts";
     @use "~styles/mia";
-
-    // handling screen size
-    $mobile: 699px;
-    $desktop: 700px;
-
-    .ghost {
-        display: contents;
-    }
-
-    .mobile {
-        display: none;
-    }
-
-    .desktop {
-        display: block;
-    }
-
-    @media (max-width: $mobile) {
-        .mobile {
-            display: block;
-        }
-
-        .desktop {
-            display: none;
-        }
-    }
-
-    @media (min-width: $desktop) {
-        .mobile {
-            display: none;
-        }
-
-        .desktop {
-            display: block;
-        }
-    }
+    @use "~styles/riko";
 
     // universal styling
     .logo > img {
@@ -125,7 +90,7 @@ const { style } = Astro.props;
     }
 
     // desktop styling
-    @media (min-width: $desktop) {
+    @media (min-width: riko.$desktop) {
         nav > .desktop {
             display: flex;
             justify-content: center;
@@ -146,7 +111,7 @@ const { style } = Astro.props;
     }
 
     // mobile styling
-    @media (max-width: $mobile) {
+    @media (max-width: riko.$mobile) {
         nav > .mobile {
             display: grid;
             grid-template-columns: 1fr auto 1fr;
@@ -184,7 +149,6 @@ const { style } = Astro.props;
             inset: 0;
 
             background-color: #f0ead6;
-            // background-color: rgba(255, 255, 255, 0.75);
 
             flex-direction: column;
 

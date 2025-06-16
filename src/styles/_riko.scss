@@ -1,0 +1,35 @@
+// handling screen size
+$mobile: 699px;
+$desktop: 700px;
+
+.ghost {
+    display: contents;
+}
+
+.mobile {
+    display: none;
+}
+
+.desktop {
+    display: block;
+}
+
+@media (max-width: $mobile) {
+    .mobile {
+        display: block;
+    }
+
+    .desktop {
+        display: none;
+    }
+}
+
+@media (min-width: $desktop) {
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+}
