@@ -15,15 +15,16 @@ import guitar from "~assets/icons/guitar.svg";
     <img class="guitar" src={guitar.src} />
     <div class="text">
         Come See Us At Truck Festival!
-        <a href="https://truckfestival.com/line-up/">Truck Festival 2025 ↗</a>
+        <a href="https://truckfestival.com/line-up/">Buy Tickets!</a>
     </div>
 </div>
 
 <style lang="scss">
     @use "~styles/riko";
+    @use "~styles/fonts";
 
     .video {
-        height: 100dvh;
+        height: 100svh;
 
         video {
             height: 100%;
@@ -33,14 +34,13 @@ import guitar from "~assets/icons/guitar.svg";
         }
     }
 
-    // .announcement {
     .guitar {
-        width: 1000px;
+        width: 800px;
         height: calc(1000px / 2.7);
 
         position: absolute;
-        top: 60dvh;
-        right: -20dvw;
+        top: 60svh;
+        right: -20svw;
         z-index: 98;
 
         transform: scaleX(-1) rotate(-15deg);
@@ -51,11 +51,10 @@ import guitar from "~assets/icons/guitar.svg";
     }
 
     .text {
-        width: 320px;
-        // border: 1px solid green;
+        width: 300px;
 
         position: absolute;
-        top: 82dvh;
+        top: 85svh;
         right: 0;
         z-index: 99;
 
@@ -64,17 +63,16 @@ import guitar from "~assets/icons/guitar.svg";
         justify-content: center;
         gap: 1rem;
 
+        @include fonts.reeniebeanie;
+        font-size: 1.25rem;
         text-align: end;
 
-        padding: 2rem;
+        padding: 1rem;
         box-sizing: border-box;
-
-        font-size: 1rem;
 
         a {
             color: blue;
             text-decoration: none;
         }
     }
-    // }
 </style>
