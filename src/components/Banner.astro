@@ -13,7 +13,10 @@ import guitar from "~assets/icons/guitar.svg";
 
 <div class="mobile announcement">
     <img class="guitar" src={guitar.src} />
-    <!-- <div class="text">Come See Us At Truck Festival!</div> -->
+    <div class="text">
+        Come See Us At Truck Festival!
+        <a href="https://truckfestival.com/line-up/">Truck Festival 2025 ↗</a>
+    </div>
 </div>
 
 <style lang="scss">
@@ -30,40 +33,48 @@ import guitar from "~assets/icons/guitar.svg";
         }
     }
 
-    .announcement {
-        .guitar {
-            position: absolute;
-            z-index: 888;
-            width: 200vw;
+    // .announcement {
+    .guitar {
+        width: 1000px;
+        height: calc(1000px / 2.7);
 
-            top: 60vh;
-            right: -20vw;
+        position: absolute;
+        top: 60vh;
+        right: -20vw;
+        z-index: 98;
 
-            transform: scaleX(-1) rotate(-15deg);
+        transform: scaleX(-1) rotate(-15deg);
 
-            img {
-                width: 100%;
-            }
-        }
-
-        .text {
-            border: 1px solid green;
-
-            width: 60.5%;
-
-            position: absolute;
-            top: 84%;
-            right: 0;
-
-            z-index: 999;
-
-            display: flex;
-            justify-content: center;
-
-            padding: 1rem;
-            box-sizing: border-box;
-
-            font-size: 1.5rem;
+        img {
+            width: 100%;
         }
     }
+
+    .text {
+        width: 320px;
+        // border: 1px solid green;
+
+        position: absolute;
+        top: 82vh;
+        right: 0;
+        z-index: 99;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+
+        text-align: end;
+
+        padding: 2rem;
+        box-sizing: border-box;
+
+        font-size: 1rem;
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+    }
+    // }
 </style>
