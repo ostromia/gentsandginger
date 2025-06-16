@@ -12,13 +12,16 @@ import truckfestival from "~assets/icons/truckfestival.svg";
     </div>
 </div>
 
-<div class="mobile announcement">
-    <img class="guitar" src={guitar.src} />
-    <div class="text">
+<div class="announcement mobile">
+    <div class="guitar">
+        <img src={guitar.src} />
+    </div>
+
+    <!-- <div class="text">
         <img src={truckfestival.src} />
         Come See Us At Truck Festival!
         <a href="https://truckfestival.com/line-up/">Buy Tickets!</a>
-    </div>
+    </div> -->
 </div>
 
 <style lang="scss">
@@ -36,51 +39,57 @@ import truckfestival from "~assets/icons/truckfestival.svg";
         }
     }
 
+    .announcement {
+        position: relative;
+    }
+
     .guitar {
         width: 800px;
         height: calc(1000px / 2.7);
 
         position: absolute;
-        top: 60svh;
-        right: -100px;
+        top: calc(-370.37px + 40px);
+        right: -80px;
         z-index: 98;
 
-        transform: scaleX(-1) rotate(-15deg);
-
         img {
+            height: 100%;
             width: 100%;
+            transform: scaleX(-1) rotate(-15deg);
         }
     }
 
-    .text {
-        height: 160px;
-        width: 200px;
-        // border: 1px solid green;
+    // .text {
+    //     height: 160px;
+    //     width: 200px;
+    //     border: 1px solid green;
 
-        position: absolute;
-        top: 79svh;
-        right: 0;
-        z-index: 98;
+    //     position: absolute;
+    //     top: 84svh;
+    //     // top: calc(100svh - 160px);
+    //     // top: 76.6svh;
+    //     right: 0;
+    //     z-index: 98;
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 0.5rem;
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     gap: 0.5rem;
 
-        padding: 1rem;
-        box-sizing: border-box;
+    //     padding: 1rem;
+    //     box-sizing: border-box;
 
-        @include fonts.reeniebeanie;
-        font-size: 1.5rem;
-        text-align: center;
+    //     @include fonts.reeniebeanie;
+    //     font-size: 1.5rem;
+    //     text-align: center;
 
-        a {
-            color: blue;
-            // text-decoration: none;
-        }
+    //     a {
+    //         color: blue;
+    //         // text-decoration: none;
+    //     }
 
-        img {
-            height: 30%;
-        }
-    }
+    //     img {
+    //         height: 30%;
+    //     }
+    // }
 </style>
