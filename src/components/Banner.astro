@@ -1,6 +1,7 @@
 ---
 import banner from "~assets/banner.webm";
 import guitar from "~assets/icons/guitar.svg";
+import truckfestival from "~assets/icons/truckfestival.svg";
 ---
 
 <div class="banner">
@@ -14,6 +15,7 @@ import guitar from "~assets/icons/guitar.svg";
 <div class="mobile announcement">
     <img class="guitar" src={guitar.src} />
     <div class="text">
+        <img src={truckfestival.src} />
         Come See Us At Truck Festival!
         <a href="https://truckfestival.com/line-up/">Buy Tickets!</a>
     </div>
@@ -53,28 +55,32 @@ import guitar from "~assets/icons/guitar.svg";
     .text {
         height: 160px;
         width: 200px;
-        border: 1px solid green;
+        // border: 1px solid green;
 
         position: absolute;
-        top: 79vh;
+        top: 79svh;
         right: 0;
         z-index: 98;
 
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 1rem;
+        gap: 0.5rem;
+
+        padding: 1rem;
+        box-sizing: border-box;
 
         @include fonts.reeniebeanie;
         font-size: 1.5rem;
-        text-align: end;
-
-        padding: 2rem 2rem 1rem;
-        box-sizing: border-box;
+        text-align: center;
 
         a {
             color: blue;
-            text-decoration: none;
+            // text-decoration: none;
+        }
+
+        img {
+            height: 30%;
         }
     }
 </style>
