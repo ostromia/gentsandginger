@@ -17,11 +17,11 @@ import truckfestival from "~assets/icons/truckfestival.svg";
         <img src={guitar.src} />
     </div>
 
-    <!-- <div class="text">
+    <div class="content">
         <img src={truckfestival.src} />
         Come See Us At Truck Festival!
         <a href="https://truckfestival.com/line-up/">Buy Tickets!</a>
-    </div> -->
+    </div>
 </div>
 
 <style lang="scss">
@@ -59,37 +59,38 @@ import truckfestival from "~assets/icons/truckfestival.svg";
         }
     }
 
-    // .text {
-    //     height: 160px;
-    //     width: 200px;
-    //     border: 1px solid green;
+    $announcementTextHeight: 169px;
+    $announcementTextWidth: 221px;
 
-    //     position: absolute;
-    //     top: 84svh;
-    //     // top: calc(100svh - 160px);
-    //     // top: 76.6svh;
-    //     right: 0;
-    //     z-index: 98;
+    .content {
+        height: $announcementTextHeight;
+        width: $announcementTextWidth;
+        // border: 1px solid green;
 
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: center;
-    //     gap: 0.5rem;
+        position: absolute;
+        top: calc(-1 * ($announcementTextHeight + 15px));
+        right: 0;
+        z-index: 98;
 
-    //     padding: 1rem;
-    //     box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
 
-    //     @include fonts.reeniebeanie;
-    //     font-size: 1.5rem;
-    //     text-align: center;
+        padding: 0.5rem;
+        box-sizing: border-box;
 
-    //     a {
-    //         color: blue;
-    //         // text-decoration: none;
-    //     }
+        @include fonts.reeniebeanie;
+        font-size: 1.5rem;
+        text-align: center;
 
-    //     img {
-    //         height: 30%;
-    //     }
-    // }
+        a {
+            color: blue;
+        }
+
+        img {
+            height: 30%;
+        }
+    }
 </style>
