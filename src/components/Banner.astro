@@ -1,15 +1,58 @@
 ---
 import banner from "~assets/banner.webm";
+import guitar from "~assets/icons/guitar.svg";
 ---
 
-<div id="banner">
-    <video autoplay muted loop playsinline>
-        <source src={banner} type="video/webm" />
-    </video>
+<div class="banner">
+    <div class="video">
+        <video autoplay muted loop playsinline>
+            <source src={banner} type="video/webm" />
+        </video>
+    </div>
+</div>
+
+<div class="mobile announcement">
+    <img class="guitar" src={guitar.src} />
+    <!-- <div class="text">Come See Us At Truck Festival!</div> -->
 </div>
 
 <style lang="scss">
-    #banner {
+    $mobile: 699px;
+    $desktop: 700px;
+
+    .ghost {
+        display: contents;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+    @media (max-width: $mobile) {
+        .mobile {
+            display: block;
+        }
+
+        .desktop {
+            display: none;
+        }
+    }
+
+    @media (min-width: $desktop) {
+        .mobile {
+            display: none;
+        }
+
+        .desktop {
+            display: block;
+        }
+    }
+
+    .video {
         height: 100vh;
 
         video {
@@ -17,6 +60,43 @@ import banner from "~assets/banner.webm";
             width: 100%;
             object-fit: cover;
             filter: grayscale(100%);
+        }
+    }
+
+    .announcement {
+        .guitar {
+            position: absolute;
+            z-index: 888;
+            width: 200vw;
+
+            top: 60vh;
+            right: -20vw;
+
+            transform: scaleX(-1) rotate(-15deg);
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .text {
+            border: 1px solid green;
+
+            width: 60.5%;
+
+            position: absolute;
+            top: 84%;
+            right: 0;
+
+            z-index: 999;
+
+            display: flex;
+            justify-content: center;
+
+            padding: 1rem;
+            box-sizing: border-box;
+
+            font-size: 1.5rem;
         }
     }
 </style>
