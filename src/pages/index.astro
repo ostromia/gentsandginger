@@ -21,6 +21,20 @@ import saxophone from "~assets/icons/saxophone.svg";
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
     </head>
     <body>
+        <aside>
+            <div class="instrument drumkit">
+                <img alt="" src={drumkit.src} />
+            </div>
+
+            <div class="instrument trumpet">
+                <img alt="" src={trumpet.src} />
+            </div>
+
+            <div class="instrument saxophone">
+                <img alt="" src={saxophone.src} />
+            </div>
+        </aside>
+
         <header>
             <Navigation style="position: absolute; width: 100%; z-index: 999;" />
             <Banner />
@@ -37,19 +51,11 @@ import saxophone from "~assets/icons/saxophone.svg";
                 </div>
             </section>
 
-            <div class="instrument drumkit mobile">
-                <img alt="" src={drumkit.src} />
-            </div>
-
             <section>
                 <h1>Githerments In Groove</h1>
 
                 <GithermentsInGroove />
             </section>
-
-            <div class="instrument trumpet mobile">
-                <img alt="" src={trumpet.src} />
-            </div>
 
             <section>
                 <h1>Merchandise</h1>
@@ -60,10 +66,6 @@ import saxophone from "~assets/icons/saxophone.svg";
                     <a href="/gentsandginger/merchandise/">View All Merchandise</a>
                 </div>
             </section>
-
-            <div class="instrument saxophone mobile">
-                <img alt="" src={saxophone.src} />
-            </div>
 
             <section>
                 <h1>Those Were The Days</h1>
@@ -86,47 +88,86 @@ import saxophone from "~assets/icons/saxophone.svg";
     @use "~styles/fonts";
     @use "~styles/riko";
 
-    // html,
-    // body {
-    //     width: 100vw;
-    //     overflow-x: hidden;
-    //     transform: translate3d(0, 0, 0);
-    // }
+    // html & body html
+    html,
+    body {
+        overflow-x: hidden;
+    }
 
-    // body {
-    //     overflow: hidden;
-    // }
+    // aside
+    aside {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+    }
 
+    .instrument {
+        width: 80%;
+        height: auto;
+
+        position: absolute;
+        z-index: 99;
+
+        display: flex;
+
+        img {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        position: absolute;
+        width: 100%;
+        pointer-events: none;
+    }
+
+    .drumkit {
+        top: calc(100svh + 2rem + 439.5px + 5rem - 349.33px + 5svh);
+        justify-content: end;
+
+        img {
+            transform: scaleX(-1);
+        }
+    }
+
+    .trumpet {
+        top: calc(100svh + 2rem + 439.5px + 5rem + 596px + 6svh);
+        justify-content: start;
+    }
+
+    .saxophone {
+        top: calc(100svh + 2rem + 439.5px + 5rem + 556px + 5rem + 733px + 5rem - 357.11px + 40svh);
+        justify-content: end;
+    }
+
+    @media (max-width: 700px) {
+        .drumkit {
+            top: calc(100svh + 2rem + 439.5px + 5rem - 349.33px + 28svh);
+        }
+    }
+
+    // main
     main {
+        position: relative;
         gap: 5rem;
+        overflow-wrap: break-word;
     }
 
     h1 {
         @include fonts.reeniebeanie;
         color: black;
         font-size: 4rem;
-    }
 
-    @media (max-width: 700px) {
-        h1 {
+        @media (max-width: 700px) {
             font-size: 3.5rem;
         }
-    }
 
-    @media (max-width: 600px) {
-        h1 {
+        @media (max-width: 600px) {
             font-size: 3rem;
         }
-    }
 
-    @media (max-width: 500px) {
-        h1 {
+        @media (max-width: 500px) {
             font-size: 2.5rem;
         }
-    }
-
-    h1 {
-        overflow-wrap: break-word;
     }
 
     .view-all-events-button {
@@ -136,38 +177,15 @@ import saxophone from "~assets/icons/saxophone.svg";
         a {
             color: white;
             text-decoration: none;
-            background-color: #d57d18;
+            background-color: black;
             padding: 0.5rem;
             box-sizing: border-box;
         }
-    }
 
-    .instrument {
-        width: 80%;
-        position: absolute;
-        z-index: 99;
-
-        img {
-            width: 100%;
+        @media (max-width: 700px) {
+            a {
+                background-color: black;
+            }
         }
-    }
-
-    .drumkit {
-        top: calc(100svh + 2rem + 439.5px + 5rem - 349.33px + 29svh);
-        right: 0;
-
-        img {
-            transform: scaleX(-1);
-        }
-    }
-
-    .trumpet {
-        top: calc(100svh + 2rem + 439.5px + 5rem + 556px + 5rem - 114.12px);
-        left: 0;
-    }
-
-    .saxophone {
-        top: calc(100svh + 2rem + 439.5px + 5rem + 556px + 5rem + 733px + 5rem - 357.11px + 25svh);
-        left: 0;
     }
 </style>
