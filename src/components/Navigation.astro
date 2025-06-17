@@ -25,9 +25,9 @@ const { style } = Astro.props;
                     rikoButtonOpen.style.display = "none";
                     document.body.style.overflow = "hidden";
                 } else {
-                    rikoButtonOpen.style.display = "block";
+                    rikoButtonOpen.style.display = "unset";
                     menu.style.display = "none";
-                    document.body.style.overflow = "visible";
+                    document.body.style.overflow = "unset";
                 }
             });
         });
@@ -86,7 +86,8 @@ const { style } = Astro.props;
 
     // universal styling
     .logo > img {
-        height: 5rem;
+        max-height: 90px;
+        max-width: 100%;
     }
 
     // desktop styling
