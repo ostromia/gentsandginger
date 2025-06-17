@@ -41,6 +41,10 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
         @media (max-width: 700px) {
             grid-template-columns: repeat(2, 1fr);
         }
+
+        @media (max-width: 250px) {
+            grid-template-columns: 1fr;
+        }
     }
 
     .product {
@@ -63,13 +67,11 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
         display: flex;
         align-items: center;
         justify-content: center;
-        overflow: hidden;
     }
 
     .image img {
         max-height: 100%;
         max-width: 100%;
-        object-fit: contain;
     }
 
     .text,
