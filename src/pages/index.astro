@@ -21,19 +21,19 @@ import saxophone from "~assets/icons/saxophone.svg";
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
     </head>
     <body>
-        <!-- <aside>
-            <div class="instrument drumkit">
+        <aside>
+            <div class="instrument mobile drumkit">
                 <img alt="" src={drumkit.src} />
             </div>
 
-            <div class="instrument trumpet">
+            <!-- <div class="instrument trumpet">
                 <img alt="" src={trumpet.src} />
             </div>
 
             <div class="instrument saxophone">
                 <img alt="" src={saxophone.src} />
-            </div>
-        </aside> -->
+            </div> -->
+        </aside>
 
         <header>
             <Navigation style="position: absolute; width: 100%; z-index: 999;" />
@@ -108,7 +108,7 @@ import saxophone from "~assets/icons/saxophone.svg";
         position: absolute;
         z-index: 99;
 
-        display: flex;
+        // display: flex;
 
         img {
             width: 100%;
@@ -121,8 +121,9 @@ import saxophone from "~assets/icons/saxophone.svg";
     }
 
     .drumkit {
-        top: calc(100svh + 2rem + 439.5px + 5rem - 349.33px + 5svh);
-        justify-content: end;
+        // top: calc(100svh + 2rem + 439.5px + 5rem - 349.33px + 5svh);
+        top: calc(100svh + 2rem + 439.5px + 5rem - 14svh);
+        justify-content: center;
 
         img {
             transform: scaleX(-1);
@@ -139,11 +140,11 @@ import saxophone from "~assets/icons/saxophone.svg";
         justify-content: end;
     }
 
-    @media (max-width: 700px) {
-        .drumkit {
-            top: calc(100svh + 2rem + 439.5px + 5rem - 349.33px + 28svh);
-        }
-    }
+    // @media (max-width: 700px) {
+    //     .drumkit {
+    //         top: calc(100svh + 2rem + 439.5px + 5rem - 349.33px + 28svh);
+    //     }
+    // }
 
     // main
     main {
