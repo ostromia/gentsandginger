@@ -22,12 +22,20 @@ const { style } = Astro.props;
             button.addEventListener("click", () => {
                 if (window.getComputedStyle(menu).display === "none") {
                     menu.style.display = "flex";
-                    rikoButtonOpen.style.display = "none";
+
                     document.body.style.overflow = "hidden";
+                    document.documentElement.style.overflow = "hidden";
+
+                    rikoButtonOpen.style.display = "none";
                 } else {
                     rikoButtonOpen.style.display = "unset";
                     menu.style.display = "none";
+
                     document.body.style.overflow = "unset";
+                    document.documentElement.style.overflow = "unset";
+
+                    document.body.style.overflowX = "hidden";
+                    document.documentElement.style.overflowX = "hidden";
                 }
             });
         });
@@ -149,7 +157,7 @@ const { style } = Astro.props;
         }
 
         #riko-menu {
-            height: 100%;
+            height: 100svh;
             display: none;
             position: fixed;
             inset: 0;
