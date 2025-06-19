@@ -83,11 +83,16 @@ const { style } = Astro.props;
     @use "~styles/fonts";
     @use "~styles/mia";
     @use "~styles/riko";
+    @use "~styles/adam";
 
     // universal styling
     .logo > img {
         max-height: 90px;
         max-width: 100%;
+    }
+
+    nav {
+        @include adam.max;
     }
 
     // desktop styling
@@ -194,7 +199,6 @@ const { style } = Astro.props;
             justify-content: center;
             align-items: center;
             gap: 2rem;
-            z-index: 999;
             @include fonts.reeniebeanie;
             font-size: 2rem;
         }

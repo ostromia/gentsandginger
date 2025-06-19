@@ -1,0 +1,13 @@
+// handling z-index layers
+
+@mixin base {
+    z-index: 100;
+}
+
+@mixin max {
+    z-index: 999;
+}
+
+@mixin instruments {
+    z-index: 99;
+}

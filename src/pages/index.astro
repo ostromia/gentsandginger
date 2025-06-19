@@ -20,7 +20,7 @@ import drumkit from "~assets/icons/drumkit.svg";
     </head>
     <body>
         <header>
-            <Navigation style="position: absolute; width: 100%; z-index: 999;" />
+            <Navigation style="position: absolute; width: 100%;" />
             <Banner />
         </header>
 
@@ -75,6 +75,7 @@ import drumkit from "~assets/icons/drumkit.svg";
     @use "~styles/global";
     @use "~styles/fonts";
     @use "~styles/riko";
+    @use "~styles/adam";
 
     html,
     body {
@@ -91,7 +92,7 @@ import drumkit from "~assets/icons/drumkit.svg";
         position: absolute;
         pointer-events: none;
 
-        z-index: 99;
+        @include adam.instruments;
 
         img {
             width: 100%;
