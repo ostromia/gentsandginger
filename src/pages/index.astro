@@ -12,6 +12,7 @@ import YouTube from "~components/YouTube.astro";
 import Footer from "~components/Footer.astro";
 
 import drumkit from "~assets/icons/drumkit.svg";
+import saxophone from "~assets/icons/saxophone.svg";
 ---
 
 <html lang="en">
@@ -64,6 +65,10 @@ import drumkit from "~assets/icons/drumkit.svg";
                     name="YouTube video player"
                     src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
                 />
+
+                <div class="instrument mobile saxophone">
+                    <img alt="" src={saxophone.src} />
+                </div>
             </section>
         </main>
 
@@ -107,6 +112,10 @@ import drumkit from "~assets/icons/drumkit.svg";
         }
     }
 
+    .saxophone {
+        top: -10svh;
+    }
+
     // main
     main {
         position: relative;
@@ -118,6 +127,7 @@ import drumkit from "~assets/icons/drumkit.svg";
         @include fonts.reeniebeanie;
         color: black;
         font-size: 4rem;
+        @include adam.base;
 
         @media (max-width: 700px) {
             font-size: 3.5rem;
@@ -133,6 +143,7 @@ import drumkit from "~assets/icons/drumkit.svg";
     }
 
     .view-all-events-button {
+        position: relative;
         display: flex;
         justify-content: center;
 

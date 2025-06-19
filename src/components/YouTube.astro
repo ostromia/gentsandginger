@@ -64,10 +64,13 @@ const {
 </iframe>
 
 <style lang="scss">
+    @use "~styles/adam";
+
     iframe {
         width: 100%;
         aspect-ratio: 4 / 3;
         height: auto;
         border: 0;
+        @include adam.base;
     }
 </style>
