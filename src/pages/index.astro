@@ -12,8 +12,6 @@ import YouTube from "~components/YouTube.astro";
 import Footer from "~components/Footer.astro";
 
 import drumkit from "~assets/icons/drumkit.svg";
-import trumpet from "~assets/icons/trumpet.svg";
-import saxophone from "~assets/icons/saxophone.svg";
 ---
 
 <html lang="en">
@@ -21,20 +19,6 @@ import saxophone from "~assets/icons/saxophone.svg";
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
     </head>
     <body>
-        <aside>
-            <div class="instrument mobile drumkit">
-                <img alt="" src={drumkit.src} />
-            </div>
-
-            <!-- <div class="instrument trumpet">
-                <img alt="" src={trumpet.src} />
-            </div>
-
-            <div class="instrument saxophone">
-                <img alt="" src={saxophone.src} />
-            </div> -->
-        </aside>
-
         <header>
             <Navigation style="position: absolute; width: 100%; z-index: 999;" />
             <Banner />
@@ -55,6 +39,10 @@ import saxophone from "~assets/icons/saxophone.svg";
                 <h1>Githerments In Groove</h1>
 
                 <GithermentsInGroove />
+
+                <div class="instrument mobile drumkit">
+                    <img alt="" src={drumkit.src} />
+                </div>
             </section>
 
             <section>
@@ -88,63 +76,35 @@ import saxophone from "~assets/icons/saxophone.svg";
     @use "~styles/fonts";
     @use "~styles/riko";
 
-    // html & body html
     html,
     body {
         overflow-x: hidden;
     }
 
-    // aside
-    aside {
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
+    section {
+        position: relative;
     }
 
     .instrument {
-        width: 80%;
-        height: auto;
-
+        width: 100%;
+        max-width: 1000px;
         position: absolute;
-        z-index: 99;
+        pointer-events: none;
 
-        // display: flex;
+        z-index: 99;
 
         img {
             width: 100%;
-            max-width: 1000px;
         }
-
-        position: absolute;
-        width: 100%;
-        pointer-events: none;
     }
 
     .drumkit {
-        // top: calc(100svh + 2rem + 439.5px + 5rem - 349.33px + 5svh);
-        top: calc(100svh + 2rem + 439.5px + 5rem - 14svh);
-        justify-content: center;
+        top: -10svh;
 
         img {
             transform: scaleX(-1);
         }
     }
-
-    .trumpet {
-        top: calc(100svh + 2rem + 439.5px + 5rem + 596px + 6svh);
-        justify-content: start;
-    }
-
-    .saxophone {
-        top: calc(100svh + 2rem + 439.5px + 5rem + 556px + 5rem + 733px + 5rem - 357.11px + 40svh);
-        justify-content: end;
-    }
-
-    // @media (max-width: 700px) {
-    //     .drumkit {
-    //         top: calc(100svh + 2rem + 439.5px + 5rem - 349.33px + 28svh);
-    //     }
-    // }
 
     // main
     main {
