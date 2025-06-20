@@ -17,7 +17,9 @@ import Footer from "~components/Footer.astro";
             <Navigation />
         </header>
 
-        <main></main>
+        <main>
+            <h1>Contact</h1>
+        </main>
 
         <Footer />
     </body>
@@ -25,4 +27,9 @@ import Footer from "~components/Footer.astro";
 
 <style lang="scss">
     @use "~styles/global";
+    @use "~styles/h1";
+
+    main {
+        gap: 1rem;
+    }
 </style>

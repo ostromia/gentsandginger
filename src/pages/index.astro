@@ -81,6 +81,7 @@ import saxophone from "~assets/icons/saxophone.svg";
     @use "~styles/fonts";
     @use "~styles/riko";
     @use "~styles/adam";
+    @use "~styles/h1";
 
     html,
     body {
@@ -127,25 +128,6 @@ import saxophone from "~assets/icons/saxophone.svg";
         position: relative;
         gap: 5rem;
         overflow-wrap: break-word;
-    }
-
-    h1 {
-        @include fonts.reeniebeanie;
-        color: black;
-        font-size: 4rem;
-        @include adam.base;
-
-        @media (max-width: 700px) {
-            font-size: 3.5rem;
-        }
-
-        @media (max-width: 600px) {
-            font-size: 3rem;
-        }
-
-        @media (max-width: 500px) {
-            font-size: 2.5rem;
-        }
     }
 
     .view-all-events-button {
