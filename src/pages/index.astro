@@ -31,7 +31,7 @@ import saxophone from "~assets/icons/saxophone.svg";
 
                 <Events number={3} />
 
-                <div class="view-all-events-button">
+                <div class="button">
                     <a href="/gentsandginger/events/">View All Events</a>
                 </div>
             </section>
@@ -51,7 +51,7 @@ import saxophone from "~assets/icons/saxophone.svg";
 
                 <Merchandise />
 
-                <div class="view-all-events-button">
+                <div class="button">
                     <a href="/gentsandginger/merchandise/">View All Merchandise</a>
                 </div>
             </section>
@@ -82,6 +82,7 @@ import saxophone from "~assets/icons/saxophone.svg";
     @use "~styles/riko";
     @use "~styles/adam";
     @use "~styles/h1";
+    @use "~styles/button";
 
     html,
     body {
@@ -128,26 +129,5 @@ import saxophone from "~assets/icons/saxophone.svg";
         position: relative;
         gap: 5rem;
         overflow-wrap: break-word;
-    }
-
-    .view-all-events-button {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        @include adam.base;
-
-        a {
-            color: white;
-            text-decoration: none;
-            background-color: black;
-            padding: 0.5rem;
-            box-sizing: border-box;
-        }
-
-        @media (max-width: 700px) {
-            a {
-                background-color: black;
-            }
-        }
     }
 </style>

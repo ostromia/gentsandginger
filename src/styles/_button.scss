@@ -1,0 +1,22 @@
+.button {
+    align-self: center;
+
+    a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        padding: 0.5rem;
+        box-sizing: border-box;
+    }
+}
+
+.button > a {
+    background-color: black;
+}
+
+.button.inactive > a {
+    background-color: grey;
+    pointer-events: none;
+    cursor: default;
+}
