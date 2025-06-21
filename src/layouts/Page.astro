@@ -1,0 +1,46 @@
+---
+import Head from "~components/Head.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
+import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
+
+import Navigation from "~components/Navigation.astro";
+import Banner from "~components/Banner.astro";
+import Footer from "~components/Footer.astro";
+
+import banner from "~assets/banner.jpg";
+
+import "~styles/_h1.scss";
+
+interface Props {
+    title?: string;
+    description?: string;
+    metaimage?: ImageMetadata;
+    bannerimage?: ImageMetadata;
+    bannertext: string;
+}
+
+const { title = SITE_TITLE, description = SITE_DESCRIPTION, metaimage = IMG_048A5038_1200x630, bannerimage = banner, bannertext } = Astro.props;
+---
+
+<html lang="en">
+    <head>
+        <Head title={title} description={description} image={metaimage} />
+    </head>
+
+    <body>
+        <header>
+            <Navigation style="position: absolute; width: 100%;" />
+            <Banner image={bannerimage} text={bannertext} />
+        </header>
+
+        <main>
+            <slot />
+        </main>
+
+        <Footer />
+    </body>
+</html>
+
+<style lang="scss">
+    @use "~styles/global";
+</style>

@@ -1,37 +1,10 @@
 ---
-import Head from "~components/Head.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
-import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
+import Page from "~layouts/Page.astro";
 
-import Navigation from "~components/Navigation.astro";
-import Banner from "~components/Banner.astro";
-import Merchandise from "~src/components/Merchandise.astro";
-import Footer from "~components/Footer.astro";
-
-import bannerImage from "~assets/banner.jpg";
+import Merchandise from "~components/Merchandise.astro";
 ---
 
-<html lang="en">
-    <head>
-        <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
-    </head>
-    <body>
-        <header>
-            <Navigation style="position: absolute; width: 100%;" />
-            <Banner image={bannerImage} text="Merchandise" />
-        </header>
-
-        <main>
-            <h1>Merchandise</h1>
-
-            <Merchandise />
-        </main>
-
-        <Footer />
-    </body>
-</html>
-
-<style lang="scss">
-    @use "~styles/global";
-    @use "~styles/h1";
-</style>
+<Page bannertext="Merchandise">
+    <h1>Merchandise</h1>
+    <Merchandise />
+</Page>

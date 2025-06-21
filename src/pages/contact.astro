@@ -1,38 +1,12 @@
 ---
-import Head from "~components/Head.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
-import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
-
-import Navigation from "~components/Navigation.astro";
-import Banner from "~components/Banner.astro";
-import Footer from "~components/Footer.astro";
+import Page from "~layouts/Page.astro";
 
 import { Content as Content } from "~content/contact.mdx";
 import "~styles/markdown.scss";
-
-import bannerImage from "~assets/banner.jpg";
 ---
 
-<html lang="en">
-    <head>
-        <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
-    </head>
-    <body>
-        <header>
-            <Navigation style="position: absolute; width: 100%;" />
-            <Banner image={bannerImage} text="Contact" />
-        </header>
-
-        <main>
-            <article>
-                <Content />
-            </article>
-        </main>
-
-        <Footer />
-    </body>
-</html>
-
-<style lang="scss">
-    @use "~styles/global";
-</style>
+<Page bannertext="Contact">
+    <article>
+        <Content />
+    </article>
+</Page>
