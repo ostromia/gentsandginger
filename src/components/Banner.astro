@@ -15,6 +15,7 @@ const { image, text } = Astro.props;
 <style lang="scss">
     @use "~styles/fonts";
     @use "~styles/adam";
+    @use "~styles/color";
 
     .banner {
         position: relative;
@@ -25,7 +26,6 @@ const { image, text } = Astro.props;
             height: 80svh;
             width: 100%;
             object-fit: cover;
-            display: block;
         }
 
         .text {
@@ -38,7 +38,7 @@ const { image, text } = Astro.props;
             @include fonts.reeniebeanie;
             font-size: 5rem;
 
-            color: #d57d18;
+            color: color.$orange;
         }
     }
 </style>

@@ -1,5 +1,6 @@
 @use "~styles/h1";
+@use "~styles/color";
 
 a {
-    color: #d57d18;
+    color: color.$orange;
 }

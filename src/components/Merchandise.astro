@@ -32,6 +32,8 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
 </div>
 
 <style lang="scss">
+    @use "~styles/color";
+
     .wrapper {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
@@ -58,7 +60,7 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
         padding: 1rem;
         box-sizing: border-box;
 
-        background-color: #e6972e;
+        background-color: color.$orange;
     }
 
     .image {

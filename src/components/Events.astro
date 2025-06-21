@@ -38,6 +38,7 @@ const { number = events.length } = Astro.props;
 
 <style lang="scss">
     @use "~styles/button";
+    @use "~styles/color";
 
     .wrapper {
         display: flex;
@@ -50,12 +51,6 @@ const { number = events.length } = Astro.props;
         display: flex;
         gap: 1rem;
     }
-
-    // .event.inactive .text,
-    // .event.inactive .button {
-    //     pointer-events: none;
-    //     cursor: default;
-    // }
 
     .image {
         width: 25%;
@@ -98,7 +93,7 @@ const { number = events.length } = Astro.props;
         }
 
         .title {
-            color: black;
+            color: color.$black;
             text-decoration: none;
             font-size: 1.75rem;
         }

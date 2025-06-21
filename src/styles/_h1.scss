@@ -1,5 +1,6 @@
 @use "~styles/fonts";
 @use "~styles/adam";
+@use "~styles/color";
 
 h1,
 h2,
@@ -12,7 +13,7 @@ h6 {
 }
 
 h1 {
-    color: black;
+    color: color.$black;
     @include fonts.reeniebeanie;
     font-size: 4rem;
 

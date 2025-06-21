@@ -92,6 +92,7 @@ const { style } = Astro.props;
     @use "~styles/mia";
     @use "~styles/riko";
     @use "~styles/adam";
+    @use "~styles/color";
 
     // universal styling
     .logo > img {
@@ -119,7 +120,7 @@ const { style } = Astro.props;
         }
 
         a {
-            color: #d57d18;
+            color: color.$orange;
             text-decoration: none;
         }
     }
@@ -148,7 +149,7 @@ const { style } = Astro.props;
 
         .riko-button {
             @include mia.resetButton;
-            color: #d57d18;
+            color: color.$orange;
 
             img {
                 height: 2rem;
@@ -162,12 +163,12 @@ const { style } = Astro.props;
             position: fixed;
             inset: 0;
 
-            background-color: #f0ead6;
+            color: color.$eggshell;
 
             flex-direction: column;
 
             a {
-                color: #d57d18;
+                color: color.$orange;
                 text-decoration: none;
             }
 
@@ -185,7 +186,7 @@ const { style } = Astro.props;
                     justify-self: start;
 
                     @include mia.resetButton;
-                    color: #d57d18;
+                    color: color.$orange;
 
                     img {
                         height: 2rem;
