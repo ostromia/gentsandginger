@@ -1,13 +1,15 @@
 ---
 import Page from "~layouts/Page.astro";
 
+import banner from "~assets/banner/events.jpg";
+
 import Events from "~components/Events.astro";
 
 const title = "Events | Gents & Ginger";
 const description = "View tour dates and tickets for Gents & Ginger.";
 ---
 
-<Page title={title} description={description} bannertext="Events">
+<Page title={title} description={description} bannerimage={banner} bannertext="Events">
     <h1>Events</h1>
     <Events />
 </Page>

@@ -7,3 +7,7 @@
     position: absolute;
     z-index: 900;
 }
+
+@mixin max {
+    z-index: 999;
+}

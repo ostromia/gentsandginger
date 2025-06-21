@@ -1,6 +1,8 @@
 ---
 import Page from "~layouts/Page.astro";
 
+import banner from "~assets/banner/about.jpg";
+
 import { Content as Content } from "~content/about.mdx";
 import "~styles/markdown.scss";
 
@@ -9,7 +11,7 @@ const description =
     "Hailing from the heart of the historic city of York, dynamic funk band Gents & Ginger bring the vibrant spirits of their world straight to your eardrums.";
 ---
 
-<Page title={title} description={description} bannertext="About">
+<Page title={title} description={description} bannerimage={banner} bannertext="About">
     <article>
         <Content />
     </article>

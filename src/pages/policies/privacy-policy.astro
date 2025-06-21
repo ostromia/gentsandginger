@@ -1,6 +1,8 @@
 ---
 import Page from "~layouts/Page.astro";
 
+import banner from "~assets/banner/merchandise.jpg";
+
 import { Content as Content } from "~content/policies/privacy-policy.mdx";
 import "~styles/markdown.scss";
 
@@ -8,7 +10,7 @@ const title = "Privacy Policy | Gents & Ginger";
 const description = "Our privacy policy outlines what personal information we collect and store on our website.";
 ---
 
-<Page title={title} description={description} bannertext="Privay Policy">
+<Page title={title} description={description} bannerimage={banner} bannertext="Privay Policy">
     <article>
         <Content />
     </article>
