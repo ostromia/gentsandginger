@@ -14,13 +14,10 @@ const { image, text } = Astro.props;
 
 <style lang="scss">
     @use "~styles/fonts";
-    @use "~styles/adam";
     @use "~styles/color";
 
     .banner {
         position: relative;
-
-        @include adam.banner;
 
         .image {
             height: 80svh;

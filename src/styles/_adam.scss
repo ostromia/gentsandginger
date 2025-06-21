@@ -1,17 +1,9 @@
-// handling z-index layers
-
 @mixin base {
+    position: relative;
     z-index: 100;
 }
 
-@mixin max {
-    z-index: 999;
-}
-
-@mixin instruments {
-    z-index: 0;
-}
-
-@mixin banner {
-    z-index: 50;
+@mixin navigation {
+    position: absolute;
+    z-index: 900;
 }

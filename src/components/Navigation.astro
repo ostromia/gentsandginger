@@ -91,8 +91,8 @@ const { style } = Astro.props;
     @use "~styles/fonts";
     @use "~styles/mia";
     @use "~styles/riko";
-    @use "~styles/adam";
     @use "~styles/color";
+    @use "~styles/adam";
 
     // universal styling
     .logo > img {
@@ -101,7 +101,7 @@ const { style } = Astro.props;
     }
 
     nav {
-        @include adam.max;
+        @include adam.navigation;
     }
 
     // desktop styling
@@ -163,7 +163,7 @@ const { style } = Astro.props;
             position: fixed;
             inset: 0;
 
-            color: color.$eggshell;
+            background-color: color.$eggshell;
 
             flex-direction: column;
 

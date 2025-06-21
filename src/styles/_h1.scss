@@ -1,5 +1,4 @@
 @use "~styles/fonts";
-@use "~styles/adam";
 @use "~styles/color";
 
 h1,
@@ -16,8 +15,6 @@ h1 {
     color: color.$black;
     @include fonts.reeniebeanie;
     font-size: 4rem;
-
-    @include adam.base;
 
     @media (max-width: 700px) {
         font-size: 3.5rem;

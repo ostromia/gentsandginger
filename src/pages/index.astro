@@ -19,15 +19,17 @@ import saxophone from "~assets/icons/saxophone.svg";
         <a class="button" href="/gentsandginger/events/">View All Events</a>
     </section>
 
-    <section>
-        <h1>Githerments In Groove</h1>
+    <div class="section-wrapper">
+        <section>
+            <h1>Githerments In Groove</h1>
 
-        <GithermentsInGroove />
+            <GithermentsInGroove />
+        </section>
 
         <div class="instrument drumkit">
             <img alt="" src={drumkit.src} />
         </div>
-    </section>
+    </div>
 
     <section>
         <h1>Merchandise</h1>
@@ -37,41 +39,47 @@ import saxophone from "~assets/icons/saxophone.svg";
         <a class="button" href="/gentsandginger/merchandise/">View All Merchandise</a>
     </section>
 
-    <section>
-        <h1>Those Were The Days</h1>
+    <div class="section-wrapper">
+        <section>
+            <h1>Those Were The Days</h1>
 
-        <YouTube
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            loading="lazy"
-            name="YouTube video player"
-            src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
-        />
+            <YouTube
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                loading="lazy"
+                name="YouTube video player"
+                src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
+            />
+        </section>
 
         <div class="instrument saxophone">
             <img alt="" src={saxophone.src} />
         </div>
-    </section>
+    </div>
 </Layout>
 
 <style lang="scss">
     @use "~styles/global";
     @use "~styles/fonts";
     @use "~styles/riko";
-    @use "~styles/adam";
     @use "~styles/h1";
     @use "~styles/button";
+    @use "~styles/adam";
 
     html,
     body {
         overflow-x: hidden;
     }
 
-    section {
+    .section-wrapper {
         position: relative;
+    }
+
+    section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
+        @include adam.base;
     }
 
     .instrument {
@@ -79,8 +87,6 @@ import saxophone from "~assets/icons/saxophone.svg";
         max-width: 1000px;
         position: absolute;
         pointer-events: none;
-
-        @include adam.instruments;
 
         img {
             width: 100%;
