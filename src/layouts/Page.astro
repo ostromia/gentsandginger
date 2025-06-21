@@ -9,7 +9,7 @@ import Footer from "~components/Footer.astro";
 
 import banner from "~assets/banner.jpg";
 
-import "~styles/_h1.scss";
+import "~styles/global.scss";
 
 interface Props {
     title?: string;
@@ -40,7 +40,3 @@ const { title = SITE_TITLE, description = SITE_DESCRIPTION, metaimage = IMG_048A
         <Footer />
     </body>
 </html>
-
-<style lang="scss">
-    @use "~styles/global";
-</style>
