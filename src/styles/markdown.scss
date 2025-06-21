@@ -1,26 +1,4 @@
-@use "~styles/fonts";
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    @include fonts.reeniebeanie;
-    color: #d57d18;
-}
-
-h1 {
-    font-size: 2.5rem;
-}
-
-h2 {
-    font-size: 2rem;
-}
-
-h3 {
-    font-size: 1.75rem;
-}
+@use "~styles/h1";
 
 a {
     color: #d57d18;

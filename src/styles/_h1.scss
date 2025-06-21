@@ -1,10 +1,21 @@
 @use "~styles/fonts";
 @use "~styles/adam";
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: normal;
+}
+
 h1 {
-    @include fonts.reeniebeanie;
     color: black;
+    @include fonts.reeniebeanie;
     font-size: 4rem;
+
     @include adam.base;
 
     @media (max-width: 700px) {
