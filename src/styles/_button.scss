@@ -1,21 +1,19 @@
 .button {
     align-self: center;
 
-    a {
-        display: block;
-        color: white;
-        text-decoration: none;
-        text-align: center;
-        padding: 0.5rem;
-        box-sizing: border-box;
-    }
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem;
+    box-sizing: border-box;
 }
 
-.button > a {
+.button {
     background-color: black;
 }
 
-.button.inactive > a {
+.button.inactive {
     background-color: grey;
     pointer-events: none;
     cursor: default;

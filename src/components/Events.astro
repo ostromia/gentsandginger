@@ -12,11 +12,9 @@ const { number = events.length } = Astro.props;
     {
         events.slice(0, number).map((event) => (
             <div class={event.date[0] > new Date() ? "event" : "event inactive"}>
-                <div class="image">
-                    <a href={event.url} aria-label={event.title}>
-                        <img alt="" src={event.image} />
-                    </a>
-                </div>
+                <a class="image" href={event.url} aria-label={event.title}>
+                    <img alt="" src={event.image} />
+                </a>
 
                 <a class="text" href={event.url}>
                     <div class="date">{event.dateFormatted}</div>
@@ -25,13 +23,13 @@ const { number = events.length } = Astro.props;
                 </a>
 
                 {event.date[0] > new Date() ? (
-                    <div class="button">
-                        <a href={event.url}>Buy Tickets</a>
-                    </div>
+                    <a class="button" href={event.url}>
+                        Buy Tickets
+                    </a>
                 ) : (
-                    <div class="button inactive">
-                        <a href={event.url}>Sold Out</a>
-                    </div>
+                    <a class="button inactive" href={event.url}>
+                        Sold Out
+                    </a>
                 )}
             </div>
         ))
@@ -53,10 +51,11 @@ const { number = events.length } = Astro.props;
         gap: 1rem;
     }
 
-    .event.inactive a {
-        pointer-events: none;
-        cursor: default;
-    }
+    // .event.inactive .text,
+    // .event.inactive .button {
+    //     pointer-events: none;
+    //     cursor: default;
+    // }
 
     .image {
         width: 25%;
