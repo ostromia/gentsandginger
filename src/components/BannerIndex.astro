@@ -1,0 +1,93 @@
+---
+import banner from "~assets/banner.webm";
+import guitar from "~assets/icons/guitar.svg";
+import truckfestival from "~assets/icons/truckfestival.svg";
+---
+
+<div class="banner">
+    <video autoplay muted loop playsinline>
+        <source src={banner} type="video/webm" />
+    </video>
+</div>
+
+<div class="announcement mobile">
+    <img class="guitar" src={guitar.src} />
+
+    <div class="content">
+        announcement section here for something
+        <!-- <img src={truckfestival.src} />
+        <div>
+            <div>Truck Festival</div>
+            <div>24 - 27 July 2025</div>
+            <div>Hill Farm, Oxfordshire</div>
+        </div>
+        <div class="buy-button">
+            <a href="https://truckfestival.com/line-up/">Buy Tickets!</a>
+        </div>
+    </div> -->
+    </div>
+</div>
+
+<style lang="scss">
+    @use "~styles/riko";
+    @use "~styles/fonts";
+    @use "~styles/adam";
+
+    .banner {
+        @include adam.base;
+        video {
+            height: 100svh;
+            width: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            display: block;
+        }
+    }
+
+    .announcement {
+        position: relative;
+    }
+
+    .guitar {
+        position: absolute;
+        top: -200px;
+        right: -100px;
+        @include adam.instruments;
+        width: 800px;
+        height: 370px;
+        transform: scaleX(-1);
+    }
+
+    .content {
+        $height: 177px;
+        $width: 186px;
+        // border: 1px solid green;
+
+        position: absolute;
+        top: -102px;
+        right: 0;
+        @include adam.base;
+
+        height: $height;
+        width: $width;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+
+        // padding: 0.125rem;
+        // box-sizing: border-box;
+
+        // @include fonts.reeniebeanie;
+        // font-size: 1.5rem;
+        text-align: center;
+
+        img {
+            height: 25%;
+            // max-height: 50%;
+            // max-width: 50%;
+        }
+    }
+</style>

@@ -11,3 +11,7 @@
 @mixin instruments {
     z-index: 0;
 }
+
+@mixin banner {
+    z-index: 50;
+}
