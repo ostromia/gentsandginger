@@ -4,10 +4,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
 import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
 
 import Navigation from "~components/Navigation.astro";
+import Banner from "~components/Banner.astro";
 import Footer from "~components/Footer.astro";
 
 import { Content as Content } from "~content/policies/privacy-policy.mdx";
 import "~styles/markdown.scss";
+
+import bannerImage from "~assets/banner.jpg";
 ---
 
 <html lang="en">
@@ -16,7 +19,8 @@ import "~styles/markdown.scss";
     </head>
     <body>
         <header>
-            <Navigation />
+            <Navigation style="position: absolute; width: 100%;" />
+            <Banner image={bannerImage} text="Privacy Policy" />
         </header>
 
         <main>
