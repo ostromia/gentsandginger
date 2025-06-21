@@ -1,76 +1,57 @@
 ---
-import Head from "~components/Head.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
-import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
+import Layout from "~layouts/Index.astro";
 
-import Navigation from "~components/Navigation.astro";
-import BannerIndex from "~components/BannerIndex.astro";
 import Events from "~components/Events.astro";
 import GithermentsInGroove from "~components/GithermentsInGroove.astro";
 import Merchandise from "~src/components/Merchandise.astro";
 import YouTube from "~components/YouTube.astro";
-import Footer from "~components/Footer.astro";
 
 import drumkit from "~assets/icons/drumkit.svg";
 import saxophone from "~assets/icons/saxophone.svg";
 ---
 
-<html lang="en">
-    <head>
-        <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
-    </head>
-    <body>
-        <header>
-            <Navigation style="position: absolute; width: 100%;" />
-            <BannerIndex />
-        </header>
+<Layout>
+    <section>
+        <h1>Events</h1>
 
-        <main>
-            <section>
-                <h1>Events</h1>
+        <Events number={3} />
 
-                <Events number={3} />
+        <a class="button" href="/gentsandginger/events/">View All Events</a>
+    </section>
 
-                <a class="button" href="/gentsandginger/events/">View All Events</a>
-            </section>
+    <section>
+        <h1>Githerments In Groove</h1>
 
-            <section>
-                <h1>Githerments In Groove</h1>
+        <GithermentsInGroove />
 
-                <GithermentsInGroove />
+        <div class="instrument drumkit">
+            <img alt="" src={drumkit.src} />
+        </div>
+    </section>
 
-                <div class="instrument drumkit">
-                    <img alt="" src={drumkit.src} />
-                </div>
-            </section>
+    <section>
+        <h1>Merchandise</h1>
 
-            <section>
-                <h1>Merchandise</h1>
+        <Merchandise />
 
-                <Merchandise />
+        <a class="button" href="/gentsandginger/merchandise/">View All Merchandise</a>
+    </section>
 
-                <a class="button" href="/gentsandginger/merchandise/">View All Merchandise</a>
-            </section>
+    <section>
+        <h1>Those Were The Days</h1>
 
-            <section>
-                <h1>Those Were The Days</h1>
+        <YouTube
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            loading="lazy"
+            name="YouTube video player"
+            src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
+        />
 
-                <YouTube
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    loading="lazy"
-                    name="YouTube video player"
-                    src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
-                />
-
-                <div class="instrument saxophone">
-                    <img alt="" src={saxophone.src} />
-                </div>
-            </section>
-        </main>
-
-        <Footer />
-    </body>
-</html>
+        <div class="instrument saxophone">
+            <img alt="" src={saxophone.src} />
+        </div>
+    </section>
+</Layout>
 
 <style lang="scss">
     @use "~styles/global";
@@ -87,6 +68,10 @@ import saxophone from "~assets/icons/saxophone.svg";
 
     section {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
     }
 
     .instrument {

@@ -1,0 +1,42 @@
+---
+import Head from "~components/Head.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
+import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
+
+import Navigation from "~components/Navigation.astro";
+import BannerIndex from "~components/BannerIndex.astro";
+import Footer from "~components/Footer.astro";
+---
+
+<html lang="en">
+    <head>
+        <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
+    </head>
+    <body>
+        <header>
+            <Navigation style="position: absolute; width: 100%;" />
+            <BannerIndex />
+        </header>
+
+        <main>
+            <slot />
+        </main>
+
+        <Footer />
+    </body>
+</html>
+
+<style lang="scss">
+    @use "~styles/global";
+
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    main {
+        position: relative;
+        gap: 5rem;
+        overflow-wrap: break-word;
+    }
+</style>
