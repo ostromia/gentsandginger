@@ -3,9 +3,12 @@ import Page from "~layouts/Page.astro";
 
 import { Content as Content } from "~content/contact.mdx";
 import "~styles/markdown.scss";
+
+const title = "Contact | Gents & Ginger";
+const description = "Get in touch with us for bookings, collaborations, or general inquiries.";
 ---
 
-<Page bannertext="Contact">
+<Page title={title} description={description} bannertext="Contact">
     <article>
         <Content />
     </article>

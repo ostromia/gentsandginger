@@ -1,6 +1,5 @@
 ---
 import Head from "~components/Head.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
 import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
 
 import Navigation from "~components/Navigation.astro";
@@ -12,14 +11,14 @@ import banner from "~assets/banner.jpg";
 import "~styles/global.scss";
 
 interface Props {
-    title?: string;
-    description?: string;
+    title: string;
+    description: string;
     metaimage?: ImageMetadata;
     bannerimage?: ImageMetadata;
     bannertext: string;
 }
 
-const { title = SITE_TITLE, description = SITE_DESCRIPTION, metaimage = IMG_048A5038_1200x630, bannerimage = banner, bannertext } = Astro.props;
+const { title, description, metaimage = IMG_048A5038_1200x630, bannerimage = banner, bannertext } = Astro.props;
 ---
 
 <html lang="en">

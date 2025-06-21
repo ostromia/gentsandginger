@@ -3,9 +3,13 @@ import Page from "~layouts/Page.astro";
 
 import { Content as Content } from "~content/about.mdx";
 import "~styles/markdown.scss";
+
+const title = "About | Gents & Ginger";
+const description =
+    "Hailing from the heart of the historic city of York, dynamic funk band Gents & Ginger bring the vibrant spirits of their world straight to your eardrums.";
 ---
 
-<Page bannertext="About">
+<Page title={title} description={description} bannertext="About">
     <article>
         <Content />
     </article>
