@@ -7,10 +7,12 @@ import Navigation from "~components/Navigation.astro";
 import Banner from "~components/Banner.astro";
 import Footer from "~components/Footer.astro";
 
+import { Content as Content } from "~content/contact.mdx";
+import "~styles/markdown.scss";
+
 import bannerImage from "~assets/banner.jpg";
 ---
 
-<!doctype html>
 <html lang="en">
     <head>
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
@@ -22,7 +24,9 @@ import bannerImage from "~assets/banner.jpg";
         </header>
 
         <main>
-            <h1>Contact</h1>
+            <article>
+                <Content />
+            </article>
         </main>
 
         <Footer />
@@ -31,9 +35,9 @@ import bannerImage from "~assets/banner.jpg";
 
 <style lang="scss">
     @use "~styles/global";
-    @use "~styles/h1";
 
     main {
+        max-width: 700px;
         gap: 1rem;
     }
 </style>
