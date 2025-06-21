@@ -10,23 +10,29 @@ const { number = events.length } = Astro.props;
 
 <div class="wrapper">
     {
-        events.slice(0, number).map((e) => (
+        events.slice(0, number).map((event) => (
             <div class="event">
                 <div class="image">
-                    <a href={e.url} aria-label={e.title}>
-                        <img alt="" src={e.image} />
+                    <a href={event.url} aria-label={event.title}>
+                        <img alt="" src={event.image} />
                     </a>
                 </div>
 
-                <a class="text" href={e.url}>
-                    <div class="date">{e.date}</div>
-                    <div class="title">{e.title}</div>
-                    <div class="location">{e.location}</div>
+                <a class="text" href={event.url}>
+                    <div class="date">{event.dateFormatted}</div>
+                    <div class="title">{event.title}</div>
+                    <div class="location">{event.location}</div>
                 </a>
 
-                <div class="buy-button">
-                    <a href={e.url}>Buy Tickets</a>
-                </div>
+                {event.date[0] > new Date() ? (
+                    <div class="buy-button">
+                        <a href={event.url}>Buy Tickets</a>
+                    </div>
+                ) : (
+                    <div class="buy-button">
+                        <a href={event.url}>Sold Out</a>
+                    </div>
+                )}
             </div>
         ))
     }

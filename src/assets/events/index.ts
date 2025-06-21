@@ -55,8 +55,8 @@ const events = data.map((event) => {
 
     return {
         title: event.title,
-        date: dateFormatted,
-        dateFormatted,
+        date: date,
+        dateFormatted: dateFormatted,
         image: event.image,
         url: event.url,
         location: event.location
