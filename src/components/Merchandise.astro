@@ -33,6 +33,7 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
 
 <style lang="scss">
     @use "~styles/color";
+    @use "~styles/fonts";
 
     .wrapper {
         display: grid;
@@ -79,5 +80,13 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
     .text,
     .button {
         margin-top: auto;
+    }
+
+    .button {
+        -webkit-appearance: none;
+        border-radius: 0;
+        border: 0;
+        @include fonts.atkinson;
+        font-size: 1rem;
     }
 </style>
