@@ -28,7 +28,7 @@ const { image, text } = Astro.props;
         }
 
         .text {
-            @include adam.max;
+            @include adam.base;
             position: absolute;
             inset: 0;
             margin: auto;
@@ -36,7 +36,7 @@ const { image, text } = Astro.props;
             height: max-content;
 
             @include fonts.reeniebeanie;
-            font-size: 5rem;
+            font-size: 4rem;
 
             color: color.$orange;
         }
