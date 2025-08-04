@@ -5,7 +5,6 @@ import lumafilmtvfestival from "./lumafilmtvfestival.jpg";
 
 const data = [
     {
-        id: "truckfestival-2025",
         title: "Truckfestival 2025",
         date: ["2025.06.24", "2025.06.27"],
         image: truckfestival.src,
@@ -107,14 +106,14 @@ const data = [
     },
 
     {
-        title: "GOODFEST22nd SEPT 5pm",
+        title: "Goodfest 2023",
         date: ["2023.09.22"],
         url: "",
         location: ""
     },
 
     {
-        title: "FULFORD ARMS BATTLE OF THE BANDS 2023",
+        title: "The Battle of the Bands 2023",
         date: ["2023.09.21"],
         url: "",
         location: "The Fulford Arms, York"
@@ -135,41 +134,41 @@ const data = [
     },
 
     {
-        title: "WHERE’S SLATER? - 19th MAY - 8pm - THE MICKLEGATE SOCIAL",
+        title: "The Micklegate Social: Where's Slater?",
         date: ["2023.05.19"],
         url: "",
         location: ""
     },
 
     {
-        title: "BANDSOC UNPLUGGED 001",
+        title: "Band Society Unplugged 001",
         date: [""],
         url: "",
         location: ""
     },
 
     {
-        title: "PH7 - 1st JUNE - FULFORD ARMS",
+        title: "PH7 Fulford Arms",
         date: ["2023.06.01"],
         url: "",
         location: "The Fulford Arms, York"
     },
 
     {
-        title: "A NIGHT OF STARS",
+        title: "A Night of Stars",
         date: ["2022.12.05"],
         url: "",
         location: ""
     },
     {
-        title: "INhibition OPENING NIGHT",
+        title: "INhibition Opening Night",
         date: ["2022.11.14"],
         url: "",
         location: ""
     },
 
     {
-        title: "AMNESTY BALL",
+        title: "The Secret Policeman's Ball",
         date: [""],
         url: "",
         location: ""
