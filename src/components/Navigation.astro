@@ -17,95 +17,53 @@ const { style } = Astro.props;
 
 <script>
     window.addEventListener("DOMContentLoaded", () => {
-        const buttons = document.querySelectorAll(".riko-button");
-        const menu = document.getElementById("riko-menu")!;
-        const rikoButtonOpen = document.getElementById("riko-button-open")!;
+        document.getElementById("button")!.addEventListener("click", function () {
+            for (const icon of this.children) {
+                icon.classList.toggle("hidden");
+            }
 
-        buttons.forEach((btn) => {
-            const button = btn as HTMLElement;
+            document.querySelector("nav")!.classList.toggle("mobile-menu-open");
+            document.getElementById("links")!.classList.toggle("mobile-menu-open");
 
-            button.addEventListener("click", () => {
-                if (window.getComputedStyle(menu).display === "none") {
-                    menu.style.display = "flex";
-
-                    document.body.style.overflow = "hidden";
-                    document.documentElement.style.overflow = "hidden";
-
-                    rikoButtonOpen.style.display = "none";
-                } else {
-                    rikoButtonOpen.style.display = "unset";
-                    menu.style.display = "none";
-
-                    document.body.style.overflow = "unset";
-                    document.documentElement.style.overflow = "unset";
-
-                    document.body.style.overflowX = "hidden";
-                    document.documentElement.style.overflowX = "hidden";
-                }
-            });
+            document.body.classList.toggle("overflow-hidden");
+            document.documentElement.classList.toggle("overflow-hidden");
         });
     });
 </script>
 
 <nav style={style}>
-    <div class="ghost mobile">
-        <button id="riko-button-open" class="riko-button">
-            <img alt="hamburger" src={hamburger.src} />
-        </button>
+    <button id="button" class="mobile">
+        <img alt="hamburger" src={hamburger.src} />
+        <img alt="x" class="hidden" src={x.src} />
+    </button>
 
-        <a class="logo" href="/gentsandginger/">
-            <img alt="" src={logo.src} />
-        </a>
-
-        <div id="riko-menu" class="hidden">
-            <div class="riko-menu-menu">
-                <button class="riko-button">
-                    <img alt="x" src={x.src} />
-                </button>
-
-                <a class="logo" href="/gentsandginger/">
-                    <img alt="" src={logo.src} />
-                </a>
-            </div>
-
-            <div class="riko-menu-links">
-                <a href="/gentsandginger/events/">Events</a>
-                <a href="/gentsandginger/merchandise/">Merchandise</a>
-                <a href="/gentsandginger/about/">About</a>
-                <a href="/gentsandginger/contact/">Contact</a>
-            </div>
-        </div>
+    <div id="links">
+        <a href="/gentsandginger/events/">Events</a>
+        <a href="/gentsandginger/merchandise/">Merchandise</a>
+        <a href="/gentsandginger/about/">About</a>
+        <a href="/gentsandginger/contact/">Contact</a>
     </div>
 
-    <div class="ghost desktop">
-        <div class="links">
-            <a href="/gentsandginger/events/">Events</a>
-            <a href="/gentsandginger/merchandise/">Merchandise</a>
-            <a href="/gentsandginger/about/">About</a>
-            <a href="/gentsandginger/contact/">Contact</a>
-        </div>
+    <a id="logo" href="/gentsandginger/">
+        <img alt="" src={logo.src} />
+    </a>
 
-        <a class="logo" href="/gentsandginger/">
-            <img alt="" src={logo.src} />
+    <div id="social-media" class="desktop">
+        <a href="https://www.instagram.com/gentsandginger/" aria-label="Instagram" target="_blank">
+            <Instagram class="icon" />
         </a>
 
-        <div class="social-links">
-            <a href="https://www.instagram.com/gentsandginger/" aria-label="Instagram" target="_blank">
-                <Instagram class="icon" />
-            </a>
+        <a href="https://www.youtube.com/@gentsginger5174" aria-label="YouTube" target="_blank">
+            <YouTube class="icon" />
+        </a>
 
-            <a href="https://www.youtube.com/@gentsginger5174" aria-label="YouTube" target="_blank">
-                <YouTube class="icon" />
-            </a>
+        <a href="https://open.spotify.com/artist/7jIpsmRlZWQbKMjbxVeJ5M?si=0scp_nZNS2KHEGRTYOtZmw" aria-label="Spotify" target="_blank">
+            <Spotify class="icon" />
+        </a>
 
-            <a href="https://open.spotify.com/artist/7jIpsmRlZWQbKMjbxVeJ5M?si=0scp_nZNS2KHEGRTYOtZmw" aria-label="Spotify" target="_blank">
-                <Spotify class="icon" />
-            </a>
-
-            <a href="https://music.apple.com/gb/artist/gents-ginger/1765128507" aria-label="Apple Music" target="_blank">
-                <AppleMusic class="icon" />
-            </a>
-        </div>
+        <a href="https://music.apple.com/gb/artist/gents-ginger/1765128507" aria-label="Apple Music" target="_blank">
+            <AppleMusic class="icon" />
+        </a>
     </div>
 </nav>
 
@@ -116,155 +74,110 @@ const { style } = Astro.props;
     @use "~styles/color";
     @use "~styles/adam";
 
-    // universal styling
-    .logo > img {
-        max-height: 75px;
-        max-width: 100%;
-    }
-
     nav {
         @include adam.navigation;
+
+        @include fonts.reeniebeanie;
+        font-size: 2rem;
+
+        padding: 1rem 2rem;
+        box-sizing: border-box;
     }
 
-    // desktop styling
+    a {
+        color: color.$orange;
+        text-decoration: none;
+    }
+
+    #button {
+        @include mia.resetButton;
+        color: color.$orange;
+
+        img {
+            height: 2rem;
+            width: 2rem;
+        }
+    }
+
+    #logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+
+        img {
+            max-height: 75px;
+            max-width: 100%;
+        }
+    }
+
+    .icon {
+        fill: color.$orange;
+    }
+
     @media (min-width: riko.$desktop) {
-        nav > .desktop {
+        nav {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            width: 100%;
-            // display: flex;
-            // justify-content: space-between;
-            // align-items: center;
-            // display: flex;
-            // justify-content: center;
-            // align-items: center;
-            // gap: 2rem;
-
-            padding: 1rem 2rem;
-            box-sizing: border-box;
-
-            @include fonts.reeniebeanie;
-            font-size: 2rem;
         }
 
-        a {
-            // display: block;
-            color: color.$orange;
-            text-decoration: none;
-        }
-
-        .desktop > div {
+        nav > div {
             display: flex;
             align-items: center;
             gap: 1rem;
-            // align-content: center;
         }
 
-        .links {
+        #links {
             justify-content: start;
         }
 
-        .logo {
-            display: flex;
-            justify-content: center;
-        }
-
-        .social-links {
+        #social-media {
             justify-content: end;
-        }
-
-        .icon {
-            fill: color.$orange;
-            // width: 24px;
-            // height: 24px;
         }
     }
 
-    // mobile styling
     @media (max-width: riko.$mobile) {
-        nav > .mobile {
+        nav {
             display: grid;
-            grid-template-columns: 1fr auto 1fr;
-            align-items: center;
-            gap: 2rem;
-
-            padding: 1rem;
-            box-sizing: border-box;
-
-            :nth-child(1) {
-                grid-column: 1;
-                justify-self: start;
-            }
-
-            :nth-child(2) {
-                grid-column: 2;
-                justify-self: center;
-            }
+            grid-template-areas:
+                "button logo"
+                "links links";
+            grid-template-columns: auto 1fr;
+            grid-tempalte-rows: auto 1fr;
         }
 
-        .riko-button {
-            @include mia.resetButton;
-            color: color.$orange;
-
-            img {
-                height: 2rem;
-                width: 2rem;
-            }
+        #button {
+            grid-area: button;
         }
 
-        #riko-menu {
+        #logo {
+            grid-area: logo;
+        }
+
+        #links {
+            grid-area: links;
+        }
+
+        nav.mobile-menu-open {
+            display: grid;
+            grid-template-rows: auto 1fr;
             height: 100svh;
-            display: none;
-            position: fixed;
-            inset: 0;
-
             background-color: color.$eggshell;
 
-            flex-direction: column;
-
-            a {
-                color: color.$orange;
-                text-decoration: none;
-            }
-
-            .riko-menu-menu {
-                display: grid;
-                grid-template-columns: 1fr auto 1fr;
-                align-items: center;
-                gap: 2rem;
-
-                padding: 1rem;
-                box-sizing: border-box;
-
-                > button {
-                    grid-column: 1;
-                    justify-self: start;
-
-                    @include mia.resetButton;
-                    color: color.$orange;
-
-                    img {
-                        height: 2rem;
-                        width: 2rem;
-                    }
-                }
-
-                > a {
-                    grid-column: 2;
-                    justify-self: center;
-                }
-            }
+            padding-bottom: calc(2rem + 75px);
         }
 
-        .riko-menu-links {
+        #links.mobile-menu-open {
             display: flex;
-            flex: 1;
             flex-direction: column;
-            justify-content: center;
+            gap: 1rem;
             align-items: center;
-            gap: 2rem;
-            @include fonts.reeniebeanie;
-            font-size: 2rem;
+            justify-content: center;
+            height: 100%;
+        }
+
+        #links {
+            display: none;
         }
     }
 </style>
