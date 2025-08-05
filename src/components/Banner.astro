@@ -2,14 +2,18 @@
 interface Props {
     image: ImageMetadata;
     text: string;
+    height?: string;
+    width?: string;
 }
 
-const { image, text } = Astro.props;
+const { image, text, height = "100%", width = "100%" } = Astro.props;
+
+const style = `height: ${height}; width: ${width};`;
 ---
 
 <div class="banner">
     <div class="text">{text}</div>
-    <img class="image" src={image.src} />
+    <img class="image" src={image.src} alt="" style={style} />
 </div>
 
 <style lang="scss">
@@ -21,10 +25,8 @@ const { image, text } = Astro.props;
         position: relative;
 
         .image {
-            height: 75svh;
-            width: 100%;
-            object-fit: cover;
             filter: grayscale(100%);
+            object-fit: cover;
         }
 
         .text {

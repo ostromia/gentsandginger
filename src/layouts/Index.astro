@@ -3,8 +3,10 @@ import Head from "~components/Head.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
 import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
 
+import bannerimage from "~assets/banner/events.jpg";
+import Banner from "~components/Banner.astro";
+
 import Navigation from "~components/Navigation.astro";
-import BannerIndex from "~components/BannerIndex.astro";
 import Footer from "~components/Footer.astro";
 
 import "~styles/global.scss";
@@ -17,7 +19,8 @@ import "~styles/global.scss";
     <body>
         <header>
             <Navigation style="position: absolute; width: 100%;" />
-            <BannerIndex />
+
+            <Banner image={bannerimage} text={""} height="100svh" width="100%" />
         </header>
 
         <main>
