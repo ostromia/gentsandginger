@@ -1,19 +1,24 @@
 ---
+import { Image } from "astro:assets";
+
 interface Props {
     image: ImageMetadata;
     text: string;
     height?: string;
     width?: string;
+    resolution?: string;
 }
 
-const { image, text, height = "100%", width = "100%" } = Astro.props;
+const { image, height = "100%", width = "100%" } = Astro.props;
 
 const style = `height: ${height}; width: ${width};`;
 ---
 
 <div class="banner">
-    <div class="text">{text}</div>
-    <img class="image" src={image.src} alt="" style={style} />
+    <Image alt="" src={image} class="image" layout="constrained" height="1080" width="1920" style={style} />
+    <div class="text">
+        <slot />
+    </div>
 </div>
 
 <style lang="scss">
@@ -25,7 +30,6 @@ const style = `height: ${height}; width: ${width};`;
         position: relative;
 
         .image {
-            filter: grayscale(100%);
             object-fit: cover;
         }
 
