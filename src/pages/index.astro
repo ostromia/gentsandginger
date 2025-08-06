@@ -3,8 +3,9 @@ import Head from "~components/Head.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
 import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
 
-import bannerimage from "~assets/banner/truckfestival0001.png";
 import Banner from "~components/Banner.astro";
+import bannerdesktop from "~assets/banner/truckfestival0001.png";
+import bannermobile from "~assets/banner/truckfestival0002.png";
 
 import Navigation from "~components/Navigation.astro";
 import Footer from "~components/Footer.astro";
@@ -25,10 +26,11 @@ import "~styles/global.scss";
     <body>
         <header>
             <Navigation style="position: absolute; width: 100%;" />
-            <Banner desktop={bannerimage} mobile={bannerimage} />
+            <!-- <img style="width: 100%; height: 100svh; object-fit: cover; object-position: 80% center;" src={bannermobile.src} /> -->
+            <Banner desktop={bannerdesktop} mobile={bannermobile} />
         </header>
 
-        <main>
+        <!-- <main>
             <section>
                 <h1>Events</h1>
 
@@ -65,7 +67,7 @@ import "~styles/global.scss";
                     />
                 </section>
             </div>
-        </main>
+        </main> -->
 
         <Footer />
     </body>
