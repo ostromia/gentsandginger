@@ -1,9 +1,17 @@
 ---
-import Page from "~layouts/Page.astro";
+import Head from "~components/Head.astro";
+import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
 
+import Navigation from "~components/Navigation.astro";
+
+import Banner from "~components/Banner.astro";
 import banner from "~assets/banner/about.jpg";
 
 import { Content as Content } from "~content/about.mdx";
+
+import Footer from "~components/Footer.astro";
+
+import "~styles/global.scss";
 import "~styles/markdown.scss";
 
 const title = "About | Gents & Ginger";
@@ -11,8 +19,33 @@ const description =
     "Hailing from the heart of the historic city of York, dynamic funk band Gents & Ginger bring the vibrant spirits of their world straight to your eardrums.";
 ---
 
-<Page title={title} description={description} banner={banner}>
-    <article>
-        <Content />
-    </article>
-</Page>
+<html lang="en">
+    <head>
+        <Head title={title} description={description} image={IMG_048A5038_1200x630} />
+    </head>
+
+    <body>
+        <header>
+            <Navigation />
+            <Banner image={banner}>
+                <div style="text-transform: capitalize; text-shadow: 1px 1px 1px black;">
+                    {Astro.url.pathname.split("/").filter(Boolean).pop()?.replace("-", " ")}
+                </div>
+            </Banner>
+        </header>
+
+        <main>
+            <article>
+                <Content />
+            </article>
+        </main>
+
+        <Footer />
+    </body>
+</html>
+
+<style>
+    header {
+        height: 75svh;
+    }
+</style>
