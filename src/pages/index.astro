@@ -1,61 +1,75 @@
 ---
-import Layout from "~layouts/Index.astro";
+import Head from "~components/Head.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "~src/consts";
+import IMG_048A5038_1200x630 from "~assets/IMG_048A5038_1200x630.jpg";
+
+import bannerimage from "~assets/banner/truckfestival0001.png";
+import Banner from "~components/Banner.astro";
+
+import Navigation from "~components/Navigation.astro";
+import Footer from "~components/Footer.astro";
 
 import Events from "~components/Events.astro";
 import GithermentsInGroove from "~components/GithermentsInGroove.astro";
 import Merchandise from "~src/components/Merchandise.astro";
 import YouTube from "~components/YouTube.astro";
 
-import drumkit from "~assets/icons/drumkit.svg";
-import saxophone from "~assets/icons/saxophone.svg";
+import "~styles/global.scss";
 ---
 
-<Layout>
-    <section>
-        <h1>Events</h1>
+<html lang="en">
+    <head>
+        <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
+    </head>
 
-        <Events number={3} />
+    <body>
+        <header>
+            <Navigation style="position: absolute; width: 100%;" />
+            <Banner image={bannerimage} height="100svh" width="100%" />
+        </header>
 
-        <a class="button" href="/gentsandginger/events/">View All Events</a>
-    </section>
+        <main>
+            <section>
+                <h1>Events</h1>
 
-    <div class="section-wrapper">
-        <section>
-            <h1>Githerments In Groove</h1>
+                <Events number={3} />
 
-            <GithermentsInGroove />
-        </section>
+                <a class="button" href="/gentsandginger/events/">View All Events</a>
+            </section>
 
-        <div class="instrument drumkit">
-            <img alt="" src={drumkit.src} />
-        </div>
-    </div>
+            <div class="section-wrapper">
+                <section>
+                    <h1>Githerments In Groove</h1>
 
-    <section>
-        <h1>Merchandise</h1>
+                    <GithermentsInGroove />
+                </section>
+            </div>
 
-        <Merchandise />
+            <section>
+                <h1>Merchandise</h1>
 
-        <a class="button" href="/gentsandginger/merchandise/">View All Merchandise</a>
-    </section>
+                <Merchandise />
 
-    <div class="section-wrapper">
-        <section>
-            <h1>Those Were The Days</h1>
+                <a class="button" href="/gentsandginger/merchandise/">View All Merchandise</a>
+            </section>
 
-            <YouTube
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                loading="lazy"
-                name="YouTube video player"
-                src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
-            />
-        </section>
+            <div class="section-wrapper">
+                <section>
+                    <h1>Those Were The Days</h1>
 
-        <div class="instrument saxophone">
-            <img alt="" src={saxophone.src} />
-        </div>
-    </div>
-</Layout>
+                    <YouTube
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        loading="lazy"
+                        name="YouTube video player"
+                        src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
+                    />
+                </section>
+            </div>
+        </main>
+
+        <Footer />
+    </body>
+</html>
 
 <style lang="scss">
     @use "~styles/global";
@@ -65,9 +79,9 @@ import saxophone from "~assets/icons/saxophone.svg";
     @use "~styles/button";
     @use "~styles/adam";
 
-    html,
-    body {
-        overflow-x: hidden;
+    main {
+        gap: 5rem;
+        overflow-wrap: break-word;
     }
 
     .section-wrapper {
