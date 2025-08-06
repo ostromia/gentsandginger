@@ -12,11 +12,10 @@ interface Props {
     title: string;
     description: string;
     metaimage?: ImageMetadata;
-    bannerimage: ImageMetadata;
-    bannertext: string;
+    banner?: ImageMetadata;
 }
 
-const { title, description, metaimage = IMG_048A5038_1200x630, bannerimage, bannertext } = Astro.props;
+const { title, description, metaimage = IMG_048A5038_1200x630, banner } = Astro.props;
 ---
 
 <html lang="en">
@@ -26,9 +25,9 @@ const { title, description, metaimage = IMG_048A5038_1200x630, bannerimage, bann
 
     <body>
         <header>
-            <Navigation style="position: absolute; width: 100%;" />
-            <Banner image={bannerimage}>
-                <div style="text-transform: capitalize;">
+            <Navigation />
+            <Banner image={banner}>
+                <div style="text-transform: capitalize; text-shadow: 1px 1px 1px black;">
                     {Astro.url.pathname.split("/").filter(Boolean).pop()?.replace("-", " ")}
                 </div>
             </Banner>
