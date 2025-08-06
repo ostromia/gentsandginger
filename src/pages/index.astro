@@ -25,7 +25,7 @@ import "~styles/global.scss";
     <body>
         <header>
             <Navigation style="position: absolute; width: 100%;" />
-            <Banner image={bannerimage} height="100svh" width="100%" />
+            <Banner desktop={bannerimage} mobile={bannerimage} />
         </header>
 
         <main>
@@ -78,6 +78,10 @@ import "~styles/global.scss";
     @use "~styles/h1";
     @use "~styles/button";
     @use "~styles/adam";
+
+    header {
+        height: 100svh;
+    }
 
     main {
         gap: 5rem;

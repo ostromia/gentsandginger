@@ -2,20 +2,20 @@
 import { Image } from "astro:assets";
 
 interface Props {
-    image: ImageMetadata;
-    height?: string;
-    width?: string;
-    resolution?: string;
+    image?: ImageMetadata;
+    desktop?: ImageMetadata;
+    mobile?: ImageMetadata;
 }
 
-const { image, height = "100%", width = "100%" } = Astro.props;
-
-const style = `height: ${height}; width: ${width};`;
+const { image, desktop, mobile } = Astro.props;
 ---
 
 <div class="banner">
-    <Image alt="" src={image} class="image" layout="constrained" height="1080" width="1920" style={style} />
-    <div class="text">
+    {desktop && <Image alt="" src={desktop} class="image desktop" layout="constrained" height="1080" width="1920" />}
+    {mobile && <Image alt="" src={mobile} class="image mobile" layout="constrained" height="1080" width="1920" />}
+    {image && <Image alt="" src={image} class="image" layout="constrained" height="1080" width="1920" />}
+
+    <div class="content">
         <slot />
     </div>
 </div>
@@ -25,14 +25,22 @@ const style = `height: ${height}; width: ${width};`;
     @use "~styles/color";
     @use "~styles/adam";
 
+    @use "~styles/riko";
+
     .banner {
         position: relative;
+        height: 100%;
+        width: 100%;
 
         .image {
+            height: 100%;
+            width: 100%;
             object-fit: cover;
+            position: absolute;
+            inset: 0;
         }
 
-        .text {
+        .content {
             @include adam.base;
             position: absolute;
             inset: 0;
