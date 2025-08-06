@@ -13,13 +13,11 @@ const { image, desktop, mobile } = Astro.props;
 <div class="banner">
     {desktop && <Image alt="" src={desktop} class="image desktop" layout="constrained" height="1080" width="1920" />}
     {mobile && <Image alt="" src={mobile} class="image mobile" layout="constrained" height="1920" width="1080" style="object-position: right;" />}
-
-    <!-- {mobile && <img style="width: 100%; height: 100svh; object-fit: cover; object-position: 80% center;" src={mobile.src} />} -->
     {image && <Image alt="" src={image} class="image" layout="constrained" height="1080" width="1920" />}
 
-    <!-- <div class="content">
+    <div class="content">
         <slot />
-    </div> -->
+    </div>
 </div>
 
 <style lang="scss">
@@ -30,41 +28,30 @@ const { image, desktop, mobile } = Astro.props;
     @use "~styles/riko";
 
     .banner {
-        height: 100svh;
+        position: relative;
+        height: 100%;
         width: 100%;
+
+        .image {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
+        }
+
+        .content {
+            @include adam.base;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: max-content;
+            height: max-content;
+
+            @include fonts.reeniebeanie;
+            font-size: 4rem;
+
+            color: color.$orange;
+        }
     }
-
-    .image {
-        height: 100svh;
-        width: 100%;
-        object-fit: cover;
-    }
-
-    // .banner {
-    //     position: relative;
-    //     height: 100%;
-    //     width: 100%;
-
-    //     .image {
-    //         height: 100%;
-    //         width: 100%;
-    //         object-fit: cover;
-    //         position: absolute;
-    //         inset: 0;
-    //     }
-
-    //     .content {
-    //         @include adam.base;
-    //         position: absolute;
-    //         inset: 0;
-    //         margin: auto;
-    //         width: max-content;
-    //         height: max-content;
-
-    //         @include fonts.reeniebeanie;
-    //         font-size: 4rem;
-
-    //         color: color.$orange;
-    //     }
-    // }
 </style>
