@@ -12,12 +12,16 @@ const { number = events.length } = Astro.props;
     {
         events.slice(0, number).map((event) => (
             <div class={event.date[0] > new Date() ? "event" : "event inactive"}>
-                <a class="image" href={event.url} aria-label={event.title}>
+                {/* <a class="image" href={event.url} aria-label={event.title}>
                     <img alt="" src={event.image} />
-                </a>
+                </a> */}
+
+                <div class="date">
+                    <div class="day">{event.day}</div>
+                    <div class="month">{event.month}</div>
+                </div>
 
                 <a class="text" href={event.url}>
-                    <div class="date">{event.dateFormatted}</div>
                     <div class="title">{event.title}</div>
                     <div class="location">{event.location}</div>
                 </a>
@@ -39,6 +43,8 @@ const { number = events.length } = Astro.props;
 <style lang="scss">
     @use "~styles/button";
     @use "~styles/color";
+    @use "~styles/fonts";
+    @use "~styles/riko";
 
     .wrapper {
         display: flex;
@@ -49,27 +55,25 @@ const { number = events.length } = Astro.props;
 
     .event {
         display: flex;
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
-    .image {
-        width: 25%;
-        aspect-ratio: 16 / 10;
-        min-height: 100px;
-        min-width: 160px;
-        border-radius: 0.25rem;
-        overflow: hidden;
+    .date {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+        width: 50px;
+
+        @include fonts.reeniebeanie;
+
+        .day {
+            font-size: 2rem;
         }
 
-        @media (max-width: 250px) {
-            min-height: unset;
-            min-width: unset;
+        .month {
+            font-size: 1.5rem;
         }
     }
 
@@ -93,14 +97,7 @@ const { number = events.length } = Astro.props;
         }
 
         .title {
-            color: color.$black;
-            text-decoration: none;
-            font-size: 1.75rem;
-        }
-
-        .location,
-        .date {
-            font-size: 1.25rem;
+            text-decoration: underline !important;
         }
     }
 
@@ -108,50 +105,9 @@ const { number = events.length } = Astro.props;
         width: 97px;
     }
 
-    @media (max-width: 800px) {
-        .text {
-            .title {
-                font-size: 1.25rem;
-            }
-
-            .location,
-            .date {
-                font-size: 1rem;
-            }
-        }
-    }
-
-    @media (max-width: 700px) {
-        .text {
-            .title {
-                font-size: 1.25rem;
-            }
-
-            .location,
-            .date {
-                font-size: 1rem;
-            }
-        }
-    }
-
-    @media (max-width: 500px) {
+    @media (max-width: riko.$mobile) {
         .button {
             display: none;
-        }
-
-        .text {
-            .title {
-                font-size: 1.125rem;
-            }
-
-            .location,
-            .date {
-                font-size: 1rem;
-            }
-        }
-
-        .event {
-            gap: 0.5rem;
         }
     }
 </style>
