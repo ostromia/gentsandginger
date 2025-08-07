@@ -1,10 +1,10 @@
 ---
-import facebook from "~assets/icons/facebook.svg";
-import instagram from "~assets/icons/instagram.svg";
-import tiktok from "~assets/icons/tiktok.svg";
-import youtube from "~assets/icons/youtube.svg";
-import spotify from "~assets/icons/spotify.svg";
-import applemusic from "~assets/icons/applemusic.svg";
+import { default as Facebook } from "~assets/icons/facebook.svg";
+import { default as Instagram } from "~assets/icons/instagram.svg";
+import { default as Tiktok } from "~assets/icons/tiktok.svg";
+import { default as YouTube } from "~assets/icons/youtube.svg";
+import { default as Spotify } from "~assets/icons/spotify.svg";
+import { default as AppleMusic } from "~assets/icons/applemusic.svg";
 ---
 
 <div style="height: 5rem; width: 100%;"></div>
@@ -12,29 +12,29 @@ import applemusic from "~assets/icons/applemusic.svg";
 <footer>
     <div class="title">Gents & Ginger</div>
 
-    <div class="social-links">
-        <a href="https://www.facebook.com/gentsandginger" aria-label="Instagram" target="_blank">
-            <img alt="" src={facebook.src} />
+    <div class="social-media-icons">
+        <a href="https://www.facebook.com/gentsandginger" aria-label="Instagram">
+            <Facebook class="icon" />
         </a>
 
-        <a href="https://www.instagram.com/gentsandginger/" aria-label="Instagram" target="_blank">
-            <img alt="" src={instagram.src} />
+        <a href="https://www.instagram.com/gentsandginger/" aria-label="Instagram">
+            <Instagram class="icon" />
         </a>
 
-        <a href="https://www.tiktok.com/@gentsandginger" aria-label="Instagram" target="_blank">
-            <img alt="" src={tiktok.src} />
+        <a href="https://www.tiktok.com/@gentsandginger" aria-label="Instagram">
+            <Tiktok class="icon" />
         </a>
 
-        <a href="https://www.youtube.com/@gentsginger5174" aria-label="YouTube" target="_blank">
-            <img alt="" src={youtube.src} />
+        <a href="https://www.youtube.com/@gentsginger5174" aria-label="YouTube">
+            <YouTube class="icon" />
         </a>
 
-        <a href="https://open.spotify.com/artist/7jIpsmRlZWQbKMjbxVeJ5M?si=0scp_nZNS2KHEGRTYOtZmw" aria-label="Spotify" target="_blank">
-            <img alt="" src={spotify.src} />
+        <a href="https://open.spotify.com/artist/7jIpsmRlZWQbKMjbxVeJ5M?si=0scp_nZNS2KHEGRTYOtZmw" aria-label="Spotify">
+            <Spotify class="icon" />
         </a>
 
-        <a href="https://music.apple.com/gb/artist/gents-ginger/1765128507" aria-label="Apple Music" target="_blank">
-            <img alt="" src={applemusic.src} />
+        <a href="https://music.apple.com/gb/artist/gents-ginger/1765128507" aria-label="Apple Music">
+            <AppleMusic class="icon" />
         </a>
     </div>
 
@@ -70,7 +70,7 @@ import applemusic from "~assets/icons/applemusic.svg";
         background-color: rgba(213, 125, 24, 0.125);
     }
 
-    .social-links {
+    .social-media-icons {
         display: flex;
         justify-content: center;
         gap: 1em;
