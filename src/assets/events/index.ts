@@ -14,26 +14,67 @@ const data = [
     },
 
     {
-        title: "Luma Film Festival",
-        // date: ["2025.06.09", "2025.06.11"],
-        date: ["2025.06.09"],
-        image: lumafilmtvfestival.src,
-        url: "https://www.lumafilmfestival.co.uk",
-        location: "The School of Art, York"
+        title: "Truckfestival 2025",
+        date: ["2025.06.24"],
+        image: truckfestival.src,
+        url: "https://truckfestival.com/line-up/",
+        location: "Hill Farm, Oxfordshire"
     },
 
     {
-        title: "Gents & Ginger Reunion",
-        date: ["2025.06.08"],
-        url: "https://www.thefulfordarms.com/event/gents-ginger/",
-        location: "The Fulford Arms, York"
+        title: "Truckfestival 2025",
+        date: ["2025.06.24"],
+        image: truckfestival.src,
+        url: "https://truckfestival.com/line-up/",
+        location: "Hill Farm, Oxfordshire"
     },
 
     {
-        title: "Elephunk in the Room: Gents & Ginger + The Palpitations",
-        date: ["2024.08.02"],
-        url: "https://bandonthewall.org/events/elephunk-in-the-room-gents-and-gingers-the-palpitations/",
-        location: "Band on the Wall, Manchester"
+        title: "Truckfestival 2025",
+        date: ["2025.06.24"],
+        image: truckfestival.src,
+        url: "https://truckfestival.com/line-up/",
+        location: "Hill Farm, Oxfordshire"
+    },
+
+    {
+        title: "Truckfestival 2025",
+        date: ["2025.06.24"],
+        image: truckfestival.src,
+        url: "https://truckfestival.com/line-up/",
+        location: "Hill Farm, Oxfordshire"
+    },
+
+    {
+        title: "Truckfestival 2025",
+        date: ["2025.06.24"],
+        image: truckfestival.src,
+        url: "https://truckfestival.com/line-up/",
+        location: "Hill Farm, Oxfordshire"
+    },
+
+    {
+        title: "Truckfestival 2025",
+        date: ["2025.06.24"],
+        image: truckfestival.src,
+        url: "https://truckfestival.com/line-up/",
+        location: "Hill Farm, Oxfordshire"
+    },
+
+    {
+        title: "Truckfestival 2025",
+        date: ["2025.06.24"],
+        image: truckfestival.src,
+        url: "https://truckfestival.com/line-up/",
+        location: "Hill Farm, Oxfordshire"
+    },
+
+    {
+        title: "Truckfestival 2025",
+        date: ["2025.06.24"],
+        image: truckfestival.src,
+        url: "https://truckfestival.com/line-up/",
+        location: "Hill Farm, Oxfordshire"
     }
 ];
 
