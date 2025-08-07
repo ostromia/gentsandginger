@@ -1,7 +1,7 @@
 ---
 import Page from "~layouts/Page.astro";
 
-import banner from "~assets/banner/contact.jpg";
+import banner from "~assets/banner/contact.png";
 
 import { Content as Content } from "~content/contact.mdx";
 import "~styles/markdown.scss";
@@ -10,8 +10,8 @@ const title = "Contact | Gents & Ginger";
 const description = "Get in touch with us for bookings, collaborations, or general inquiries.";
 ---
 
-<!-- <Page title={title} description={description} bannerimage={banner} bannertext="Contact">
+<Page title={title} description={description} banner={banner}>
     <article>
         <Content />
     </article>
-</Page> -->
+</Page>
