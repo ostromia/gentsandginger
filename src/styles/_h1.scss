@@ -9,11 +9,11 @@ h5,
 h6 {
     margin: 0;
     font-weight: normal;
+    @include fonts.reeniebeanie;
 }
 
 h1 {
     color: color.$black;
-    @include fonts.reeniebeanie;
     font-size: 4rem;
 
     @media (max-width: 700px) {
@@ -27,4 +27,8 @@ h1 {
     @media (max-width: 500px) {
         font-size: 2.5rem;
     }
+}
+
+h2 {
+    font-size: 2.5rem;
 }
