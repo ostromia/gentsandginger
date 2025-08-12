@@ -3,14 +3,14 @@ import Page from "~layouts/Page.astro";
 
 import banner from "~assets/banner/events.jpg";
 
-import Events from "~components/Events.astro";
+import Live from "~components/live.astro";
 
 const title = "Events | Gents & Ginger";
 const description = "View tour dates and tickets for Gents & Ginger.";
 ---
 
 <Page title={title} description={description} banner={banner}>
-    <Events />
+    <Live />
 </Page>
 <style lang="scss">
     @use "~styles/h1";
