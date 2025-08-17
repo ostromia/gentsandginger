@@ -1,4 +1,12 @@
-<h1>
+---
+interface Props {
+    size?: string;
+}
+
+const { size } = Astro.props;
+---
+
+<h1 class={size}>
     <slot />
 </h1>
 
@@ -13,7 +21,9 @@
         font-weight: normal;
         color: color.$orange;
         text-transform: capitalize;
+    }
 
+    .dynamic {
         @media (max-width: 700px) {
             font-size: 3.5rem;
         }
