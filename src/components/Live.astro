@@ -19,6 +19,7 @@ const { number = events.length } = Astro.props;
                 <div class="date">
                     <div class="day">{event.day}</div>
                     <div class="month">{event.month}</div>
+                    <div class="month">{event.year}</div>
                 </div>
 
                 <a class="text" href={event.url}>
@@ -64,7 +65,7 @@ const { number = events.length } = Astro.props;
         justify-content: center;
         align-items: center;
 
-        width: 50px;
+        width: 100px;
 
         @include fonts.reeniebeanie;
 
