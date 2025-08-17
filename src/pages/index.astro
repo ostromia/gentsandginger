@@ -10,6 +10,8 @@ import bannermobile from "~assets/banner/truckfestival0002.png";
 import Navigation from "~components/Navigation.astro";
 import Footer from "~components/Footer.astro";
 
+import H1 from "~components/H1.astro";
+
 import Live from "~components/live.astro";
 import GithermentsInGroove from "~components/GithermentsInGroove.astro";
 import Store from "~src/components/store.astro";
@@ -31,36 +33,32 @@ import "~styles/global.scss";
 
         <main>
             <section>
-                <h1>Live</h1>
+                <H1>Live</H1>
 
                 <Live number={3} />
 
                 <a class="button" href="/gentsandginger/live/">View All Events</a>
             </section>
 
-            <div class="section-wrapper">
-                <section>
-                    <h1>Githerments In Groove</h1>
+            <section>
+                <H1>Githerments In Groove</H1>
 
-                    <GithermentsInGroove />
-                </section>
-            </div>
-
-            <div class="section-wrapper">
-                <section>
-                    <h1>Those Were The Days</h1>
-
-                    <YouTube
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        loading="lazy"
-                        name="YouTube video player"
-                        src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
-                    />
-                </section>
-            </div>
+                <GithermentsInGroove />
+            </section>
 
             <section>
-                <h1>Store</h1>
+                <H1>Those Were The Days</H1>
+
+                <YouTube
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    loading="lazy"
+                    name="YouTube video player"
+                    src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
+                />
+            </section>
+
+            <section>
+                <H1>Store</H1>
 
                 <Store number={4} />
 
@@ -73,12 +71,7 @@ import "~styles/global.scss";
 </html>
 
 <style lang="scss">
-    @use "~styles/global";
-    @use "~styles/fonts";
-    @use "~styles/riko";
-    @use "~styles/h1";
     @use "~styles/button";
-    @use "~styles/adam";
 
     header {
         height: 100svh;
@@ -91,44 +84,10 @@ import "~styles/global.scss";
         box-sizing: border-box;
     }
 
-    .section-wrapper {
-        position: relative;
-    }
-
     section {
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 1rem;
-        @include adam.base;
-    }
-
-    .instrument {
-        width: 100%;
-        max-width: 1000px;
-        position: absolute;
-        pointer-events: none;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .drumkit {
-        top: -20svh;
-
-        img {
-            transform: scaleX(-1);
-        }
-    }
-
-    @media (max-width: riko.$mobile) {
-        .drumkit {
-            top: -15svh;
-        }
-    }
-
-    .saxophone {
-        top: -10svh;
     }
 </style>
