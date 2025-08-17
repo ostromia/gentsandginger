@@ -17,20 +17,20 @@ const { size } = Astro.props;
     h1 {
         margin: 0;
         @include fonts.swankyandmoomoo;
-        font-size: 4rem;
+        font-size: 3rem;
         font-weight: normal;
         color: color.$orange;
         text-transform: capitalize;
     }
 
     .dynamic {
-        @media (max-width: 700px) {
-            font-size: 3.5rem;
-        }
+        // @media (max-width: 700px) {
+        //     font-size: 3.5rem;
+        // }
 
-        @media (max-width: 600px) {
-            font-size: 3rem;
-        }
+        // @media (max-width: 600px) {
+        //     font-size: 3rem;
+        // }
 
         @media (max-width: 500px) {
             font-size: 2.5rem;
