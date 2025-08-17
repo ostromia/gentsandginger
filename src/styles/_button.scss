@@ -16,7 +16,7 @@
 }
 
 .button.inactive {
-    background-color: color.$grey;
     pointer-events: none;
     cursor: default;
+    opacity: 0.5;
 }

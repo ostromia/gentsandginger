@@ -25,7 +25,7 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
                     <div class="price">{gbp.format(e.price)}</div>
                 </div>
 
-                <button disabled class="button">
+                <button disabled class="button inactive">
                     Sold Out
                 </button>
             </div>
@@ -83,5 +83,13 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
         font-size: 1rem;
         margin-top: auto;
         border-radius: 3px;
+        background-color: black;
+        color: white;
+    }
+
+    .button.inactive {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.5;
     }
 </style>
