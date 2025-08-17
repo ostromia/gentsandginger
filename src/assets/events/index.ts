@@ -1,80 +1,156 @@
-import thefulfordarms from "./thefulfordarms.jpg";
-import truckfestival from "./truckfestival.jpeg";
-import bandonthewall from "./bandonthewall.jpg";
-import lumafilmtvfestival from "./lumafilmtvfestival.jpg";
-
 const data = [
     {
         title: "Truckfestival 2025",
-        // date: ["2025.06.24", "2025.06.27"],
         date: ["2025.06.24"],
-        image: truckfestival.src,
         url: "https://truckfestival.com/line-up/",
         location: "Hill Farm, Oxfordshire"
     },
 
     {
-        title: "Truckfestival 2025",
-        date: ["2025.06.24"],
-        image: truckfestival.src,
-        url: "https://truckfestival.com/line-up/",
-        location: "Hill Farm, Oxfordshire"
+        title: "Gents & Ginger Reunion",
+        date: ["2025.06.08"],
+        url: "https://www.thefulfordarms.com/event/gents-ginger/",
+        location: "The Fulford Arms, York"
     },
 
     {
-        title: "Truckfestival 2025",
-        date: ["2025.06.24"],
-        image: truckfestival.src,
-        url: "https://truckfestival.com/line-up/",
-        location: "Hill Farm, Oxfordshire"
+        title: "Elephunk in the Room: Gents & Ginger + The Palpitations",
+        date: ["2024.08.02"],
+        url: "https://bandonthewall.org/events/elephunk-in-the-room-gents-and-gingers-the-palpitations/",
+        location: "Band on the Wall, Manchester"
     },
 
     {
-        title: "Truckfestival 2025",
-        date: ["2025.06.24"],
-        image: truckfestival.src,
-        url: "https://truckfestival.com/line-up/",
-        location: "Hill Farm, Oxfordshire"
+        title: "Those Were The Days Tour 6: Matt & Phred's",
+        date: ["2024.04.18"],
+        url: "",
+        location: "Matt & Phred's, Manchester"
     },
 
     {
-        title: "Truckfestival 2025",
-        date: ["2025.06.24"],
-        image: truckfestival.src,
-        url: "https://truckfestival.com/line-up/",
-        location: "Hill Farm, Oxfordshire"
+        title: "Those Were The Days Tour 5: Farewell Fest",
+        date: ["2024.04.15"],
+        url: "",
+        location: "The Crescent, York"
     },
 
     {
-        title: "Truckfestival 2025",
-        date: ["2025.06.24"],
-        image: truckfestival.src,
-        url: "https://truckfestival.com/line-up/",
-        location: "Hill Farm, Oxfordshire"
+        title: "Those Were The Days 4: Micklegigs The Ghost Ship Album Launch",
+        date: ["2024.04.12"],
+        url: "",
+        location: "Micklegate Social, York"
     },
 
     {
-        title: "Truckfestival 2025",
-        date: ["2025.06.24"],
-        image: truckfestival.src,
-        url: "https://truckfestival.com/line-up/",
-        location: "Hill Farm, Oxfordshire"
+        title: "Those Were The Days 4: Micklegigs The Ghost Ship Album Launch",
+        date: ["2024.04.12"],
+        url: "",
+        location: "Micklegate Social, York"
     },
 
     {
-        title: "Truckfestival 2025",
-        date: ["2025.06.24"],
-        image: truckfestival.src,
-        url: "https://truckfestival.com/line-up/",
-        location: "Hill Farm, Oxfordshire"
+        title: "Those Were The Days Tour 3: The Finsbury",
+        date: ["2024.03.25"],
+        url: "",
+        location: "The Finsbury, London"
     },
 
     {
-        title: "Truckfestival 2025",
-        date: ["2025.06.24"],
-        image: truckfestival.src,
-        url: "https://truckfestival.com/line-up/",
-        location: "Hill Farm, Oxfordshire"
+        title: "Those Were The Days Tour 2: Folkstone",
+        date: ["2024.03.22"],
+        url: "",
+        location: "Folkstone, Kent"
+    },
+
+    {
+        title: "Those Were The Days Tour Opening",
+        date: ["2024.03.18"],
+        url: "",
+        location: "The Fulford Arms, York"
+    },
+
+    {
+        title: "Blue Monday Beach Party",
+        date: ["2024.01.15"],
+        url: "",
+        location: "The Fulford Arms, York"
+    },
+
+    {
+        title: "Christmas w/ Everything After Midnight",
+        date: ["2023.12.01"],
+        url: "",
+        location: "The Golden Ball, York"
+    },
+
+    {
+        title: "Micklegigs: Gents & Ginger, Joe Haydon and the Ghost Ship and Divorce Lawer",
+        date: ["2023.09.29"],
+        url: "",
+        location: "Micklegate Social, York"
+    },
+
+    {
+        title: "Fulford Arms Battle of the Bands 2023",
+        date: ["2023.09.21"],
+        url: "",
+        location: "The Fulford Arms, York"
+    },
+
+    {
+        title: "PH7 Fulford Arms",
+        date: ["2023.06.01"],
+        url: "",
+        location: "The Fulford Arms, York"
+    },
+
+    {
+        title: "The Micklegate Social: Where's Slater?",
+        date: ["2023.05.19"],
+        url: "",
+        location: "Micklegate Social, York"
+    },
+
+    {
+        title: "Plantfood",
+        date: ["2022.11.16"],
+        url: "",
+        location: "The Crescent, York"
+    },
+
+    {
+        title: "INhibition Opening Night",
+        date: ["2022.11.14"],
+        url: "",
+        location: "Norman Rea Gallery, York "
+    },
+
+    {
+        title: "Everything After Midnight",
+        date: ["2022.10.24"],
+        url: "",
+        location: "The Crescent, York"
+    },
+
+    {
+        title: "Greenhouse Jam",
+        date: ["2022.06.19"],
+        url: "",
+        location: "Micklegate Social, York"
+    },
+
+    {
+        title: "Victoria Vaults",
+        date: ["2022.06.09"],
+        url: "",
+        location: "Victoria Vaults, York "
+    },
+
+    {
+        title: "Univeristy of York Battle of the Bands 2022",
+        date: ["2022.03.11"],
+        url: "",
+        location: "The Fulford Arms, York"
     }
 ];
 
@@ -98,9 +174,9 @@ const events = data.map((event) => {
         title: event.title,
         day: dateFormatted.split(" ")[0],
         month: dateFormatted.split(" ")[1],
+        year: dateFormatted.split(" ")[2],
         date: date,
         dateFormatted: dateFormatted,
-        image: event.image,
         url: event.url,
         location: event.location
     };
