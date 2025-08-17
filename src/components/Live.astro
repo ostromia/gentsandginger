@@ -18,7 +18,7 @@ const { number = events.length } = Astro.props;
 
                 <div class="date">
                     <div class="day">{event.day}</div>
-                    <div class="month">{event.month}</div>
+                    <div class="month">{event.month.slice(0, 3)}</div>
                     {/* <div class="month">{event.year}</div> */}
                 </div>
 
@@ -65,16 +65,18 @@ const { number = events.length } = Astro.props;
         justify-content: center;
         align-items: center;
 
-        width: 100px;
+        width: 50px;
 
-        @include fonts.reeniebeanie;
+        @include fonts.swankyandmoomoo;
+
+        font-size: 1.5rem;
 
         .day {
-            font-size: 2rem;
+            // font-size: 1.5rem;
         }
 
         .month {
-            font-size: 1.5rem;
+            // font-size: 1.25rem;
         }
     }
 
