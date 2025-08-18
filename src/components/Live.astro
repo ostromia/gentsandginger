@@ -12,14 +12,9 @@ const { number = events.length } = Astro.props;
     {
         events.slice(0, number).map((event) => (
             <div class={event.date[0] > new Date() ? "event" : "event inactive"}>
-                {/* <a class="image" href={event.url} aria-label={event.title}>
-                    <img alt="" src={event.image} />
-                </a> */}
-
                 <div class="date">
                     <div class="day">{event.day}</div>
                     <div class="month">{event.month.slice(0, 3)}</div>
-                    {/* <div class="month">{event.year}</div> */}
                 </div>
 
                 <a class="text" href={event.url}>
@@ -68,16 +63,7 @@ const { number = events.length } = Astro.props;
         width: 50px;
 
         @include fonts.swankyandmoomoo;
-
         font-size: 1.5rem;
-
-        .day {
-            // font-size: 1.5rem;
-        }
-
-        .month {
-            // font-size: 1.25rem;
-        }
     }
 
     .text {
