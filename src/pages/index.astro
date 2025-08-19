@@ -10,86 +10,35 @@ import bannermobile from "~assets/banner/truckfestival0002.png";
 import Navigation from "~components/Navigation.astro";
 import Footer from "~components/Footer.astro";
 
-import H1 from "~components/H1.astro";
-
-import Live from "~components/live.astro";
 import GithermentsInGroove from "~components/GithermentsInGroove.astro";
-import Store from "~src/components/store.astro";
-import YouTube from "~components/YouTube.astro";
-
-import "~styles/global.scss";
 ---
 
 <html lang="en">
     <head>
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js" defer></script>
     </head>
 
-    <body>
-        <header>
+    <body id="pagepiling">
+        <div class="section">
             <Navigation style="position: absolute; width: 100%;" />
             <Banner desktop={bannerdesktop} mobile={bannermobile} />
-        </header>
+        </div>
 
-        <main>
-            <!-- <section>
-                <H1 size="dynamic">Live</H1>
+        <div class="section">
+            <GithermentsInGroove />
+        </div>
 
-                <Live number={3} />
+        <div class="section">
+            <Footer />
+        </div>
 
-                <a class="button" href="/gentsandginger/live/">View All Events</a>
-            </section> -->
-
-            <section>
-                <!-- <H1 size="dynamic">Githerments In Groove</H1> -->
-
-                <!-- <div>Listen to our debut album!</div> -->
-
-                <GithermentsInGroove />
-            </section>
-
-            <section>
-                <!-- <H1 size="dynamic">Those Were The Days</H1> -->
-
-                <YouTube
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    loading="eager"
-                    name="YouTube video player"
-                    src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
-                />
-            </section>
-
-            <!-- <section>
-                <H1 size="dynamic">Store</H1>
-
-                <Store number={4} />
-
-                <a class="button" href="/gentsandginger/store/">View Store</a>
-            </section> -->
-        </main>
-
-        <Footer />
+        <script type="module" client:load>
+            $(document).ready(function () {
+                $("#pagepiling").pagepiling();
+            });
+        </script>
     </body>
 </html>
-
-<style lang="scss">
-    @use "~styles/button";
-
-    header {
-        height: 100svh;
-    }
-
-    main {
-        gap: 2.5rem;
-        overflow-wrap: break-word;
-        padding: 2.5rem 1rem 5rem;
-        box-sizing: border-box;
-    }
-
-    section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1rem;
-    }
-</style>
