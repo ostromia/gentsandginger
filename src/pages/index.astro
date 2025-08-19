@@ -18,7 +18,7 @@ import GithermentsInGroove from "~components/GithermentsInGroove.astro";
 <script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js"></script>
 
 <script>
-    $(document).ready(function () {
+    document.addEventListener("DOMContentLoaded", () => {
         $("#pagepiling").pagepiling();
     });
 </script>
