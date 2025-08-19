@@ -1,65 +1,14 @@
----
-type HTMLAttributeReferrerPolicy =
-    | "no-referrer"
-    | "no-referrer-when-downgrade"
-    | "origin"
-    | "origin-when-cross-origin"
-    | "same-origin"
-    | "strict-origin"
-    | "strict-origin-when-cross-origin"
-    | "unsafe-url";
-
-type HTMLAttributeSandbox =
-    | "allow-downloads"
-    | "allow-forms"
-    | "allow-modals"
-    | "allow-orientation-lock"
-    | "allow-pointer-lock"
-    | "allow-popups"
-    | "allow-popups-to-escape-sandbox"
-    | "allow-presentation"
-    | "allow-same-origin"
-    | "allow-scripts"
-    | "allow-storage-access-by-user-activation"
-    | "allow-top-navigation"
-    | "allow-top-navigation-by-user-activation";
-
-interface Props {
-    allow?: string;
-    height?: number;
-    loading?: "eager" | "lazy";
-    name?: string;
-    referrerpolicy?: HTMLAttributeReferrerPolicy;
-    sandbox?: HTMLAttributeSandbox;
-    src: string;
-    srcdoc?: string;
-    width?: number;
-}
-
-const {
-    allow,
-    height,
-    loading = "eager",
-    name = "YouTube embedded video player",
-    referrerpolicy = "strict-origin-when-cross-origin",
-    sandbox,
-    src,
-    srcdoc,
-    width
-} = Astro.props;
----
-
 <iframe
-    allow={allow ?? undefined}
-    height={height ?? undefined}
-    loading={loading}
-    name={name}
-    referrerpolicy={referrerpolicy}
-    sandbox={sandbox ?? undefined}
-    src={src}
-    srcdoc={srcdoc ?? undefined}
-    title={name}
-    width={width ?? undefined}
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    height={undefined}
+    loading="eager"
+    name="YouTube video player"
+    referrerpolicy="strict-origin-when-cross-origin"
+    sandbox={undefined}
+    src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
+    srcdoc={undefined}
+    title="YouTube video player"
+    width={undefined}
 >
 </iframe>
 
