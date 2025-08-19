@@ -8,10 +8,72 @@ import "~styles/markdown.scss";
 
 const title = "Contact | Gents & Ginger";
 const description = "Get in touch with us for bookings, collaborations, or general inquiries.";
+
+import { default as Facebook } from "~assets/icons/facebook.svg";
+import { default as Instagram } from "~assets/icons/instagram.svg";
+import { default as Tiktok } from "~assets/icons/tiktok.svg";
+import { default as YouTube } from "~assets/icons/youtube.svg";
+import { default as Spotify } from "~assets/icons/spotify.svg";
+import { default as AppleMusic } from "~assets/icons/applemusic.svg";
 ---
 
 <Page title={title} description={description} banner={banner}>
     <article>
         <Content />
     </article>
+
+    <div class="social-media-icons">
+        <a href="mailto:gentsandginger@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path
+                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+                ></path>
+            </svg>
+            <div>E-mail</div>
+        </a>
+
+        <a href="https://www.facebook.com/gentsandginger" aria-label="Instagram">
+            <Facebook class="icon" />
+            <div>Facebook</div>
+        </a>
+
+        <a href="https://www.instagram.com/gentsandginger/" aria-label="Instagram">
+            <Instagram class="icon" />
+            <div>Instagram</div>
+        </a>
+
+        <a href="https://www.tiktok.com/@gentsandginger" aria-label="Instagram">
+            <Tiktok class="icon" />
+            <div>Tiktok</div>
+        </a>
+
+        <a href="https://www.youtube.com/@gentsginger5174" aria-label="YouTube">
+            <YouTube class="icon" />
+            <div>YouTube</div>
+        </a>
+    </div>
 </Page>
+
+<style lang="scss">
+    @use "~styles/fonts";
+    @use "~styles/color";
+
+    .social-media-icons {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        margin: auto;
+
+        a {
+            text-decoration: none;
+            // align-content: center;
+            align-items: center;
+            display: flex;
+            gap: 1rem;
+            color: black;
+        }
+    }
+</style>
