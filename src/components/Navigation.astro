@@ -93,6 +93,10 @@ const { style } = Astro.props;
     @use "~styles/color";
     @use "~styles/adam";
 
+    a {
+        font-size: 2rem;
+    }
+
     nav {
         @include adam.navigation;
 
@@ -145,7 +149,7 @@ const { style } = Astro.props;
         nav > div {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
         }
 
         #links {
