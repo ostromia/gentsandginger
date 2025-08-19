@@ -13,12 +13,19 @@ import Footer from "~components/Footer.astro";
 import GithermentsInGroove from "~components/GithermentsInGroove.astro";
 ---
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.css" />
+<script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#pagepiling").pagepiling();
+    });
+</script>
+
 <html lang="en">
     <head>
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.css" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js"></script>
     </head>
 
     <body id="pagepiling">
@@ -34,11 +41,5 @@ import GithermentsInGroove from "~components/GithermentsInGroove.astro";
         <div class="section">
             <Footer />
         </div>
-
-        <script type="module" client:load>
-            $(document).ready(function () {
-                $("#pagepiling").pagepiling();
-            });
-        </script>
     </body>
 </html>
