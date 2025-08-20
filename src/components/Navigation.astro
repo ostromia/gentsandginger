@@ -23,12 +23,6 @@ const { style } = Astro.props;
             for (const icon of this.children) {
                 icon.classList.toggle("hidden");
             }
-
-            document.querySelector("nav")!.classList.toggle("mobile-menu-open");
-            document.getElementById("links")!.classList.toggle("mobile-menu-open");
-
-            document.body.classList.toggle("overflow-hidden");
-            document.documentElement.classList.toggle("overflow-hidden");
         });
     });
 </script>
@@ -98,6 +92,7 @@ const { style } = Astro.props;
     }
 
     nav {
+        z-index: 999;
         @include adam.navigation;
 
         @include fonts.swankyandmoomoo;
