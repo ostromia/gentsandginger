@@ -35,11 +35,11 @@ import YouTube from "~components/YouTube.astro";
             <Banner desktop={bannerdesktop} mobile={bannermobile} />
         </div>
 
-        <div class="section">
+        <div class="section GIG">
             <GithermentsInGroove />
         </div>
 
-        <div class="section">
+        <div class="section YT">
             <YouTube />
         </div>
 
@@ -56,5 +56,15 @@ import YouTube from "~components/YouTube.astro";
         height: 100svh;
         width: 100%;
         background-color: color.$eggshell;
+    }
+
+    .GIG,
+    .YT {
+        max-width: 1000px;
+        padding: 1rem 5rem;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>
