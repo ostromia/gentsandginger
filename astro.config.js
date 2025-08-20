@@ -29,8 +29,8 @@ export default defineConfig({
         fonts: [
             {
                 provider: fontProviders.fontsource(),
-                name: "Atkinson Hyperlegible",
-                cssVariable: "--font-atkinson-hyperlegible"
+                name: "Roboto",
+                cssVariable: "--font-roboto"
             },
             {
                 provider: fontProviders.fontsource(),
