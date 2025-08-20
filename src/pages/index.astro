@@ -60,7 +60,6 @@ import YouTube from "~components/YouTube.astro";
     .section {
         height: 100svh;
         width: 100%;
-        background-color: color.$eggshell;
     }
 
     .GIG,
@@ -70,5 +69,13 @@ import YouTube from "~components/YouTube.astro";
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+
+    div:has(.GIG) {
+        background-color: #600e00;
+    }
+
+    div:has(.YT) {
+        background-color: color.$eggshell;
     }
 </style>
