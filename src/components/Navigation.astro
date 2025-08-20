@@ -23,6 +23,9 @@ const { style } = Astro.props;
             for (const icon of this.children) {
                 icon.classList.toggle("hidden");
             }
+
+            document.querySelector("nav")!.classList.toggle("mobile-menu-open");
+            document.getElementById("links")!.classList.toggle("mobile-menu-open");
         });
     });
 </script>
