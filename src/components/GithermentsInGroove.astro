@@ -37,7 +37,7 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
         </div>
     </div>
 
-    <div class="iframe-wrapper">
+    <div class="spotify">
         <iframe
             style="border-radius:12px"
             src="https://open.spotify.com/embed/album/3A1fC1ph7Fr40ikFbDJMQs?utm_source=generator"
@@ -89,73 +89,63 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
 
         gap: 2rem;
         box-sizing: border-box;
+    }
 
-        .image {
-            grid-area: image;
-            display: flex;
-            justify-content: center;
+    .image {
+        grid-area: image;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        img {
+            object-fit: contain;
             width: 100%;
 
-            img {
-                object-fit: contain;
-                width: 100%;
+            border-radius: 10px;
+            box-sizing: border-box;
 
-                border-radius: 10px;
-                box-sizing: border-box;
-            }
-        }
-
-        .text {
-            grid-area: text;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .review {
-            line-height: 1.5rem;
-
-            font-style: italic;
-
-            margin: 0;
-
-            span {
-                font-size: 3rem;
-                line-height: 1rem;
-                display: inline-block;
-                vertical-align: top;
-            }
-
-            a {
-                color: black;
-                display: inline-block;
-            }
-        }
-
-        .streaming {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            @include fonts.reeniebeanie;
-            font-size: 2rem;
+            box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.3);
         }
     }
 
-    iframe {
-        width: 100%;
-        height: calc(200px + 583px);
-        border: 0;
-        grid-area: spotify;
+    .text {
+        grid-area: text;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
     }
 
-    @media (max-width: riko.$mobile) {
-        iframe {
-            height: calc(200px + 583px + 5px);
+    .review {
+        line-height: 1.5rem;
+
+        font-style: italic;
+
+        margin: 0;
+
+        span {
+            font-size: 3rem;
+            line-height: 1rem;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        a {
+            color: black;
+            display: inline-block;
         }
     }
 
-    .iframe-wrapper {
+    .streaming {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        @include fonts.reeniebeanie;
+        font-size: 2rem;
+    }
+
+    .spotify {
         grid-area: spotify;
         width: 100%;
         height: 583px;
@@ -163,14 +153,19 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
         position: relative;
         border-radius: 20px;
         box-sizing: border-box;
-    }
 
-    .iframe-wrapper iframe {
-        width: 100%;
-        height: calc(583px + 200px);
-        border: 0;
-        position: absolute;
-        top: -200px;
-        left: 0;
+        iframe {
+            width: 100%;
+            height: calc(200px + 583px);
+            border: 0;
+            grid-area: spotify;
+            position: absolute;
+            top: -200px;
+            left: 0;
+
+            @media (max-width: riko.$mobile) {
+                height: calc(200px + 583px + 5px);
+            }
+        }
     }
 </style>
