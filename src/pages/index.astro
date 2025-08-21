@@ -16,82 +16,29 @@ import YouTube from "~components/YouTube.astro";
 import "~styles/global.scss";
 ---
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.css" />
-<script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script is:inline defer src="https://cdnjs.cloudflare.com/ajax/libs/pagePiling.js/1.5.6/jquery.pagepiling.min.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
-        $("#pagepiling").pagepiling();
-        $("#pp-nav").hide();
-    });
-</script>
-
 <html lang="en">
     <head>
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
     </head>
 
     <body id="pagepiling">
-        <div class="section">
-            <Navigation style="position: absolute; width: 100%;" />
+        <header>
+            <Navigation />
             <Banner desktop={bannerdesktop} mobile={bannermobile} />
-        </div>
+        </header>
 
-        <section class="section GIG">
-            <div>
-                <!-- <H1>"Listen to our Debut Album"</H1> -->
+        <main>
+            <section>
                 <GithermentsInGroove />
-            </div>
-        </section>
+            </section>
 
-        <section class="section YT">
-            <div>
+            <section>
                 <YouTube />
-            </div>
-        </section>
+            </section>
+        </main>
 
-        <div class="section">
-            <Footer />
-        </div>
+        <Footer />
     </body>
 </html>
 
-<style lang="scss">
-    @use "~styles/color";
-
-    .section {
-        height: 100svh;
-        width: 100%;
-    }
-
-    section div {
-        margin: auto;
-        max-width: 1000px;
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-        padding: 1rem;
-        box-sizing: border-box;
-    }
-
-    // .YT {
-    //     display: flex;
-    //     justify-content: center;
-    //     align-items: center;
-    // }
-
-    // .GIG {
-    //     height: 216px;
-    //     overflow: hidden;
-    //     background-color: #8f3300;
-    // }
-
-    .GIG {
-        background-color: #600e00;
-    }
-
-    .YT {
-        background-color: color.$eggshell;
-    }
-</style>
+<style lang="scss"></style>
