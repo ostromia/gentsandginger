@@ -45,6 +45,14 @@ import "~styles/global.scss";
 
             <section style="background-color: #d57d18">
                 <div>
+                    <p>
+                        <span>“</span>
+                        York band Gents and Ginger have got a funk box and they know how to use it! “Ricke” opens proceedings with an explosion of joy
+                        while “Abience For A Kebab Shop Pt II” oozes the style and ability of some of the great funk bands from the past to rock out.<span
+                            >„</span
+                        >
+                    </p>
+
                     <GithermentsInGroove />
                 </div>
             </section>
@@ -78,26 +86,40 @@ import "~styles/global.scss";
 </html>
 
 <style lang="scss">
+    @use "~styles/color";
+
     header {
         height: 100svh;
+    }
+
+    p {
+        line-height: 1.25rem;
+
+        font-style: italic;
+
+        margin: 0;
+
+        padding: 1rem 0 2rem;
+        box-sizing: border-box;
+
+        text-align: center;
+
+        span {
+            font-size: 3rem;
+            line-height: 1rem;
+            display: inline-block;
+            vertical-align: top;
+        }
     }
 
     main {
         display: flex;
         flex-direction: column;
-        // gap: 5rem;
-        // overflow-wrap: break-word;
-        // padding: 2.5rem 1rem 5rem;
-        box-sizing: border-box;
     }
 
     section {
         padding: 3rem;
         box-sizing: border-box;
-        // width: 100%;
-        // display: flex;
-        // flex-direction: column;
-        // gap: 2rem;
 
         > div {
             margin: auto;
