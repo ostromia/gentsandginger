@@ -2,12 +2,13 @@
 interface Props {
     size?: string;
     color?: string;
+    align?: string;
 }
 
-const { size, color } = Astro.props;
+const { size, color, align } = Astro.props;
 ---
 
-<h1 class={size} style={`color: ${color};`}>
+<h1 class={size} style={`color: ${color}; text-align: ${align}`}>
     <slot />
 </h1>
 
