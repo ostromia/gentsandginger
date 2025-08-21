@@ -1,14 +1,14 @@
 ---
 interface Props {
-    size?: string;
+    dynamic?: boolean;
     color?: string;
     align?: string;
 }
 
-const { size, color, align } = Astro.props;
+const { color, align, dynamic = false } = Astro.props;
 ---
 
-<h1 class={size} style={`color: ${color}; text-align: ${align}`}>
+<h1 class={`${dynamic && "dynamic"}`} style={`color: ${color}; text-align: ${align}`}>
     <slot />
 </h1>
 
@@ -26,20 +26,16 @@ const { size, color, align } = Astro.props;
     }
 
     .dynamic {
-        // @media (max-width: 700px) {
-        //     font-size: 3.5rem;
-        // }
-
-        // @media (max-width: 600px) {
-        //     font-size: 3rem;
-        // }
-
-        @media (max-width: 500px) {
+        @media (max-width: 800px) {
             font-size: 2.5rem;
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 700px) {
             font-size: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            font-size: 1.5rem;
         }
     }
 </style>

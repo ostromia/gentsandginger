@@ -14,8 +14,10 @@ import H1 from "~components/H1.astro";
 import Button from "~components/Button.astro";
 
 import Live from "~components/live.astro";
+import Store from "~components/store.astro";
 import GithermentsInGroove from "~components/GithermentsInGroove.astro";
 import YouTube from "~components/YouTube.astro";
+import MeetTheBand from "~components/MeetTheBand.astro";
 
 import "~styles/global.scss";
 ---
@@ -58,9 +60,27 @@ import "~styles/global.scss";
                     />
                 </div>
             </section>
-        </main>
 
-        <Footer />
+            <section style="background-color: #d57d18;">
+                <div>
+                    <H1 align="center" color="black" dynamic>Manchester-based five-piece family feast!</H1>
+
+                    <p style="text-align: center; padding: 1rem; box-sizing: border-box;">
+                        <span>“</span>
+                        Once described as having the vibe of waking up on your birthday and having ten Weetabix for breakfast, Gents & Ginger brings the
+                        vibrant spirits and positive energy of their world straight to your eardrums. This Manchester-based five-piece family feast, brings
+                        a delicious blend of old-school funk and rock with a modern twist. Off the back of their critically acclaimed debut album 'Githerments
+                        in Groove' and sold-out 'Those Were The Days' UK headline tour, Gents & Ginger continue to light up the stage performing on the
+                        Nest stage at Truck Festival.
+                        <span>„</span>
+                    </p>
+
+                    <MeetTheBand />
+                </div>
+            </section>
+
+            <Footer />
+        </main>
     </body>
 </html>
 
@@ -87,6 +107,26 @@ import "~styles/global.scss";
             flex-direction: column;
             justify-content: center;
             gap: 1rem;
+        }
+    }
+
+    p {
+        line-height: 1.5rem;
+
+        font-style: italic;
+
+        margin: 0;
+
+        span {
+            font-size: 3rem;
+            line-height: 1rem;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        a {
+            color: black;
+            display: inline-block;
         }
     }
 </style>
