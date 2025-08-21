@@ -3,12 +3,13 @@ interface Props {
     dynamic?: boolean;
     color?: string;
     align?: string;
+    type?: string;
 }
 
-const { color, align, dynamic = false } = Astro.props;
+const { color, align, dynamic = false, type } = Astro.props;
 ---
 
-<h1 class={`${dynamic && "dynamic"}`} style={`color: ${color}; text-align: ${align}`}>
+<h1 class={`${dynamic && "dynamic"} ${type}`} style={`color: ${color}; text-align: ${align}`}>
     <slot />
 </h1>
 
@@ -25,7 +26,7 @@ const { color, align, dynamic = false } = Astro.props;
         text-transform: capitalize;
     }
 
-    .dynamic {
+    .type-long {
         @media (max-width: 800px) {
             font-size: 2.5rem;
         }
@@ -36,6 +37,12 @@ const { color, align, dynamic = false } = Astro.props;
 
         @media (max-width: 600px) {
             font-size: 1.5rem;
+        }
+    }
+
+    .type-medium {
+        @media (max-width: 400px) {
+            font-size: 2rem;
         }
     }
 </style>
