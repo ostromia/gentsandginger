@@ -29,8 +29,8 @@ export default defineConfig({
         fonts: [
             {
                 provider: fontProviders.fontsource(),
-                name: "Roboto",
-                cssVariable: "--font-roboto"
+                name: "Atkinson Hyperlegible",
+                cssVariable: "--font-atkinson-hyperlegible"
             },
             {
                 provider: fontProviders.fontsource(),
@@ -39,7 +39,7 @@ export default defineConfig({
             },
             {
                 provider: fontProviders.fontsource(),
-                name: "Reenie Beanie",
+                name: "Swanky and Moo Moo",
                 cssVariable: "--font-swanky-and-moo-moo"
             }
         ]

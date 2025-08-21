@@ -1,20 +1,18 @@
 ---
 interface Props {
-    class_?: string;
     size?: string;
 }
 
-const { size, class_ } = Astro.props;
+const { size } = Astro.props;
 ---
 
-<h1 class={`${size} ${class_}`}>
+<h1 class={size}>
     <slot />
 </h1>
 
 <style lang="scss">
     @use "~styles/fonts";
     @use "~styles/color";
-    @use "~styles/riko";
 
     h1 {
         margin: 0;

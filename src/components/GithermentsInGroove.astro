@@ -1,121 +1,26 @@
----
-import debutcover from "~assets/debutcover.jpeg";
-import { Image } from "astro:assets";
-
-import H1 from "~components/H1.astro";
-
-import { default as Spotify } from "~assets/icons/spotify.svg";
-import { default as AppleMusic } from "~assets/icons/applemusic.svg";
----
-
-<div class="wrapper">
-    <div class="image">
-        <Image alt="" src={debutcover} layout="constrained" height="1080" width="1080" />
-    </div>
-
-    <div class="text">
-        <H1 class_="desktop">GITHERMENTS IN GROOVE</H1>
-
-        <p>
-            <span>“</span>
-            York band Gents and Ginger have got a funk box and they know how to use it! “Ricke” opens proceedings with an explosion of joy while “Abience
-            For A Kebab Shop Pt II” oozes the style and ability of some of the great funk bands from the past to rock out.<span>„</span>
-        </p>
-
-        <div class="icons">
-            <a href="https://open.spotify.com/artist/7jIpsmRlZWQbKMjbxVeJ5M?si=0scp_nZNS2KHEGRTYOtZmw" aria-label="Spotify">
-                <Spotify class="icon" />
-            </a>
-
-            <a href="https://music.apple.com/gb/artist/gents-ginger/1765128507" aria-label="Apple Music">
-                <AppleMusic class="icon" />
-            </a>
-        </div>
-    </div>
-</div>
+<iframe
+    style="border-radius:12px"
+    src="https://open.spotify.com/embed/album/3A1fC1ph7Fr40ikFbDJMQs?utm_source=generator"
+    width="100%"
+    allowfullscreen=""
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="eager"
+    title="Spotify embedded music player"
+>
+</iframe>
 
 <style lang="scss">
     @use "~styles/riko";
-    @use "~styles/color";
 
-    .icon {
-        fill: color.$orange;
-    }
-
-    .text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        gap: 2rem;
-        text-align: center;
-
-        p {
-            color: color.$orange;
-
-            line-height: 1.25rem;
-
-            font-style: italic;
-
-            margin: 0;
-
-            padding: 1rem 0;
-            box-sizing: border-box;
-
-            span {
-                font-size: 3rem;
-                line-height: 1rem;
-                display: inline-block;
-                vertical-align: top;
-            }
-        }
-    }
-
-    .icons {
-        display: flex;
-        gap: 2rem;
-        justify-content: center;
-    }
-
-    @media (min-width: riko.$desktop) {
-        .wrapper {
-            display: flex;
-            gap: 2rem;
-            width: 100%;
-
-            .image {
-                width: 30%;
-            }
-
-            .text {
-                width: 70%;
-            }
-        }
-
-        img {
-            height: auto;
-            width: 100%;
-        }
+    iframe {
+        width: 100%;
+        height: calc(200px + 583px);
+        border: 0;
     }
 
     @media (max-width: riko.$mobile) {
-        .wrapper {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .image,
-        .text {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .image img {
-            height: auto;
-            width: 80%;
+        iframe {
+            height: calc(200px + 583px + 5px);
         }
     }
 </style>

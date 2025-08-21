@@ -23,6 +23,7 @@ const { image, desktop, mobile } = Astro.props;
 <style lang="scss">
     @use "~styles/fonts";
     @use "~styles/color";
+    @use "~styles/adam";
 
     @use "~styles/riko";
 
@@ -40,11 +41,17 @@ const { image, desktop, mobile } = Astro.props;
         }
 
         .content {
+            @include adam.base;
             position: absolute;
             inset: 0;
             margin: auto;
             width: max-content;
             height: max-content;
+
+            // @include fonts.swankyandmoomoo;
+            // font-size: 4rem;
+
+            // color: color.$orange;
         }
     }
 </style>

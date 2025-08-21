@@ -3,8 +3,7 @@
 
 html,
 body {
-    @include fonts.roboto;
-    font-family: sans-serif;
+    @include fonts.atkinson;
     margin: 0;
     padding: 0;
     background-color: color.$eggshell;
@@ -25,4 +24,11 @@ main {
 
 .hidden {
     display: none;
+}
+
+html.overflow-hidden,
+body.overflow-hidden {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
 }

@@ -17,17 +17,10 @@ const { number = events.length } = Astro.props;
                     <div class="month">{event.month.slice(0, 3)}</div>
                 </div>
 
-                {event.url ? (
-                    <a class="text" href={event.url}>
-                        <div class="title">{event.title}</div>
-                        <div class="location">{event.location}</div>
-                    </a>
-                ) : (
-                    <div class="text">
-                        <div>{event.title}</div>
-                        <div class="location">{event.location}</div>
-                    </div>
-                )}
+                <a class="text" href={event.url}>
+                    <div class="title">{event.title}</div>
+                    <div class="location">{event.location}</div>
+                </a>
 
                 {event.date[0] > new Date() ? (
                     <a class="button" href={event.url}>
@@ -39,6 +32,8 @@ const { number = events.length } = Astro.props;
                     </a>
                 )}
             </div>
+
+            <div style="height: 1px; background-color: black"></div>
         ))
     }
 </div>
@@ -53,18 +48,12 @@ const { number = events.length } = Astro.props;
         display: flex;
         flex-direction: column;
         justify-content: center;
+        gap: 1rem;
     }
 
     .event {
         display: flex;
         gap: 0.5rem;
-        border-bottom: 1px solid black;
-        padding: 1rem;
-        box-sizing: border-box;
-    }
-
-    .wrapper > :last-child {
-        border-bottom: 0;
     }
 
     .date {
@@ -76,7 +65,7 @@ const { number = events.length } = Astro.props;
         width: 50px;
 
         @include fonts.swankyandmoomoo;
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     .text {

@@ -29,9 +29,11 @@ const { title, description, metaimage = IMG_048A5038_1200x630, banner } = Astro.
         <header>
             <Navigation />
             <Banner image={banner}>
+                <!-- <div style="text-transform: capitalize; text-shadow: 1px 1px 1px black;"> -->
                 <H1>
                     {Astro.url.pathname.split("/").filter(Boolean).pop()?.replace("-", " ")}
                 </H1>
+                <!-- </div> -->
             </Banner>
         </header>
 
