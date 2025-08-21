@@ -88,7 +88,6 @@ const { style } = Astro.props;
     @use "~styles/mia";
     @use "~styles/riko";
     @use "~styles/color";
-    @use "~styles/adam";
 
     a {
         font-size: 2rem;
@@ -96,7 +95,6 @@ const { style } = Astro.props;
 
     nav {
         z-index: 999;
-        @include adam.navigation;
 
         @include fonts.swankyandmoomoo;
         font-size: 1.5rem;
