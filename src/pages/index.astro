@@ -34,36 +34,42 @@ import "~styles/global.scss";
 
         <main>
             <section>
-                <H1 size="dynamic">Upcoming Events...</H1>
+                <div>
+                    <H1 size="dynamic">Upcoming Events...</H1>
 
-                <Live number={3} />
+                    <Live number={3} />
 
-                <Button href="/gentsandginger/live/">View All Events</Button>
+                    <Button href="/gentsandginger/live/">View All Events</Button>
+                </div>
+            </section>
+
+            <section style="background-color: #d57d18">
+                <div>
+                    <GithermentsInGroove />
+                </div>
             </section>
 
             <section>
-                <H1 size="dynamic">Githerments In Groove</H1>
+                <div>
+                    <H1 size="dynamic">Those Were The Days</H1>
 
-                <GithermentsInGroove />
+                    <YouTube
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        loading="eager"
+                        name="YouTube video player"
+                        src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
+                    />
+                </div>
             </section>
 
             <section>
-                <H1 size="dynamic">Those Were The Days</H1>
+                <div>
+                    <H1 size="dynamic">Store</H1>
 
-                <YouTube
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    loading="eager"
-                    name="YouTube video player"
-                    src="https://www.youtube.com/embed/gXMAVJ8y9Qk?si=yMVbQXZTZnDOYO_x"
-                />
-            </section>
+                    <Store number={4} />
 
-            <section>
-                <H1 size="dynamic">Store</H1>
-
-                <Store number={4} />
-
-                <Button href="/gentsandginger/store/">View Store</Button>
+                    <Button href="/gentsandginger/store/">View Store</Button>
+                </div>
             </section>
         </main>
 
@@ -72,23 +78,34 @@ import "~styles/global.scss";
 </html>
 
 <style lang="scss">
-    @use "~styles/button";
-
     header {
         height: 100svh;
     }
 
     main {
-        gap: 5rem;
-        overflow-wrap: break-word;
-        padding: 2.5rem 1rem 5rem;
+        display: flex;
+        flex-direction: column;
+        // gap: 5rem;
+        // overflow-wrap: break-word;
+        // padding: 2.5rem 1rem 5rem;
         box-sizing: border-box;
     }
 
     section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1rem;
+        padding: 3rem;
+        box-sizing: border-box;
+        // width: 100%;
+        // display: flex;
+        // flex-direction: column;
+        // gap: 2rem;
+
+        > div {
+            margin: auto;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+        }
     }
 </style>
