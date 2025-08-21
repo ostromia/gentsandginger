@@ -5,8 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://ostromia.github.io",
-    base: "gentsandginger",
+    site: "https://www.gentsandginger.com",
 
     integrations: [mdx(), sitemap()],
 
