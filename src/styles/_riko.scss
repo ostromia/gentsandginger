@@ -16,20 +16,20 @@ $desktop: 800px;
 
 @media (max-width: $mobile) {
     .mobile {
-        display: block !important;
+        display: block;
     }
 
     .desktop {
-        display: none !important;
+        display: none;
     }
 }
 
 @media (min-width: $desktop) {
     .mobile {
-        display: none !important;
+        display: none;
     }
 
     .desktop {
-        display: block !important;
+        display: block;
     }
 }

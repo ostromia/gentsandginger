@@ -16,9 +16,27 @@ const { href, class_, style, desktop = false, mobile = false, inactive = false }
 </a>
 
 <style lang="scss">
-    @use "~styles/color";
-    @use "~styles/fonts";
     @use "~styles/riko";
+
+    @media (max-width: riko.$mobile) {
+        .mobile {
+            display: flex !important;
+        }
+
+        .desktop {
+            display: none !important;
+        }
+    }
+
+    @media (min-width: riko.$desktop) {
+        .mobile {
+            display: none !important;
+        }
+
+        .desktop {
+            display: flex !important;
+        }
+    }
 
     .button {
         display: flex;
