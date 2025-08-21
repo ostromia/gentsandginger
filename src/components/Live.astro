@@ -32,7 +32,7 @@ const { number = events.length } = Astro.props;
                     </div>
                 )}
 
-                <Button desktop class_={event.date[0] > new Date() ? "" : "inactive"} href={event.url}>
+                <Button desktop inactive={event.date[0] < new Date()} href={event.url}>
                     Buy Tickets
                 </Button>
             </div>
