@@ -20,6 +20,13 @@ interface Props {
 const { title, description, metaimage = IMG_048A5038_1200x630, banner } = Astro.props;
 ---
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const header = document.querySelector("header")!;
+        header.style.height = `${window.innerHeight * 0.75}px`;
+    });
+</script>
+
 <html lang="en">
     <head>
         <Head title={title} description={description} image={metaimage} />
@@ -44,10 +51,6 @@ const { title, description, metaimage = IMG_048A5038_1200x630, banner } = Astro.
 </html>
 
 <style lang="scss">
-    header {
-        height: 75vh;
-    }
-
     main {
         max-width: 1000px;
         margin: auto;
