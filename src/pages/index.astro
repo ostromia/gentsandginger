@@ -10,8 +10,6 @@ import bannermobile from "~assets/banner/truckfestival0002.png";
 import Navigation from "~components/Navigation.astro";
 import Footer from "~components/Footer.astro";
 
-import H1 from "~components/H1.astro";
-
 import GithermentsInGroove from "~components/GithermentsInGroove.astro";
 import YouTube from "~components/YouTube.astro";
 
@@ -40,17 +38,18 @@ import "~styles/global.scss";
             <Banner desktop={bannerdesktop} mobile={bannermobile} />
         </div>
 
-        <div class="section">
-            <div class="GIG">
+        <section class="section GIG">
+            <div>
+                <!-- <H1>"Listen to our Debut Album"</H1> -->
                 <GithermentsInGroove />
             </div>
-        </div>
+        </section>
 
-        <div class="section">
-            <div class="YT">
+        <section class="section YT">
+            <div>
                 <YouTube />
             </div>
-        </div>
+        </section>
 
         <div class="section">
             <Footer />
@@ -66,31 +65,33 @@ import "~styles/global.scss";
         width: 100%;
     }
 
-    .GIG,
-    .YT {
+    section div {
         margin: auto;
         max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
         padding: 1rem;
         box-sizing: border-box;
     }
 
-    .YT {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+    // .YT {
+    //     display: flex;
+    //     justify-content: center;
+    //     align-items: center;
+    // }
+
+    // .GIG {
+    //     height: 216px;
+    //     overflow: hidden;
+    //     background-color: #8f3300;
+    // }
 
     .GIG {
-        height: 216px;
-        overflow: hidden;
-        background-color: #8f3300;
-    }
-
-    div:has(.GIG) {
         background-color: #600e00;
     }
 
-    div:has(.YT) {
+    .YT {
         background-color: color.$eggshell;
     }
 </style>
