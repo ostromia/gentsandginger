@@ -13,7 +13,7 @@ const { number = events.length } = Astro.props;
     {
         events.slice(0, number).map((event) => (
             <div class={event.date[0] > new Date() ? "event" : "event inactive"}>
-                <div class="date" style={event.date[0] > new Date() ? "" : "color: grey;"}>
+                <div class="date" style={event.date[0] > new Date() ? "" : ""}>
                     <div class="day">{event.day}</div>
                     <div class="month">{event.month.slice(0, 3)}</div>
                 </div>
