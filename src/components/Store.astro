@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 
 import merchandise from "~assets/store";
 
+import Button from "~components/Button.astro";
+
 interface Props {
     number?: number;
 }
@@ -25,9 +27,9 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
                     <div class="price">{gbp.format(e.price)}</div>
                 </div>
 
-                <button disabled class="button inactive">
+                <Button class_="inactive" style="width: 100%; padding: 0.25rem;">
                     Sold Out
-                </button>
+                </Button>
             </div>
         ))
     }
@@ -36,6 +38,7 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
 <style lang="scss">
     @use "~styles/color";
     @use "~styles/fonts";
+    @use "~styles/button";
 
     .wrapper {
         display: grid;
@@ -76,20 +79,7 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
     }
 
     .button {
-        -webkit-appearance: none;
-        border-radius: 0;
-        border: 0;
-        @include fonts.atkinson;
-        font-size: 1rem;
-        margin-top: auto;
-        border-radius: 3px;
-        background-color: black;
-        color: white;
-    }
-
-    .button.inactive {
-        pointer-events: none;
-        cursor: default;
-        opacity: 0.5;
+        width: 100%;
+        padding: 0.25rem;
     }
 </style>

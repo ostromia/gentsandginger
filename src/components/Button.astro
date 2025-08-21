@@ -1,0 +1,50 @@
+---
+interface Props {
+    href?: string;
+    class_?: string;
+    style?: string;
+}
+
+const { href, class_, style } = Astro.props;
+---
+
+<a class={"button " + class_} href={href} style={style}>
+    <slot />
+</a>
+
+<style lang="scss">
+    @use "~styles/color";
+    @use "~styles/fonts";
+
+    .button {
+        display: flex;
+        justify-content: center;
+
+        color: white;
+        background-color: black;
+
+        appearance: none;
+
+        border: 0;
+
+        height: min-content;
+
+        text-decoration: none;
+
+        margin: auto;
+
+        padding: 0.25rem;
+
+        font-size: 1rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+
+        border-radius: 5px;
+    }
+
+    .button.inactive {
+        pointer-events: none;
+        cursor: default;
+        opacity: 0.5;
+    }
+</style>

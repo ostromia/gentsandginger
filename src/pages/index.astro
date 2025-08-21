@@ -11,6 +11,7 @@ import Navigation from "~components/Navigation.astro";
 import Footer from "~components/Footer.astro";
 
 import H1 from "~components/H1.astro";
+import Button from "~components/Button.astro";
 
 import Live from "~components/live.astro";
 import GithermentsInGroove from "~components/GithermentsInGroove.astro";
@@ -33,11 +34,11 @@ import "~styles/global.scss";
 
         <main>
             <section>
-                <H1 size="dynamic">Live</H1>
+                <H1 size="dynamic">Upcoming Events...</H1>
 
                 <Live number={3} />
 
-                <a class="button" href="/gentsandginger/live/">View All Events</a>
+                <Button href="/gentsandginger/live/">View All Events</Button>
             </section>
 
             <section>
@@ -62,7 +63,7 @@ import "~styles/global.scss";
 
                 <Store number={4} />
 
-                <a class="button" href="/gentsandginger/store/">View Store</a>
+                <Button href="/gentsandginger/store/">View Store</Button>
             </section>
         </main>
 
