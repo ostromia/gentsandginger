@@ -36,11 +36,6 @@ export default defineConfig({
                 provider: fontProviders.fontsource(),
                 name: "Reenie Beanie",
                 cssVariable: "--font-reenie-beanie"
-            },
-            {
-                provider: fontProviders.fontsource(),
-                name: "Swanky and Moo Moo",
-                cssVariable: "--font-swanky-and-moo-moo"
             }
         ]
     }
