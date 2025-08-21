@@ -13,15 +13,24 @@ const { number = events.length } = Astro.props;
     {
         events.slice(0, number).map((event) => (
             <div class={event.date[0] > new Date() ? "event" : "event inactive"}>
-                <div class="date">
+                <div class="date" style={event.date[0] > new Date() ? "" : "color: grey;"}>
                     <div class="day">{event.day}</div>
                     <div class="month">{event.month.slice(0, 3)}</div>
                 </div>
 
-                <a class="text" href={event.url}>
-                    <div class="title">{event.title}</div>
-                    <div class="location">{event.location}</div>
-                </a>
+                {event.url ? (
+                    <a class="text" href={event.url}>
+                        <div class="title">{event.title}</div>
+                        <div class="location">{event.location}</div>
+                    </a>
+                ) : (
+                    <div class="text">
+                        <div class="title" style="text-decoration: none !important">
+                            {event.title}
+                        </div>
+                        <div class="location">{event.location}</div>
+                    </div>
+                )}
 
                 <Button class_={event.date[0] > new Date() ? "" : "inactive"} href={event.url}>
                     Buy Tickets
@@ -89,12 +98,6 @@ const { number = events.length } = Astro.props;
 
         .title {
             text-decoration: underline !important;
-        }
-    }
-
-    @media (max-width: riko.$mobile) {
-        .button {
-            display: none;
         }
     }
 </style>
