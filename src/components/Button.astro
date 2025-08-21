@@ -3,18 +3,21 @@ interface Props {
     href?: string;
     class_?: string;
     style?: string;
+    desktop?: boolean;
+    mobile?: boolean;
 }
 
-const { href, class_, style } = Astro.props;
+const { href, class_, style, desktop = false, mobile = false } = Astro.props;
 ---
 
-<a class={"button " + class_} href={href} style={style}>
+<a class={`button ${class_} ${desktop && "desktop"} ${mobile && "mobile"}`} href={href} style={style}>
     <slot />
 </a>
 
 <style lang="scss">
     @use "~styles/color";
     @use "~styles/fonts";
+    @use "~styles/riko";
 
     .button {
         display: flex;
