@@ -12,16 +12,19 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
         <H1 color="black" type="type-medium">Githerments in Groove</H1>
 
         <div class="review">
-            <span>“</span>
-            York band Gents and Ginger have got a funk box and they know how to use it! Their recently released album, 'Githerments In Groove' showcases
-            their steadfast talent for being as funky as hell. “Ricke” opens proceedings with an explosion of joy while “Ambience For A Kebab Shop Pt II”
-            oozes the style and ability of some of the great funk bands from the past to rock out. I think I prefer the songs here that feature vocals
-            and the first of those to appear is “Turtle”, musically it has the feel of the classic Bowie band from the 1974 American tour. “4 Silly Balls”,
-            what a great title that is, and “Style Control” power on like extended versions of one of the jazzed up interludes that Earth, Wind, and Fire
-            included in their best 70s albums.
-            <span>„</span>
+            <span class="quotation">“</span>
+            Their recently released album, 'Githerments In Groove' showcases their steadfast talent for being as funky as hell. “Ricke” opens proceedings
+            with an explosion of joy while “Ambience For A Kebab Shop Pt II” oozes the style and ability of some of the great funk bands from the past
+            to rock out.
+
+            <span class="mobile part2">
+                I think I prefer the songs here that feature vocals and the first of those to appear is “Turtle”, musically it has the feel of the
+                classic Bowie band from the 1974 American tour. “4 Silly Balls”, what a great title that is, and “Style Control” power on like
+                extended versions of one of the jazzed up interludes that Earth, Wind, and Fire included in their best 70s albums.
+            </span>
+            <span class="quotation">„</span>
             -
-            <a href="https://withjustahintofmayhem.blog/tag/gents-and-ginger/">Just a Hint of Mayhem</a>
+            <a href="https://withjustahintofmayhem.blog/tag/gents-and-ginger/">With Just a Hint of Mayhem</a>
         </div>
 
         <div class="streaming">
@@ -124,11 +127,10 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
 
         margin: 0;
 
-        span {
+        .quotation {
             font-size: 3rem;
             line-height: 1rem;
             display: inline-block;
-            vertical-align: top;
         }
 
         a {
@@ -166,6 +168,18 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
             @media (max-width: riko.$mobile) {
                 height: calc(200px + 583px + 5px);
             }
+        }
+    }
+
+    @media (max-width: riko.$mobile) {
+        .part2 {
+            display: none;
+        }
+    }
+
+    @media (min-width: riko.$desktop) {
+        .part2 {
+            display: inline;
         }
     }
 </style>
