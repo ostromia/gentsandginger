@@ -32,8 +32,6 @@ const { number = events.length } = Astro.props;
                     </a>
                 )}
             </div>
-
-            <div style="height: 1px; background-color: black"></div>
         ))
     }
 </div>
@@ -48,12 +46,20 @@ const { number = events.length } = Astro.props;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 1rem;
     }
 
     .event {
         display: flex;
         gap: 0.5rem;
+
+        padding: 1rem;
+        box-sizing: border-box;
+
+        border-bottom: 1px solid black;
+    }
+
+    .wrapper > :last-child {
+        border-bottom: 0;
     }
 
     .date {
