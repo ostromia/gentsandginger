@@ -36,7 +36,7 @@ import "~styles/global.scss";
         <main>
             <section>
                 <div>
-                    <H1 size="dynamic">Upcoming Events...</H1>
+                    <H1>Upcoming Events...</H1>
 
                     <Live number={3} />
 
@@ -66,13 +66,15 @@ import "~styles/global.scss";
                     <H1 align="center" color="black" dynamic>Manchester-based five-piece family feast!</H1>
 
                     <p style="text-align: center; padding: 1rem; box-sizing: border-box;">
-                        <span>“</span>
+                        <span class="quotation">“</span>
                         Once described as having the vibe of waking up on your birthday and having ten Weetabix for breakfast, Gents & Ginger brings the
                         vibrant spirits and positive energy of their world straight to your eardrums. This Manchester-based five-piece family feast, brings
-                        a delicious blend of old-school funk and rock with a modern twist. Off the back of their critically acclaimed debut album 'Githerments
-                        in Groove' and sold-out 'Those Were The Days' UK headline tour, Gents & Ginger continue to light up the stage performing on the
-                        Nest stage at Truck Festival.
-                        <span>„</span>
+                        a delicious blend of old-school funk and rock with a modern twist.
+                        <span class="mobile part2"
+                            >Off the back of their critically acclaimed debut album 'Githerments in Groove' and sold-out 'Those Were The Days' UK
+                            headline tour, Gents & Ginger continue to light up the stage performing on the Nest stage at Truck Festival.</span
+                        >
+                        <span class="quotation">„</span>
                     </p>
 
                     <MeetTheBand />
@@ -96,6 +98,19 @@ import "~styles/global.scss";
 
 <style lang="scss">
     @use "~styles/color";
+    @use "~styles/riko";
+
+    @media (max-width: riko.$mobile) {
+        .part2 {
+            display: none;
+        }
+    }
+
+    @media (min-width: riko.$desktop) {
+        .part2 {
+            display: inline;
+        }
+    }
 
     header {
         height: 100svh;
@@ -127,7 +142,7 @@ import "~styles/global.scss";
 
         margin: 0;
 
-        span {
+        .quotation {
             font-size: 3rem;
             line-height: 1rem;
             display: inline-block;
