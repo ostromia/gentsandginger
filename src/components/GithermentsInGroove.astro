@@ -1,21 +1,148 @@
-<iframe
-    style="border-radius:12px"
-    src="https://open.spotify.com/embed/album/3A1fC1ph7Fr40ikFbDJMQs?utm_source=generator"
-    width="100%"
-    allowfullscreen=""
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="eager"
-    title="Spotify embedded music player"
->
-</iframe>
+---
+import H1 from "~components/H1.astro";
+import { default as Spotify } from "~assets/icons/spotify.svg";
+import { default as AppleMusic } from "~assets/icons/applemusic.svg";
+---
+
+<div class="wrapper">
+    <div class="image">
+        <img src="https://i.scdn.co/image/ab67616d0000b27345bed8a403f0d84a47c09b8e" />
+    </div>
+    <div class="text">
+        <H1 color="black">Githerments in Groove</H1>
+
+        <div class="review">
+            <span>“</span>
+            York band Gents and Ginger have got a funk box and they know how to use it! Their recently released album, ‘Githerments In Groove’ showcases
+            their steadfast talent for being as funky as hell. “Ricke” opens proceedings with an explosion of joy while “Abience For A Kebab Shop Pt II”
+            oozes the style and ability of some of the great funk bands from the past to rock out. I think I prefer the songs here that feature vocals
+            and the first of those to appear is “Turtle”, musically it has the feel of the classic Bowie band from the 1974 American tour. “4 Silly Balls”,
+            what a great title that is, and “Style Control” power on like extended versions of one of the jazzed up interludes that Earth, Wind, and Fire
+            included in their best 70s albums.
+            <span>„</span>
+            -
+            <a href="https://withjustahintofmayhem.blog/tag/gents-and-ginger/">Just a Hint of Mayhem</a>
+        </div>
+
+        <div class="streaming">
+            <div>Streaming Now!</div>
+
+            <a href="https://open.spotify.com/artist/7jIpsmRlZWQbKMjbxVeJ5M?si=0scp_nZNS2KHEGRTYOtZmw" aria-label="Spotify">
+                <Spotify class="icon" />
+            </a>
+
+            <a href="https://music.apple.com/gb/artist/gents-ginger/1765128507" aria-label="Apple Music">
+                <AppleMusic class="icon" />
+            </a>
+        </div>
+    </div>
+
+    <iframe
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/album/3A1fC1ph7Fr40ikFbDJMQs?utm_source=generator"
+        width="100%"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="eager"
+        title="Spotify embedded music player"
+    >
+    </iframe>
+</div>
 
 <style lang="scss">
     @use "~styles/riko";
+    @use "~styles/fonts";
+
+    @media (min-width: riko.$desktop) {
+        .wrapper {
+            grid-template-areas:
+                "image text"
+                "spotify spotify";
+        }
+    }
+
+    @media (max-width: riko.$mobile) {
+        .wrapper {
+            grid-template-areas:
+                "image"
+                "text"
+                "spotify";
+
+            * {
+                justify-content: center;
+                text-align: center;
+            }
+
+            .image {
+                padding: 2rem;
+                box-sizing: border-box;
+            }
+
+            align-items: center;
+        }
+    }
+
+    .wrapper {
+        width: 100%;
+        display: grid;
+
+        gap: 2rem;
+        box-sizing: border-box;
+
+        .image {
+            grid-area: image;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+
+            img {
+                object-fit: contain;
+                width: 100%;
+            }
+        }
+
+        .text {
+            grid-area: text;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .review {
+            line-height: 1.5rem;
+
+            font-style: italic;
+
+            margin: 0;
+
+            span {
+                font-size: 3rem;
+                line-height: 1rem;
+                display: inline-block;
+                vertical-align: top;
+            }
+
+            a {
+                color: black;
+                display: inline-block;
+            }
+        }
+
+        .streaming {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            @include fonts.reeniebeanie;
+            font-size: 2rem;
+        }
+    }
 
     iframe {
         width: 100%;
         height: calc(200px + 583px);
         border: 0;
+        grid-area: spotify;
     }
 
     @media (max-width: riko.$mobile) {
