@@ -18,6 +18,9 @@ import GithermentsInGroove from "~components/GithermentsInGroove.astro";
 import Store from "~src/components/store.astro";
 import YouTube from "~components/YouTube.astro";
 
+import { default as Spotify } from "~assets/icons/spotify.svg";
+import { default as AppleMusic } from "~assets/icons/applemusic.svg";
+
 import "~styles/global.scss";
 ---
 
@@ -43,8 +46,8 @@ import "~styles/global.scss";
                 </div>
             </section>
 
-            <section style="background-color: #d57d18">
-                <div>
+            <section style="background-color: #d57d18;">
+                <div style="gap: 1.5rem;">
                     <p>
                         <span>“</span>
                         York band Gents and Ginger have got a funk box and they know how to use it! “Ricke” opens proceedings with an explosion of joy
@@ -52,6 +55,16 @@ import "~styles/global.scss";
                             >„</span
                         >
                     </p>
+
+                    <div class="stream-here">
+                        <a href="https://open.spotify.com/album/3A1fC1ph7Fr40ikFbDJMQs?si=JFNyFKonQJy-IgHLePuehg" aria-label="Spotify">
+                            <Spotify class="icon" />
+                        </a>
+
+                        <a href="https://music.apple.com/gb/album/githerments-in-groove/1768795800" aria-label="Apple Music">
+                            <AppleMusic class="icon" />
+                        </a>
+                    </div>
 
                     <GithermentsInGroove />
                 </div>
@@ -99,9 +112,6 @@ import "~styles/global.scss";
 
         margin: 0;
 
-        padding: 1rem 0 2rem;
-        box-sizing: border-box;
-
         text-align: center;
 
         span {
@@ -110,6 +120,12 @@ import "~styles/global.scss";
             display: inline-block;
             vertical-align: top;
         }
+    }
+
+    .stream-here {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
     }
 
     main {
