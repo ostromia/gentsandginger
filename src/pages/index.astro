@@ -29,6 +29,12 @@ import "~styles/global.scss";
     });
 </script>
 
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        window.fitText(document.getElementById("mbfpff"), 2.5);
+    });
+</script>
+
 <html lang="en">
     <head>
         <Head title={SITE_TITLE} description={SITE_DESCRIPTION} image={IMG_048A5038_1200x630} />
@@ -70,7 +76,7 @@ import "~styles/global.scss";
 
             <section style="background-color: #d57d18;">
                 <div>
-                    <H1 align="center" color="black" type="type-long" dynamic>Manchester-based five-piece family feast!</H1>
+                    <H1 id="mbfpff" align="center">A Manchester-Based Five-Piece Family Feast!</H1>
 
                     <p style="text-align: center; padding: 1rem; box-sizing: border-box;">
                         <span class="quotation">“</span>
@@ -90,7 +96,7 @@ import "~styles/global.scss";
 
             <section>
                 <div>
-                    <H1 color="black">Store</H1>
+                    <H1>Store</H1>
 
                     <Store number={4} />
 
