@@ -35,6 +35,11 @@ export default defineConfig({
                 provider: fontProviders.fontsource(),
                 name: "Reenie Beanie",
                 cssVariable: "--font-reenie-beanie"
+            },
+            {
+                provider: fontProviders.fontsource(),
+                name: "Grandstander",
+                cssVariable: "--font-grandstander"
             }
         ]
     }
