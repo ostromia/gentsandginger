@@ -19,7 +19,7 @@ const members = [
 <script>
     document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".item").forEach((el) => {
-            el.style.height = `${window.innerHeight * 0.75}px`;
+            el.style.height = `${window.innerHeight * 0.75 > 1080 ? window.innerHeight * 0.75 : window.innerHeight * 0.9}px`;
         });
     });
 </script>
