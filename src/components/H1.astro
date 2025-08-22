@@ -3,46 +3,21 @@ interface Props {
     dynamic?: boolean;
     color?: string;
     align?: string;
-    type?: string;
+    style?: string;
 }
-
-const { color, align, dynamic = false, type } = Astro.props;
+const { dynamic = false, color, align, style } = Astro.props;
 ---
 
-<h1 class={`${dynamic && "dynamic"} ${type}`} style={`color: ${color}; text-align: ${align}`}>
+<h1 class={`${dynamic && "madri"}`} style={`color: ${color}; text-align: ${align}; ${style}`}>
     <slot />
 </h1>
 
 <style lang="scss">
     @use "~styles/fonts";
-    @use "~styles/color";
 
     h1 {
+        @include fonts.grandstander;
+        font-size: 2rem;
         margin: 0;
-        @include fonts.reeniebeanie;
-        font-size: 3rem;
-        font-weight: normal;
-        color: color.$orange;
-        text-transform: capitalize;
-    }
-
-    .type-long {
-        @media (max-width: 800px) {
-            font-size: 2.5rem;
-        }
-
-        @media (max-width: 700px) {
-            font-size: 2rem;
-        }
-
-        @media (max-width: 600px) {
-            font-size: 1.5rem;
-        }
-    }
-
-    .type-medium {
-        @media (max-width: 400px) {
-            font-size: 2rem;
-        }
     }
 </style>
