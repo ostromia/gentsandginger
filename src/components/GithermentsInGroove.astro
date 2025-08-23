@@ -130,11 +130,22 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
     }
 
     .streaming {
-        display: flex;
         align-items: center;
         gap: 1rem;
         font-size: 2rem;
         @include fonts.reeniebeanie;
+    }
+
+    @media (max-width: riko.$mobile) {
+        .streaming {
+            display: none;
+        }
+    }
+
+    @media (min-width: riko.$desktop) {
+        .streaming {
+            display: flex;
+        }
     }
 
     .spotify {
