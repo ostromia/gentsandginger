@@ -42,13 +42,6 @@ const data = [
     },
 
     {
-        title: "Those Were The Days 4: Micklegigs The Ghost Ship Album Launch",
-        date: ["2024.04.12"],
-        url: "",
-        location: "Micklegate Social, York"
-    },
-
-    {
         title: "Those Were The Days Tour 3: The Finsbury",
         date: ["2024.03.25"],
         url: "",
