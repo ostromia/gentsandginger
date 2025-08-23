@@ -1,0 +1,43 @@
+---
+interface Props {
+    mobile?: boolean;
+    desktop?: boolean;
+
+    quotation?: boolean;
+    align?: string;
+}
+
+const { mobile = false, desktop = false, quotation = false, align } = Astro.props;
+---
+
+<p class={`review ${mobile && "mobile"} ${desktop && "desktop"}`} style={`text-align: ${align}`}>
+    {quotation && <span class="quotation">“</span>}
+    <slot />
+    {quotation && <span class="quotation">„</span>}
+    <slot name="after" />
+</p>
+
+<style lang="scss">
+    @use "~styles/riko";
+    @use "~styles/fonts";
+
+    p {
+        display: block;
+
+        line-height: 1.5rem;
+
+        font-style: italic;
+
+        margin: 0;
+
+        padding: 1rem 0 0.25rem;
+        box-sizing: border-box;
+
+        .quotation {
+            font-size: 3rem;
+            line-height: 1rem;
+            display: inline-block;
+            vertical-align: top;
+        }
+    }
+</style>
