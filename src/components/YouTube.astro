@@ -1,3 +1,7 @@
+---
+import thumbnail from "~assets/thosewerethedays.jpg";
+---
+
 <script>
     import Hls from "hls.js";
 
@@ -15,4 +19,15 @@
     });
 </script>
 
-<video controls id="thosewerethedays"></video>
+<video controls id="thosewerethedays" poster={thumbnail.src}></video>
+
+<style lang="scss">
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 4 / 3;
+        border: 0;
+        display: block;
+    }
+</style>
