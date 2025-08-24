@@ -1,13 +1,18 @@
 ---
+import { Image } from "astro:assets";
+
 import H1 from "~components/H1.astro";
 import P from "~components/P.astro";
+
+import GithermentsInGrooveAlbumCover from "~assets/GithermentsInGroove.jpeg";
+
 import { default as Spotify } from "~assets/icons/spotify.svg";
 import { default as AppleMusic } from "~assets/icons/applemusic.svg";
 ---
 
 <div class="wrapper">
     <div class="image">
-        <img src="https://i.scdn.co/image/ab67616d0000b27345bed8a403f0d84a47c09b8e" />
+        <Image alt="" src={GithermentsInGrooveAlbumCover} layout="constrained" />
     </div>
     <div class="text">
         <H1 dynamic scale={1.25} font="reeniebeanie" style="text-transform: uppercase;">Githerments in Groove</H1>
@@ -108,10 +113,13 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
         display: flex;
         justify-content: center;
         align-items: center;
+
+        height: auto;
         width: 100%;
 
         img {
             object-fit: contain;
+            height: auto;
             width: 100%;
 
             border-radius: 10px;
