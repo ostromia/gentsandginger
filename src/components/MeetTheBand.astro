@@ -24,18 +24,39 @@ const members = [
     });
 </script>
 
-<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
-<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script>
+    import Swiper from "swiper";
+    // import { Navigation, Pagination } from "swiper/modules";
+    import "swiper/css";
+    // import "swiper/css/navigation";
+    // import "swiper/css/pagination";
 
-<div class="gallery js-flickity" data-flickity-options='{ "wrapAround": true, "prevNextButtons": false }'>
-    {
-        members.map(({ image, text }) => (
-            <div class="item">
-                <div class="text">{text}</div>
-                <Image alt="" src={image} layout="constrained" height="1920" width="1080" />
-            </div>
-        ))
-    }
+    const swiper = new Swiper(".swiper", {
+        // modules: [Navigation, Pagination],
+        loop: true,
+
+        slidesPerView: "auto",
+        centeredSlides: true,
+        spaceBetween: 5,
+
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true
+        }
+    });
+</script>
+
+<div class="swiper">
+    <div class="swiper-wrapper">
+        {
+            members.map(({ image, text }) => (
+                <div class="item swiper-slide">
+                    <div class="text">{text}</div>
+                    <Image alt="" src={image} layout="constrained" height="1920" width="1080" />
+                </div>
+            ))
+        }
+    </div>
 </div>
 
 <style lang="scss">
