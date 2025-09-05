@@ -1,5 +1,12 @@
 const data = [
     {
+        title: "The Crescent 10th Birthday: Gig Night w/ Pennine Suite, Gents & Ginger, YouVee + Flatnumbertwo",
+        date: ["2025.09.25"],
+        url: "https://thecrescentyork.com/events/the-crescent-10th-birthday-gig-night-w-pennine-suite-gents-ginger-youvee-flatnumbertwo/",
+        location: "The Crescent, York"
+    },
+
+    {
         title: "Truckfestival 2025",
         date: ["2025.06.24"],
         url: "https://truckfestival.com/line-up/",
@@ -7,7 +14,7 @@ const data = [
     },
 
     {
-        title: "Gents & Ginger Reunion",
+        title: "Gents & Ginger Reunion: GENTS & GINGER - THE TONICS - THE BLAZERS - CATCH!",
         date: ["2025.06.08"],
         url: "https://www.thefulfordarms.com/event/gents-ginger/",
         location: "The Fulford Arms, York"
