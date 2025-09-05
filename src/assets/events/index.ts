@@ -2,7 +2,7 @@ const data = [
     {
         title: "The Crescent 10th Birthday: Gig Night w/ Pennine Suite, Gents & Ginger, YouVee + Flatnumbertwo",
         date: ["2025.09.25"],
-        url: "https://thecrescentyork.com/events/the-crescent-10th-birthday-gig-night-w-pennine-suite-gents-ginger-youvee-flatnumbertwo/",
+        url: "https://www.seetickets.com/event/the-crescent-10th-birthday-gig-night/the-crescent/3493493",
         location: "The Crescent, York"
     },
 
