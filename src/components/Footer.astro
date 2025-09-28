@@ -35,7 +35,7 @@ import SocialMedia from "~components/SocialMedia.astro";
     .title {
         font-size: 2rem;
         @include fonts.reeniebeanie;
-        padding: 2rem;
+        padding: 2rem 0;
         box-sizing: border-box;
     }
 
@@ -43,16 +43,14 @@ import SocialMedia from "~components/SocialMedia.astro";
         display: flex;
         gap: 1rem;
         justify-content: center;
-        flex-wrap: wrap;
 
         a {
-            color: color.$black;
+            color: black;
             text-decoration: none;
-            white-space: nowrap;
         }
     }
 
     .signature a {
-        color: color.$darkblue;
+        color: darkblue;
     }
 </style>

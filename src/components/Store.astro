@@ -27,7 +27,7 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
                     <div class="price">{gbp.format(e.price)}</div>
                 </div>
 
-                <Button class_="inactive" style="width: 100%; padding: 0.25rem;">
+                <Button inactive style="width: 100%;">
                     Sold Out
                 </Button>
             </div>
@@ -36,15 +36,15 @@ const gbp = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" 
 </div>
 
 <style lang="scss">
+    @use "~styles/riko";
     @use "~styles/color";
-    @use "~styles/fonts";
 
     .wrapper {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 1rem;
 
-        @media (max-width: 700px) {
+        @media (max-width: riko.$mobile) {
             grid-template-columns: repeat(2, 1fr);
         }
     }

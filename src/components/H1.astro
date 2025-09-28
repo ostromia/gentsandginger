@@ -1,26 +1,14 @@
 ---
 interface Props {
-    dynamic?: boolean;
-    scale?: number;
-    color?: string;
-    align?: string;
-    style?: string;
     font?: string;
+    style?: string;
+    color?: string;
+    "text-align"?: string;
 }
-const { dynamic = false, color, align, style, font, scale } = Astro.props;
-
-const cid = Math.random().toString(36).slice(2, 11);
+const { font, style, color, "text-align": textAlign } = Astro.props;
 ---
 
-<script is:inline define:vars={{ cid, dynamic, scale }}>
-    document.addEventListener("DOMContentLoaded", () => {
-        if (dynamic) {
-            window.fitText(document.querySelector(`.${cid}`), scale);
-        }
-    });
-</script>
-
-<h1 data-scale={scale} class={`${cid} ${dynamic && "madri"} ${font}`} style={`color: ${color}; text-align: ${align}; ${style}`}>
+<h1 class={font} style={`${style}; color: ${color}; text-align: ${textAlign}`}>
     <slot />
 </h1>
 
@@ -38,63 +26,3 @@ const cid = Math.random().toString(36).slice(2, 11);
         @include fonts.reeniebeanie;
     }
 </style>
-
-<!-- FitText.js -->
-<script>
-    /*!
-     * FitText.js 1.0 jQuery free version
-     *
-     * Copyright 2011, Dave Rupert http://daverupert.com
-     * Released under the WTFPL license
-     * http://sam.zoy.org/wtfpl/
-     * Modified by Slawomir Kolodziej http://slawekk.info
-     *
-     * Date: Tue Aug 09 2011 10:45:54 GMT+0200 (CEST)
-     */
-    (function () {
-        var addEvent = function (el, type, fn) {
-            if (el.addEventListener) el.addEventListener(type, fn, false);
-            else el.attachEvent("on" + type, fn);
-        };
-
-        var extend = function (obj, ext) {
-            for (var key in ext) if (ext.hasOwnProperty(key)) obj[key] = ext[key];
-            return obj;
-        };
-
-        window.fitText = function (el, kompressor, options) {
-            var settings = extend(
-                {
-                    minFontSize: -1 / 0,
-                    maxFontSize: 1 / 0
-                },
-                options
-            );
-
-            var fit = function (el) {
-                var compressor = kompressor || 1;
-
-                var resizer = function () {
-                    el.style.fontSize =
-                        Math.max(Math.min(el.clientWidth / (compressor * 10), parseFloat(settings.maxFontSize)), parseFloat(settings.minFontSize)) +
-                        "px";
-                };
-
-                // Call once to set.
-                resizer();
-
-                // Bind events
-                // If you have any js library which support Events, replace this part
-                // and remove addEvent function (or use original jQuery version)
-                addEvent(window, "resize", resizer);
-                addEvent(window, "orientationchange", resizer);
-            };
-
-            if (el.length) for (var i = 0; i < el.length; i++) fit(el[i]);
-            else fit(el);
-
-            // return set of elements
-            return el;
-        };
-    })();
-</script>

@@ -66,9 +66,9 @@ import "~styles/global.scss";
 
             <section style="background-color: #d57d18;">
                 <div>
-                    <H1 dynamic scale={1.5} align="center">A Manchester-Based Five-Piece Family Feast!</H1>
+                    <H1 text-align="center">A Manchester-Based Five-Piece Family Feast!</H1>
 
-                    <P align="center" desktop quotation>
+                    <P text-align="center" desktop quotation>
                         Once described as having the vibe of waking up on your birthday and having ten Weetabix for breakfast, Gents & Ginger brings
                         the vibrant spirits and positive energy of their world straight to your eardrums. This Manchester-based five-piece family
                         feast, brings a delicious blend of old-school funk and rock with a modern twist. Off the back of their critically acclaimed
@@ -76,7 +76,7 @@ import "~styles/global.scss";
                         the stage performing on the Nest stage at Truck Festival.
                     </P>
 
-                    <P align="center" mobile quotation>
+                    <P text-align="center" mobile quotation>
                         Once described as having the vibe of waking up on your birthday and having ten Weetabix for breakfast, Gents & Ginger brings
                         the vibrant spirits and positive energy of their world straight to your eardrums. This Manchester-based five-piece family
                         feast, brings a delicious blend of old-school funk and rock with a modern twist.
@@ -104,6 +104,10 @@ import "~styles/global.scss";
 <style lang="scss">
     @use "~styles/color";
     @use "~styles/riko";
+
+    header {
+        height: 100svh;
+    }
 
     main {
         display: flex;

@@ -56,10 +56,10 @@ const { style } = Astro.props;
     @use "~styles/mia";
     @use "~styles/riko";
     @use "~styles/color";
-    @use "~styles/adam";
 
     nav {
-        @include adam.navigation;
+        position: absolute;
+        z-index: 900;
 
         @include fonts.reeniebeanie;
         font-size: 1.5rem;

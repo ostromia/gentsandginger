@@ -26,13 +26,9 @@ const members = [
 
 <script>
     import Swiper from "swiper";
-    // import { Navigation, Pagination } from "swiper/modules";
     import "swiper/css";
-    // import "swiper/css/navigation";
-    // import "swiper/css/pagination";
 
     const swiper = new Swiper(".swiper", {
-        // modules: [Navigation, Pagination],
         loop: true,
 
         slidesPerView: "auto",
@@ -62,7 +58,6 @@ const members = [
 <style lang="scss">
     @use "~styles/fonts";
     @use "~styles/color";
-    @use "~styles/adam";
     @use "~styles/riko";
 
     @media (min-width: riko.$desktop) {
@@ -112,5 +107,8 @@ const members = [
         justify-content: center;
 
         color: white;
+
+        padding: 0.2rem;
+        box-sizing: border-box;
     }
 </style>

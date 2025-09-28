@@ -21,32 +21,24 @@ const { image, desktop, mobile } = Astro.props;
 </div>
 
 <style lang="scss">
-    @use "~styles/fonts";
-    @use "~styles/color";
-    @use "~styles/adam";
-
-    @use "~styles/riko";
-
     .banner {
         position: relative;
         height: 100%;
         width: 100%;
 
         .image {
+            position: absolute;
             height: 100%;
             width: 100%;
             object-fit: cover;
-            position: absolute;
-            inset: 0;
         }
 
         .content {
-            @include adam.base;
             position: absolute;
             inset: 0;
-            margin: auto;
-            width: max-content;
-            height: max-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 </style>

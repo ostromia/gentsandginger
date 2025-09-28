@@ -28,11 +28,6 @@ export default defineConfig({
         fonts: [
             {
                 provider: fontProviders.fontsource(),
-                name: "Atkinson Hyperlegible",
-                cssVariable: "--font-atkinson-hyperlegible"
-            },
-            {
-                provider: fontProviders.fontsource(),
                 name: "Reenie Beanie",
                 cssVariable: "--font-reenie-beanie"
             },

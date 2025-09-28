@@ -1,17 +1,16 @@
 ---
 interface Props {
     href?: string;
-    class_?: string;
     style?: string;
     desktop?: boolean;
     mobile?: boolean;
     inactive?: boolean;
 }
 
-const { href, class_, style, desktop = false, mobile = false, inactive = false } = Astro.props;
+const { href, style, desktop = false, mobile = false, inactive = false } = Astro.props;
 ---
 
-<a class={`button ${class_} ${desktop && "desktop"} ${mobile && "mobile"} ${inactive && "inactive"}`} href={href} style={style}>
+<a class={`button ${desktop && "desktop"} ${mobile && "mobile"} ${inactive && "inactive"}`} href={href} style={style}>
     <slot />
 </a>
 

@@ -2,15 +2,14 @@
 interface Props {
     mobile?: boolean;
     desktop?: boolean;
-
     quotation?: boolean;
-    align?: string;
+    "text-align"?: string;
 }
 
-const { mobile = false, desktop = false, quotation = false, align } = Astro.props;
+const { mobile = false, desktop = false, quotation = false, "text-align": textAlign } = Astro.props;
 ---
 
-<p class={`review ${mobile && "mobile"} ${desktop && "desktop"}`} style={`text-align: ${align}`}>
+<p class={`review ${mobile && "mobile"} ${desktop && "desktop"}`} style={`text-align: ${textAlign}`}>
     {quotation && <span class="quotation">“</span>}
     <slot />
     {quotation && <span class="quotation">„</span>}
@@ -19,7 +18,6 @@ const { mobile = false, desktop = false, quotation = false, align } = Astro.prop
 
 <style lang="scss">
     @use "~styles/riko";
-    @use "~styles/fonts";
 
     p {
         display: block;
