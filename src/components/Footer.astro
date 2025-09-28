@@ -1,40 +1,11 @@
 ---
-import { default as Facebook } from "~assets/icons/facebook.svg";
-import { default as Instagram } from "~assets/icons/instagram.svg";
-import { default as Tiktok } from "~assets/icons/tiktok.svg";
-import { default as YouTube } from "~assets/icons/youtube.svg";
-import { default as Spotify } from "~assets/icons/spotify.svg";
-import { default as AppleMusic } from "~assets/icons/applemusic.svg";
+import SocialMedia from "~components/SocialMedia.astro";
 ---
 
 <footer>
     <div class="title">Gents & Ginger</div>
 
-    <div class="social-media-icons">
-        <a href="https://www.facebook.com/gentsandginger" aria-label="Instagram">
-            <Facebook class="icon" />
-        </a>
-
-        <a href="https://www.instagram.com/gentsandginger/" aria-label="Instagram">
-            <Instagram class="icon" />
-        </a>
-
-        <a href="https://www.tiktok.com/@gentsandginger" aria-label="Instagram">
-            <Tiktok class="icon" />
-        </a>
-
-        <a href="https://www.youtube.com/@gentsandginger" aria-label="YouTube">
-            <YouTube class="icon" />
-        </a>
-
-        <a href="https://open.spotify.com/artist/7jIpsmRlZWQbKMjbxVeJ5M?si=0scp_nZNS2KHEGRTYOtZmw" aria-label="Spotify">
-            <Spotify class="icon" />
-        </a>
-
-        <a href="https://music.apple.com/gb/artist/gents-ginger/1765128507" aria-label="Apple Music">
-            <AppleMusic class="icon" />
-        </a>
-    </div>
+    <SocialMedia style="margin: auto;" color="black" />
 
     <div class="policies">
         <a href="/about/">About</a>
@@ -51,13 +22,6 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
     @use "~styles/fonts";
     @use "~styles/color";
 
-    .title {
-        font-size: 2rem;
-        @include fonts.reeniebeanie;
-        padding: 2rem;
-        box-sizing: border-box;
-    }
-
     footer {
         display: flex;
         flex-direction: column;
@@ -68,15 +32,11 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
         background-color: color.$orange;
     }
 
-    .social-media-icons {
-        display: flex;
-        justify-content: center;
-        gap: 1em;
-        flex-wrap: wrap;
-
-        a {
-            text-decoration: none;
-        }
+    .title {
+        font-size: 2rem;
+        @include fonts.reeniebeanie;
+        padding: 2rem;
+        box-sizing: border-box;
     }
 
     .policies {

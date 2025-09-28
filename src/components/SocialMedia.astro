@@ -5,9 +5,17 @@ import { default as Tiktok } from "~assets/icons/tiktok.svg";
 import { default as YouTube } from "~assets/icons/youtube.svg";
 import { default as Spotify } from "~assets/icons/spotify.svg";
 import { default as AppleMusic } from "~assets/icons/applemusic.svg";
+
+interface Props {
+    style?: string;
+    color?: string;
+    direction?: string;
+}
+
+const { style, color = "#d57d18", direction = "row" } = Astro.props;
 ---
 
-<div class="social-media-icons">
+<div style={`${style}; color: ${color}; flex-direction: ${direction};`}>
     <a href="https://www.facebook.com/gentsandginger" aria-label="Instagram">
         <Facebook class="icon" />
     </a>
@@ -34,9 +42,13 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
 </div>
 
 <style lang="scss">
-    .social-media-icons {
+    div {
         display: flex;
-        flex-direction: column;
         gap: 1rem;
+    }
+
+    a,
+    .icon {
+        color: inherit;
     }
 </style>

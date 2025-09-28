@@ -3,12 +3,7 @@ import logo from "~assets/logo.svg";
 import hamburger from "~assets/icons/hamburger.svg";
 import x from "~assets/icons/x.svg";
 
-import { default as Facebook } from "~assets/icons/facebook.svg";
-import { default as Instagram } from "~assets/icons/instagram.svg";
-import { default as Tiktok } from "~assets/icons/tiktok.svg";
-import { default as YouTube } from "~assets/icons/youtube.svg";
-import { default as Spotify } from "~assets/icons/spotify.svg";
-import { default as AppleMusic } from "~assets/icons/applemusic.svg";
+import SocialMedia from "~components/SocialMedia.astro";
 
 interface Props {
     style?: string;
@@ -52,29 +47,7 @@ const { style } = Astro.props;
     </a>
 
     <div id="social-media" class="desktop">
-        <a href="https://www.facebook.com/gentsandginger" aria-label="Instagram">
-            <Facebook class="icon" />
-        </a>
-
-        <a href="https://www.instagram.com/gentsandginger/" aria-label="Instagram">
-            <Instagram class="icon" />
-        </a>
-
-        <a href="https://www.tiktok.com/@gentsandginger" aria-label="Instagram">
-            <Tiktok class="icon" />
-        </a>
-
-        <a href="https://www.youtube.com/@gentsandginger" aria-label="YouTube">
-            <YouTube class="icon" />
-        </a>
-
-        <a href="https://open.spotify.com/artist/7jIpsmRlZWQbKMjbxVeJ5M?si=0scp_nZNS2KHEGRTYOtZmw" aria-label="Spotify">
-            <Spotify class="icon" />
-        </a>
-
-        <a href="https://music.apple.com/gb/artist/gents-ginger/1765128507" aria-label="Apple Music">
-            <AppleMusic class="icon" />
-        </a>
+        <SocialMedia />
     </div>
 </nav>
 
@@ -123,10 +96,6 @@ const { style } = Astro.props;
             max-height: 100px;
             max-width: 100%;
         }
-    }
-
-    .icon {
-        fill: color.$orange;
     }
 
     @media (min-width: riko.$desktop) {

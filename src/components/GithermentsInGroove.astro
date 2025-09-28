@@ -70,6 +70,7 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
 <style lang="scss">
     @use "~styles/riko";
     @use "~styles/fonts";
+    @use "~styles/color";
 
     @media (min-width: riko.$desktop) {
         .wrapper {
@@ -142,6 +143,10 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
         gap: 1rem;
         font-size: 2rem;
         @include fonts.reeniebeanie;
+
+        a {
+            color: black;
+        }
     }
 
     @media (max-width: riko.$mobile) {
