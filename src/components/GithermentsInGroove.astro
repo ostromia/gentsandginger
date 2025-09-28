@@ -15,7 +15,9 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
         <Image alt="" src={GithermentsInGrooveAlbumCover} layout="constrained" />
     </div>
     <div class="text">
-        <H1 font="reeniebeanie" style="text-transform: uppercase;">Githerments in Groove</H1>
+        <!-- <div class="desktop">
+            <H1 font="reeniebeanie" style="text-transform: uppercase;">Githerments in Groove</H1>
+        </div> -->
 
         <P desktop quotation>
             Their recently released album, 'Githerments In Groove' showcases their steadfast talent for being as funky as hell. “Ricke” opens
@@ -30,16 +32,18 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
             </span>
         </P>
 
-        <P text-align="center" mobile quotation>
-            Their recently released album, 'Githerments In Groove' showcases their steadfast talent for being as funky as hell. “Ricke” opens
-            proceedings with an explosion of joy while “Ambience For A Kebab Shop Pt II” oozes the style and ability of some of the great funk bands
-            from the past to rock out.
+        <div class="mobile review">
+            <P text-align="center" style="padding: 0;">
+                Their recently released album, 'Githerments In Groove' showcases their steadfast talent for being as funky as hell. “Ricke” opens
+                proceedings with an explosion of joy while “Ambience For A Kebab Shop Pt II” oozes the style and ability of some of the great funk
+                bands from the past to rock out.
 
-            <span slot="after">
-                -
-                <a style="color: black" href="https://withjustahintofmayhem.blog/tag/gents-and-ginger/">With Just a Hint of Mayhem</a>
-            </span>
-        </P>
+                <span slot="after">
+                    -
+                    <a style="color: black" href="https://withjustahintofmayhem.blog/tag/gents-and-ginger/">With Just a Hint of Mayhem</a>
+                </span>
+            </P>
+        </div>
 
         <div class="streaming">
             <div>Streaming Now!</div>
@@ -77,7 +81,15 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
             grid-template-areas:
                 "image text"
                 "spotify spotify";
+            gap: 2rem;
         }
+    }
+
+    .review {
+        background-color: rgba(239, 225, 213, 0.25);
+        padding: 0.5rem;
+        box-sizing: border-box;
+        border-radius: 10px;
     }
 
     @media (max-width: riko.$mobile) {
@@ -86,6 +98,7 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
                 "image"
                 "text"
                 "spotify";
+            gap: 1rem;
 
             align-items: center;
 
@@ -95,7 +108,7 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
             }
 
             .image {
-                padding: 0 2.5rem;
+                // padding: 0 2.5rem;
                 box-sizing: border-box;
             }
         }
@@ -105,7 +118,6 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
         width: 100%;
         display: grid;
 
-        gap: 2rem;
         box-sizing: border-box;
     }
 
@@ -126,7 +138,7 @@ import { default as AppleMusic } from "~assets/icons/applemusic.svg";
             border-radius: 10px;
             box-sizing: border-box;
 
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            // box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
         }
     }
 
