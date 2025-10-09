@@ -1,5 +1,11 @@
 const data = [
     {
+        title: "Gents & Ginger plus Khamra & No More Band",
+        date: "2025.12.12",
+        url: "https://www.fatsoma.com/e/jex2d0ul/gents-ginger-plus-khamra-no-more-band",
+        location: "The Washington, Sheffield"
+    },
+    {
         title: "The Crescent 10th Birthday: Gig Night w/ Pennine Suite, Gents & Ginger, YouVee + Flatnumbertwo",
         date: "2025.09.25",
         url: "https://www.seetickets.com/event/the-crescent-10th-birthday-gig-night/the-crescent/3493493",
