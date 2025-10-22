@@ -6,6 +6,12 @@ const data = [
         location: "The Washington, Sheffield"
     },
     {
+        title: "We Hate The Sharkman Support",
+        date: "2025.10.31",
+        url: "https://www.fatsoma.com/e/i90vvcaf/la/ppw0",
+        location: "33 Oldham Street, Manchester"
+    },
+    {
         title: "The Crescent 10th Birthday: Gig Night w/ Pennine Suite, Gents & Ginger, YouVee + Flatnumbertwo",
         date: "2025.09.25",
         url: "https://www.seetickets.com/event/the-crescent-10th-birthday-gig-night/the-crescent/3493493",
