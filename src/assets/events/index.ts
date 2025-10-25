@@ -6,6 +6,12 @@ const data = [
         location: "The Washington, Sheffield"
     },
     {
+        title: "BLOOM Live at the Rat and Pigeon",
+        date: "2025.11.12",
+        url: "https://www.fatsoma.com/e/po0je8yg/bloom-live-at-the-rat-and-pigeon",
+        location: "The Rat & Pigeon, Manchester"
+    },
+    {
         title: "We Hate The Sharkman Support",
         date: "2025.10.31",
         url: "https://www.fatsoma.com/e/i90vvcaf/la/ppw0",
