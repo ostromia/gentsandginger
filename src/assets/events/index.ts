@@ -1,5 +1,11 @@
 const data = [
     {
+        title: "Flat Moon Presents: Cookin' Up A Groove UK Tour - Manchester",
+        date: "2026.02.06",
+        url: "https://www.eventbrite.com/e/flat-moon-presents-cookin-up-a-groove-uk-tour-manchester-tickets-1975841695700?aff=oddtdtcreator",
+        location: "The Rat & Pigeon, Manchester"
+    },
+    {
         title: "Gents & Ginger plus Khamra & No More Band",
         date: "2025.12.12",
         url: "https://www.fatsoma.com/e/jex2d0ul/gents-ginger-plus-khamra-no-more-band",
