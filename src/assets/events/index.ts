@@ -1,5 +1,11 @@
 const data = [
     {
+        title: "FLAT MOON (ALBUM LAUNCH!) + GENTS & GINGER",
+        date: "2026.02.26",
+        url: "https://www.thefulfordarms.com/event/flat-moon-album-launch-gents-ginger/",
+        location: "The Fulford Arms, York"
+    },
+    {
         title: "Flat Moon Presents: Cookin' Up A Groove UK Tour - Manchester",
         date: "2026.02.06",
         url: "https://www.eventbrite.com/e/flat-moon-presents-cookin-up-a-groove-uk-tour-manchester-tickets-1975841695700?aff=oddtdtcreator",
