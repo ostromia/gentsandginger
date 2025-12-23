@@ -12,6 +12,12 @@ const data = [
         location: "The Rat & Pigeon, Manchester"
     },
     {
+        title: "Blue Monday! Feat. Flat Moon - Gents & Ginger - Trip Sitter - Pedestrian",
+        date: "2026.01.19",
+        url: "https://www.fatsoma.com/e/bjgwu570/blue-monday-feat-flat-moon-gents-ginger-trip-sitter-pedestrian",
+        location: "The Fulford Arms, York"
+    },
+    {
         title: "Gents & Ginger plus Khamra & No More Band",
         date: "2025.12.12",
         url: "https://www.fatsoma.com/e/jex2d0ul/gents-ginger-plus-khamra-no-more-band",
