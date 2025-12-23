@@ -18,6 +18,12 @@ const data = [
         location: "The Fulford Arms, York"
     },
     {
+        title: "Gents & Ginger + Supports",
+        date: "2026.01.09",
+        url: "https://dice.fm/partner/tickets/event/8er7yw-gents-ginger-9th-jan-the-bread-and-roses-london-tickets",
+        location: "The Bread and Roses, London"
+    },
+    {
         title: "Gents & Ginger plus Khamra & No More Band",
         date: "2025.12.12",
         url: "https://www.fatsoma.com/e/jex2d0ul/gents-ginger-plus-khamra-no-more-band",
