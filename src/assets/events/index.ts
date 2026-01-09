@@ -12,6 +12,18 @@ const data = [
         location: "The Rat & Pigeon, Manchester"
     },
     {
+        title: "Elephunk in The Room",
+        date: "2026.01.30",
+        url: "https://www.fatsoma.com/e/wws07x38/elephunk-in-the-room",
+        location: "Band on the Wall, Manchester"
+    },
+    {
+        title: "The Skapones + Guests",
+        date: "2026.01.25",
+        url: "https://nightnday.org/show/the-skapones/",
+        location: "Night and Day, Manchester"
+    },
+    {
         title: "Blue Monday! Feat. Flat Moon - Gents & Ginger - Trip Sitter - Pedestrian",
         date: "2026.01.19",
         url: "https://www.fatsoma.com/e/bjgwu570/blue-monday-feat-flat-moon-gents-ginger-trip-sitter-pedestrian",
