@@ -1,5 +1,11 @@
 const data = [
     {
+        title: "SUBCONSCIOUS CLUB + GENTS AND GINGER + SPECIAL GUESTS",
+        date: "2026.04.17",
+        url: "https://www.ticketweb.uk/event/subconscious-club-gents-and-troubadour-tickets/14781513",
+        location: "Troubadour, London"
+    },
+    {
         title: "FLAT MOON (ALBUM LAUNCH!) + GENTS & GINGER",
         date: "2026.02.26",
         url: "https://www.thefulfordarms.com/event/flat-moon-album-launch-gents-ginger/",
