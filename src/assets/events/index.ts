@@ -1,5 +1,11 @@
 const data = [
     {
+        title: "WEEK THREE EVENTS | Jesmond Community Festival",
+        date: "2026.05.16",
+        url: "https://jesmondcommunityfestival.co.uk/project/week-three-events/",
+        location: "Holy Trinity Church, Newcastle"
+    },
+    {
         title: "SUBCONSCIOUS CLUB + GENTS AND GINGER + SPECIAL GUESTS",
         date: "2026.04.17",
         url: "https://www.ticketweb.uk/event/subconscious-club-gents-and-troubadour-tickets/14781513",
