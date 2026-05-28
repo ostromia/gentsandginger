@@ -1,5 +1,11 @@
 const data = [
     {
+        title: "Solstice | Pealie's Barn",
+        date: "2026.06.20",
+        url: "https://www.pealiesbarn.co.uk/event-details-registration/solstice",
+        location: "Pealie's Barn, Northallerton"
+    },
+    {
         title: "Sonic Sheffield Presents: Crunk Up The Funk!",
         date: "2026.06.18",
         url: "https://www.skiddle.com/whats-on/Sheffield/Yellow-Arch-Studios/Sonic-Sheffield-Presents-Crunk-Up-The-Funk/42415354/",
