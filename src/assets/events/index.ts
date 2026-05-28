@@ -1,5 +1,11 @@
 const data = [
     {
+        title: "Gents & Ginger @ Lions Den",
+        date: "2026.06.26",
+        url: "https://dice.fm/partner/tickets/event/v3np8d-gents-ginger-lions-den-26th-jun-lions-den-manchester-tickets",
+        location: "Lions Den, Manchester"
+    },
+    {
         title: "WEEK THREE EVENTS | Jesmond Community Festival",
         date: "2026.05.16",
         url: "https://jesmondcommunityfestival.co.uk/project/week-three-events/",
