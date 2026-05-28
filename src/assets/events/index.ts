@@ -1,5 +1,11 @@
 const data = [
     {
+        title: "Sonic Sheffield Presents: Crunk Up The Funk!",
+        date: "2026.06.18",
+        url: "https://www.skiddle.com/whats-on/Sheffield/Yellow-Arch-Studios/Sonic-Sheffield-Presents-Crunk-Up-The-Funk/42415354/",
+        location: "Yellow Arch Studios, Sheffield"
+    },
+    {
         title: "Gents & Ginger @ Lions Den",
         date: "2026.06.26",
         url: "https://dice.fm/partner/tickets/event/v3np8d-gents-ginger-lions-den-26th-jun-lions-den-manchester-tickets",
